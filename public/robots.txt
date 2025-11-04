@@ -1,2 +1,16 @@
-# https://www.robotstxt.org/robotstxt.html
+# robots.txt for https://aryankr.netlify.app
+# Created on 2025-11-04 by aryanjsx
+
 User-agent: *
+Allow: /
+
+# Disallow admin or backend routes if you ever add them
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Specify the location of the sitemap
+Sitemap: https://aryankr.netlify.app/sitemap.xml
+
+# Optional: Declare crawl-delay to prevent overloading (commented by default)
+# Crawl-delay: 10
