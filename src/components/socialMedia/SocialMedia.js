@@ -50,6 +50,51 @@ export default function socialMedia() {
         <i className="fab fa-instagram"></i>
         <span></span>
       </a>
+      <a
+        href={socialMediaLinks.codechef}
+        className="icon-button codechef"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fas fa-code"></i>
+        <span></span>
+      </a>
+      <a
+        href={socialMediaLinks.leetcode}
+        className="icon-button leetcode"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fas fa-code"></i>
+        <span></span>
+      </a>
+      <a
+        href={socialMediaLinks.hackerrank}
+        className="icon-button hackerrank"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fab fa-hackerrank"></i>
+        <span></span>
+      </a>
+      <a
+        href={socialMediaLinks.gfg}
+        className="icon-button gfg"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fas fa-code"></i>
+        <span></span>
+      </a>
+      <a
+        href={socialMediaLinks.medium}
+        className="icon-button medium"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i className="fab fa-medium"></i>
+        <span></span>
+      </a>
     </div>
   );
 }
