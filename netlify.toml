@@ -1,0 +1,16 @@
+[build]
+  command = "npm run generate:sitemap-images && npm run build"
+  publish = "build"
+
+# --- Redirect rules for sitemap files ---
+[[redirects]]
+  from = "/sitemap-images.xml"
+  to = "/sitemap-images.xml"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+  force = true
