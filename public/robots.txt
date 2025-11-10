@@ -11,6 +11,7 @@ Disallow: /dashboard/
 
 # Specify the location of the sitemap
 Sitemap: https://aryankr.netlify.app/sitemap.xml
+Sitemap: https://aryankr.netlify.app/sitemap-images.xml
 
 # Optional: Declare crawl-delay to prevent overloading (commented by default)
 # Crawl-delay: 10
