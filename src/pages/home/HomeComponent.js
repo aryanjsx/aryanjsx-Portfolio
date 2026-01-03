@@ -9,16 +9,14 @@ function Home(props) {
   return (
     <>
       <HomeSEO />
-      <Header theme={props.theme} setTheme={props.setTheme} />
-      <main id="main-content">
-        <article>
+      <div className="home-main">
+        <Header theme={props.theme} setTheme={props.setTheme} />
+        <main id="main-content">
           <Greeting theme={props.theme} />
-        </article>
-        <section aria-labelledby="skills-heading">
           <Skills theme={props.theme} />
-        </section>
-      </main>
-      <Footer theme={props.theme} />
+        </main>
+        <Footer theme={props.theme} />
+      </div>
     </>
   );
 }

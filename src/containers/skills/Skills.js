@@ -6,16 +6,23 @@ import { Fade } from "react-awesome-reveal";
 export default function Skills(props) {
   const theme = props.theme;
   return (
-    <div className="main" id="skills">
+    <div className="skills-container" id="skills">
       <div className="skills-header-div">
-        <Fade bottom duration={2000} distance="20px">
+        <Fade direction="up" duration={1000} triggerOnce>
           <h2
             id="skills-heading"
             className="skills-header"
             style={{ color: theme.text }}
           >
-            Here's what I do
+            What I Do
           </h2>
+          <p
+            className="skills-subheader"
+            style={{ color: theme.secondaryText }}
+          >
+            Passionate about creating impactful solutions with modern
+            technologies
+          </p>
         </Fade>
       </div>
       <SkillSection theme={theme} />

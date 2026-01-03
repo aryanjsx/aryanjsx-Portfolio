@@ -2,19 +2,19 @@
 
 const lightTheme = {
   name: "light",
-  body: "#FFFFFF",
-  text: "#343434",
+  body: "#F2F2F5",
+  text: "#1D1D1F",
   dark: "#000000",
-  secondaryText: "#7F8DAA",
+  secondaryText: "#6E6E73",
   accentColor: "#E3405F",
   accentBright: "#FC1056",
-  projectCard: "#DCE4F2",
+  projectCard: "#E8E8ED",
   skinColor: "#F7B799",
-  skinColor2: "#FCB696",
-  imageDark: "#dce4f2",
-  imageClothes: "#dce4f2",
-  avatarMisc: "#e9ecf2",
-  avatarShoes: "#ccd2e3",
+  skinColor2: "##FA9161",
+  imageDark: "#E8E8ED",
+  imageClothes: "#E8E8ED",
+  avatarMisc: "#E5E5EA",
+  avatarShoes: "#D1D1D6",
 };
 
 const darkTheme = {

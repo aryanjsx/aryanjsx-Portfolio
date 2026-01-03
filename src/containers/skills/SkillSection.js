@@ -6,7 +6,6 @@ import { Fade } from "react-awesome-reveal";
 import DataScienceImg from "./DataScienceImg";
 import FullStackImg from "./FullStackImg";
 import CloudInfraImg from "./CloudInfraImg";
-// import DesignImg from "./DesignImg";
 
 function GetSkillSvg(props) {
   if (props.fileName === "DataScienceImg")
@@ -15,86 +14,72 @@ function GetSkillSvg(props) {
     return <FullStackImg theme={props.theme} />;
   else if (props.fileName === "CloudInfraImg")
     return <CloudInfraImg theme={props.theme} />;
-  // return <DesignImg theme={props.theme} />;
+  return null;
 }
 
 function SkillSection(props) {
   const theme = props.theme;
+
   return (
     <div>
       {skills.data.map((skill, index) => {
-        if (index % 2 === 0) {
-          return (
-            <div key={skill.title} className="skills-main-div">
-              <Fade left duration={2000}>
-                <div className="skills-image-div">
-                  <GetSkillSvg fileName={skill.fileName} theme={theme} />
-                </div>
-              </Fade>
+        const isEven = index % 2 === 0;
+
+        return (
+          <Fade
+            key={skill.title}
+            direction="up"
+            duration={1000}
+            triggerOnce
+            delay={index * 100}
+          >
+            <div
+              className="skills-main-div"
+              style={{
+                flexDirection: isEven ? "row" : "row-reverse",
+                backgroundColor: `${theme.text}05`,
+                border: `1px solid ${theme.text}10`,
+              }}
+            >
+              <div className="skills-image-div">
+                <GetSkillSvg fileName={skill.fileName} theme={theme} />
+              </div>
 
               <div className="skills-text-div">
-                <Fade right duration={1000}>
-                  <h1 className="skills-heading" style={{ color: theme.text }}>
-                    {skill.title}
-                  </h1>
-                </Fade>
-                <Fade right duration={1500}>
+                <h3 className="skills-heading" style={{ color: theme.text }}>
+                  {skill.title}
+                  <span
+                    style={{
+                      position: "absolute",
+                      bottom: "-8px",
+                      left: 0,
+                      width: "60px",
+                      height: "3px",
+                      backgroundColor: theme.accentColor,
+                      borderRadius: "2px",
+                    }}
+                  />
+                </h3>
+
+                <div className="skills-icons-wrapper">
                   <SoftwareSkill logos={skill.softwareSkills} />
-                </Fade>
-                <Fade right duration={2000}>
-                  <div>
-                    {skill.skills.map((skillSentence) => {
-                      return (
-                        <p
-                          key={skillSentence}
-                          className="subTitle skills-text"
-                          style={{ color: theme.secondaryText }}
-                        >
-                          {skillSentence}
-                        </p>
-                      );
-                    })}
-                  </div>
-                </Fade>
-              </div>
-            </div>
-          );
-        } else {
-          return (
-            <div key={skill.title} className="skills-main-div">
-              <div className="skills-text-div">
-                <Fade left duration={1000}>
-                  <h1 className="skills-heading" style={{ color: theme.text }}>
-                    {skill.title}
-                  </h1>
-                </Fade>
-                <Fade left duration={1500}>
-                  <SoftwareSkill logos={skill.softwareSkills} />
-                </Fade>
-                <Fade left duration={2000}>
-                  <div>
-                    {skill.skills.map((skillSentence) => {
-                      return (
-                        <p
-                          key={skillSentence}
-                          className="subTitle skills-text"
-                          style={{ color: theme.secondaryText }}
-                        >
-                          {skillSentence}
-                        </p>
-                      );
-                    })}
-                  </div>
-                </Fade>
-              </div>
-              <Fade right duration={2000}>
-                <div className="skills-image-div">
-                  <GetSkillSvg fileName={skill.fileName} theme={theme} />
                 </div>
-              </Fade>
+
+                <div>
+                  {skill.skills.map((skillSentence) => (
+                    <p
+                      key={skillSentence}
+                      className="subTitle skills-text"
+                      style={{ color: theme.secondaryText }}
+                    >
+                      {skillSentence}
+                    </p>
+                  ))}
+                </div>
+              </div>
             </div>
-          );
-        }
+          </Fade>
+        );
       })}
     </div>
   );
