@@ -8,10 +8,10 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -b gh-pages -d build",
     "eject": "react-scripts eject",
+    "generate:sitemap-images": "node generate-image-sitemap.js",
     "prepare": "husky install",
     "start": "react-scripts start",
-    "test": "react-scripts test",
-    "generate:sitemap-images": "node generate-image-sitemap.js"
+    "test": "react-scripts test"
   },
   "dependencies": {
     "baseui": "^12.2.0",
@@ -40,6 +40,9 @@
     "lint-staged": "^14.0.1",
     "prettier": "3.0.3",
     "prettier-package-json": "^2.8.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "browserslist": {
     "production": [
