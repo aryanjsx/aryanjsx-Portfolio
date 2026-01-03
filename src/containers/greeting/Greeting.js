@@ -36,6 +36,10 @@ export default function Greeting(props) {
               <span style={{ color: theme.accentColor }}>
                 {greeting.full_name}
               </span>
+              <span className="visually-hidden">
+                {" "}
+                — aryanjsx, Full Stack Developer & Software Engineer
+              </span>
             </h1>
 
             <span

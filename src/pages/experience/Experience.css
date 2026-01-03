@@ -33,7 +33,7 @@
 .experience-heading-text {
   font-size: 56px;
   font-weight: 400;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
   line-height: 1.1;
   text-align: center;
   margin-top: 80px;
@@ -41,7 +41,7 @@
 
 .experience-heading-sub-text {
   font-size: 30px;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -52,7 +52,7 @@
   margin-top: 0px;
   margin-left: 20px;
   margin-right: 20px;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
 }
 
 /* Timeline Section */
@@ -67,7 +67,7 @@
 
 .section-title {
   font-size: 40px;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   line-height: 1.1;
   text-align: center;
 }
@@ -93,7 +93,7 @@
   border-radius: 30px;
   border: 2px solid;
   background: transparent;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -201,13 +201,13 @@
 
 .timeline-card-title {
   font-size: 1.3rem;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
   margin: 0 0 0.3rem 0;
 }
 
 .timeline-card-company {
   font-size: 1rem;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   margin: 0;
 }
 
@@ -235,14 +235,14 @@
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
 }
 
 /* Card Description */
 .timeline-card-description {
   font-size: 0.95rem;
   line-height: 1.7;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
 }
 
 .timeline-card-description p {

@@ -38,12 +38,12 @@ const skills = {
       title: "Software & Web Development",
       fileName: "FullStackImg",
       skills: [
-        "⚡ Building responsive website front end using ReactJS",
-        "⚡ Backend development using NodeJS and ExpressJS",
-        "⚡ Proficient in Python and Java",
-        "⚡ Specialized in crafting robust applications",
-        "⚡ Problem-solving skills for complex coding challenges",
-        "⚡ Experience in building scalable solutions",
+        "⚡ Crafting responsive, pixel-perfect frontends with React & Next.js",
+        "⚡ Building RESTful APIs and backend services using Node.js & Express",
+        "⚡ Developing automation scripts and tools with Python & Java",
+        "⚡ Designing and optimizing databases with MongoDB & MySQL",
+        "⚡ Deploying cloud-native applications on Azure",
+        "⚡ Writing clean, maintainable code with modern best practices",
       ],
       softwareSkills: [
         {

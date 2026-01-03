@@ -10,18 +10,22 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
   // Build SEO-optimized title with brand
   const siteTitle = title
     ? `${title} | ${BRAND_NAME}`
-    : `${greeting.full_name} (${BRAND_NAME}) | Fullstack Developer Portfolio`;
+    : `${greeting.full_name} (${BRAND_NAME}) | Full Stack Developer Portfolio`;
 
   // Default description optimized for portfolio, react, github keywords
-  const defaultDescription = `${BRAND_NAME} — ${greeting.full_name}'s developer portfolio. Explore React, Next.js, and full-stack projects on GitHub. Software Engineer skilled in JavaScript, Python, and cloud technologies.`;
+  const defaultDescription = `${BRAND_NAME} — ${greeting.full_name}'s developer portfolio. Full Stack Developer and Software Engineer specializing in React, Next.js, JavaScript, and Python. Explore GitHub projects and professional experience.`;
   const siteDescription = description || defaultDescription;
 
   const siteImage = image || DEFAULT_IMAGE;
+
+  // For hash-based routing, canonical should point to base URL for homepage
+  // or include hash for other pages
+  const canonicalUrl = path === "/" ? BASE_URL : `${BASE_URL}${path}`;
   const siteUrl = `${BASE_URL}${path}`;
 
   // Keywords optimized for portfolio, react, github, and brand
   const defaultKeywords =
-    "aryanjsx, aryan kumar portfolio, react developer, github projects, javascript developer, full stack developer, web developer portfolio, next.js, node.js, python developer, software engineer portfolio";
+    "aryanjsx, aryan kumar, aryan kumar portfolio, react developer, full stack developer, frontend developer, github projects, javascript developer, web developer portfolio, next.js, node.js, python developer, software engineer portfolio";
   const siteKeywords = keywords || defaultKeywords;
 
   // JSON-LD structured data for Person with enhanced SEO
@@ -94,8 +98,8 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
       <meta name="twitter:creator" content={`@${BRAND_NAME}`} />
       <meta name="twitter:site" content={`@${BRAND_NAME}`} />
 
-      {/* Canonical URL */}
-      <link rel="canonical" href={siteUrl} />
+      {/* Canonical URL - Points to base URL for homepage */}
+      <link rel="canonical" href={canonicalUrl} />
 
       {/* JSON-LD structured data */}
       <script type="application/ld+json">{JSON.stringify(personSchema)}</script>

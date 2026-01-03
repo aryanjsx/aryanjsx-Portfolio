@@ -29,7 +29,7 @@ function Contact(props) {
     {
       icon: "💼",
       title: "LinkedIn",
-      value: "Connect with me",
+      value: "@aryanjsx",
       link: socialMediaLinks.linkedin,
       color: "#0A66C2",
     },
@@ -240,7 +240,7 @@ function Contact(props) {
                       }}
                     >
                       <span>📝</span>
-                      <span>Read My Blogs</span>
+                      <span>Read My Blogs at medium (@aryanjsx)</span>
                     </a>
                   </div>
                 </div>

@@ -1,17 +1,29 @@
 # robots.txt for https://aryankr.netlify.app
-# Created on 2025-11-04 by aryanjsx
+# aryanjsx - Aryan Kumar Portfolio
+# Last updated: 2026-01-04
 
 User-agent: *
 Allow: /
 
-# Disallow admin or backend routes if you ever add them
+# Allow all static resources for proper rendering
+Allow: /static/
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+Allow: /*.webp$
+Allow: /*.woff$
+Allow: /*.woff2$
+
+# Disallow admin or backend routes
 Disallow: /api/
 Disallow: /admin/
 Disallow: /dashboard/
 
-# Specify the location of the sitemap
+# Sitemaps
 Sitemap: https://aryankr.netlify.app/sitemap.xml
 Sitemap: https://aryankr.netlify.app/sitemap-images.xml
 
-# Optional: Declare crawl-delay to prevent overloading (commented by default)
-# Crawl-delay: 10
+# Host directive for canonical domain
+Host: https://aryankr.netlify.app
