@@ -37,7 +37,7 @@
 /* Typography */
 .greeting-intro {
   font-size: 1.2rem;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   margin-bottom: 0.5rem;
   opacity: 0.8;
   letter-spacing: 2px;
@@ -46,7 +46,7 @@
 
 .greeting-name {
   font-size: 4rem;
-  font-family: "Google Sans Bold";
+  font-family: "Google Sans Bold", sans-serif;
   line-height: 1.1;
   margin: 0.5rem 0;
 }
@@ -54,7 +54,7 @@
 .greeting-username {
   display: inline-block;
   font-size: 1.5rem;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
   padding: 0.5rem 1.2rem;
   border-radius: 25px;
   margin: 1rem 0;
@@ -62,7 +62,7 @@
 
 .greeting-role {
   font-size: 1.8rem;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
   margin: 1rem 0;
   display: flex;
   align-items: center;
@@ -86,7 +86,7 @@
 .greeting-description {
   font-size: 1.1rem;
   line-height: 1.8;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   margin: 1.5rem 0;
   opacity: 0.85;
 }
@@ -111,7 +111,7 @@
   padding: 1rem 2rem;
   border-radius: 8px;
   border: none;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -131,7 +131,7 @@
   border-radius: 8px;
   border: 2px solid;
   background: transparent;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
   font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -157,13 +157,13 @@
 
 .stat-number {
   font-size: 2rem;
-  font-family: "Google Sans Bold";
+  font-family: "Google Sans Bold", sans-serif;
   display: block;
 }
 
 .stat-label {
   font-size: 0.9rem;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   opacity: 0.7;
   margin-top: 0.3rem;
 }
@@ -184,7 +184,7 @@
 
 .scroll-indicator span {
   font-size: 0.8rem;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   letter-spacing: 1px;
 }
 
@@ -339,7 +339,7 @@
   width: 200px;
   height: 50px;
   font-weight: bold;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   font-size: 17px;
   transition: all 0.2s ease-in-out;
   cursor: pointer;

@@ -13,13 +13,13 @@
 .skills-header {
   font-size: 2.8rem;
   line-height: 1.2;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
   margin-bottom: 1rem;
 }
 
 .skills-subheader {
   font-size: 1.1rem;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   opacity: 0.7;
   max-width: 600px;
   margin: 0 auto;
@@ -64,7 +64,7 @@
 .skills-heading {
   font-size: 2.2rem;
   font-weight: 600;
-  font-family: "Google Sans Medium";
+  font-family: "Google Sans Medium", sans-serif;
   margin-bottom: 1.5rem;
   position: relative;
   display: inline-block;
@@ -84,7 +84,7 @@
 .skills-text {
   font-size: 1.05rem;
   line-height: 1.8;
-  font-family: "Google Sans Regular";
+  font-family: "Google Sans Regular", sans-serif;
   margin: 0.8rem 0;
   padding-left: 0;
   position: relative;
