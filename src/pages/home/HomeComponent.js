@@ -7,13 +7,19 @@ import HomeSEO from "./HomeSEO";
 
 function Home(props) {
   return (
-    <div>
+    <>
       <HomeSEO />
       <Header theme={props.theme} setTheme={props.setTheme} />
-      <Greeting theme={props.theme} />
-      <Skills theme={props.theme} />
+      <main id="main-content">
+        <article>
+          <Greeting theme={props.theme} />
+        </article>
+        <section aria-labelledby="skills-heading">
+          <Skills theme={props.theme} />
+        </section>
+      </main>
       <Footer theme={props.theme} />
-    </div>
+    </>
   );
 }
 

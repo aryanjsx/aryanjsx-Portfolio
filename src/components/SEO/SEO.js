@@ -2,34 +2,59 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { greeting, socialMediaLinks } from "../../portfolio";
 
-const SEO = ({ title, description, image, url, keywords }) => {
-  const siteTitle =
-    title || `${greeting.title1} ${greeting.full_name} | Portfolio`;
-  const siteDescription = description || greeting.subTitle;
-  const siteImage =
-    image || "https://aryanjsx.github.io/React-Portfolio/logo512.png";
-  const siteUrl = url || "https://aryankr.netlify.app/";
-  const siteKeywords =
-    keywords || "portfolio, developer, react, javascript, web developer";
+const BASE_URL = "https://aryankr.netlify.app";
+const DEFAULT_IMAGE = `${BASE_URL}/logo512.png`;
+const BRAND_NAME = "aryanjsx";
 
-  // JSON-LD structured data for Person
+const SEO = ({ title, description, image, path = "/", keywords }) => {
+  // Build SEO-optimized title with brand
+  const siteTitle = title
+    ? `${title} | ${BRAND_NAME}`
+    : `${greeting.full_name} (${BRAND_NAME}) | Fullstack Developer Portfolio`;
+
+  // Default description optimized for portfolio, react, github keywords
+  const defaultDescription = `${BRAND_NAME} — ${greeting.full_name}'s developer portfolio. Explore React, Next.js, and full-stack projects on GitHub. Software Engineer skilled in JavaScript, Python, and cloud technologies.`;
+  const siteDescription = description || defaultDescription;
+
+  const siteImage = image || DEFAULT_IMAGE;
+  const siteUrl = `${BASE_URL}${path}`;
+
+  // Keywords optimized for portfolio, react, github, and brand
+  const defaultKeywords =
+    "aryanjsx, aryan kumar portfolio, react developer, github projects, javascript developer, full stack developer, web developer portfolio, next.js, node.js, python developer, software engineer portfolio";
+  const siteKeywords = keywords || defaultKeywords;
+
+  // JSON-LD structured data for Person with enhanced SEO
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: greeting.full_name,
-    url: "https://aryankr.netlify.app/",
+    alternateName: BRAND_NAME,
+    url: BASE_URL,
     sameAs: [
-      "https://github.com/aryanjsx",
-      "https://www.linkedin.com/in/aryanjsx",
-      "https://x.com/aryanjsx",
-      "https://aryanjsx.medium.com",
-      "https://www.leetcode.com/aryanjsx",
-      "https://www.geeksforgeeks.org/user/aryanjsx/",
-      "https://www.instagram.com/aryanjsx",
-      "https://www.facebook.com/aryanjsx",
-      "https://in.pinterest.com/aryanjsx/",
+      socialMediaLinks.github,
+      socialMediaLinks.linkedin,
+      `https://x.com/${BRAND_NAME}`,
+      socialMediaLinks.medium,
+      socialMediaLinks.leetcode,
+      socialMediaLinks.gfg,
+      socialMediaLinks.instagram,
+      socialMediaLinks.facebook,
     ],
-    jobTitle: "Developer",
+    jobTitle: "Software Engineer",
+    worksFor: {
+      "@type": "Organization",
+      name: "LTIMindtree",
+    },
+    knowsAbout: [
+      "React",
+      "Next.js",
+      "JavaScript",
+      "Python",
+      "Node.js",
+      "Web Development",
+      "Full Stack Development",
+    ],
     image: siteImage,
     description: siteDescription,
     email: greeting.mail,
@@ -41,6 +66,8 @@ const SEO = ({ title, description, image, url, keywords }) => {
       <title>{siteTitle}</title>
       <meta name="description" content={siteDescription} />
       <meta name="keywords" content={siteKeywords} />
+      <meta name="author" content={`${greeting.full_name} (${BRAND_NAME})`} />
+      <meta name="robots" content="index, follow" />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content="website" />
@@ -49,17 +76,23 @@ const SEO = ({ title, description, image, url, keywords }) => {
       <meta property="og:description" content={siteDescription} />
       <meta property="og:image" content={siteImage} />
       <meta
-        property="og:site_name"
-        content={`${greeting.full_name} | Portfolio`}
+        property="og:image:alt"
+        content={`${BRAND_NAME} portfolio preview`}
       />
+      <meta
+        property="og:site_name"
+        content={`${greeting.full_name} (${BRAND_NAME}) | Portfolio`}
+      />
+      <meta property="og:locale" content="en_US" />
 
       {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={siteUrl} />
-      <meta property="twitter:title" content={siteTitle} />
-      <meta property="twitter:description" content={siteDescription} />
-      <meta property="twitter:image" content={siteImage} />
-      <meta name="twitter:creator" content={socialMediaLinks.twitter} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={siteUrl} />
+      <meta name="twitter:title" content={siteTitle} />
+      <meta name="twitter:description" content={siteDescription} />
+      <meta name="twitter:image" content={siteImage} />
+      <meta name="twitter:creator" content={`@${BRAND_NAME}`} />
+      <meta name="twitter:site" content={`@${BRAND_NAME}`} />
 
       {/* Canonical URL */}
       <link rel="canonical" href={siteUrl} />

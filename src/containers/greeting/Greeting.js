@@ -20,40 +20,53 @@ export default function Greeting(props) {
 
   return (
     <Fade bottom duration={2000} distance="40px">
-      <div className="greet-main" id="greeting">
+      <section
+        className="greet-main"
+        id="greeting"
+        aria-labelledby="greeting-heading"
+      >
         <div className="greeting-main">
           <div className="greeting-text-div">
             <div>
-              <h1 className="greeting-text">{greeting.title}</h1>
+              <h1 id="greeting-heading" className="greeting-text">
+                {greeting.title}
+              </h1>
               <p
                 className="greeting-text-p subTitle"
                 style={{ color: theme.secondaryText }}
               >
                 <span>I'm </span>
                 <span style={{ color: theme.accentColor }}>
-                  {greeting.full_name}.{" "}
+                  {greeting.full_name}
                 </span>
+                <span style={{ color: theme.secondaryText }}> (</span>
+                <strong style={{ color: theme.accentColor }}>aryanjsx</strong>
+                <span style={{ color: theme.secondaryText }}>). </span>
                 {greeting.subTitle}
               </p>
               <SocialMedia />
-              <div className="portfolio-repo-btn-div">
+              <nav
+                className="portfolio-repo-btn-div"
+                aria-label="Contact navigation"
+              >
                 <button
                   {...styles}
                   className="button"
                   onClick={() => {
                     navigate("/contact");
                   }}
+                  aria-label="Navigate to contact page"
                 >
                   Contact Me
                 </button>
-              </div>
+              </nav>
             </div>
           </div>
-          <div className="greeting-image-div">
+          <div className="greeting-image-div" aria-hidden="true">
             <FeelingProud theme={theme} />
           </div>
         </div>
-      </div>
+      </section>
     </Fade>
   );
 }

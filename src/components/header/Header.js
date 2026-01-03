@@ -14,11 +14,9 @@ function Header(props) {
     cursor: "pointer",
     height: "45px",
     width: "45px",
-    marginRight: "5px",
-    marginLeft: "15px",
-    paddingTop: "5px",
     borderRadius: "50%",
     border: "none",
+    display: "flex",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: props.theme.name === "light" ? "#7CD1F7" : "#292C3F",
@@ -63,28 +61,39 @@ function Header(props) {
     );
 
   return (
-    <Fade top duration={1000} distance="20px">
-      <div>
-        <header className="header">
-          <NavLink to={link} tag={Link} className="logo">
-            <span style={{ color: theme.text }}></span>
-            <span className="logo-name" style={{ color: theme.text }}>
-              {greeting.logo_name}
-            </span>
-            <span style={{ color: theme.text }}></span>
-          </NavLink>
-          <input className="menu-btn" type="checkbox" id="menu-btn" />
-          <label className="menu-icon" htmlFor="menu-btn">
-            <span className="navicon"></span>
-          </label>
-          <ul className="menu">
+    <Fade direction="down" duration={1000} triggerOnce>
+      <header className="header">
+        {/* Logo - Left */}
+        <NavLink to={link} tag={Link} className="logo">
+          <span className="logo-name" style={{ color: theme.text }}>
+            {greeting.logo_name}
+          </span>
+        </NavLink>
+
+        {/* Mobile menu checkbox */}
+        <input className="menu-btn" type="checkbox" id="menu-btn" />
+
+        {/* Theme Button - Right */}
+        <div className="theme-btn-wrapper">
+          <button {...styles} onClick={changeTheme} aria-label="Toggle theme">
+            {icon}
+          </button>
+        </div>
+
+        {/* Mobile menu icon */}
+        <label className="menu-icon" htmlFor="menu-btn">
+          <span className="navicon"></span>
+        </label>
+
+        {/* Navigation Links - Center */}
+        <nav className="menu">
+          <ul className="nav-links">
             <li>
               <NavLink
                 className="homei"
                 to="/home"
                 tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
+                style={{ color: theme.text }}
               >
                 Home
               </NavLink>
@@ -94,10 +103,9 @@ function Header(props) {
                 className="ec"
                 to="/education"
                 tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
+                style={{ color: theme.text }}
               >
-                Education and Certifications
+                Education
               </NavLink>
             </li>
             <li>
@@ -105,8 +113,7 @@ function Header(props) {
                 className="xp"
                 to="/experience"
                 tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
+                style={{ color: theme.text }}
               >
                 Experience
               </NavLink>
@@ -116,8 +123,7 @@ function Header(props) {
                 className="projects"
                 to="/projects"
                 tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
+                style={{ color: theme.text }}
               >
                 Projects
               </NavLink>
@@ -127,31 +133,14 @@ function Header(props) {
                 className="cr"
                 to="/contact"
                 tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
+                style={{ color: theme.text }}
               >
-                Contact and Resume
+                Contact
               </NavLink>
             </li>
-            {/* <li>
-              <a
-                className="cr"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://play.google.com/store/apps/details?id=com.picle.journalify"
-                tag={Link}
-                activeStyle={{ fontWeight: "bold" }}
-                style={{ borderRadius: 5, color: theme.text }}
-              >
-                Journalify
-              </a>
-            </li> */}
-            <button {...styles} onClick={changeTheme}>
-              {icon}
-            </button>
           </ul>
-        </header>
-      </div>
+        </nav>
+      </header>
     </Fade>
   );
 }
