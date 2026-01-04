@@ -64,6 +64,22 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
     email: greeting.mail,
   };
 
+  // JSON-LD structured data for ProfilePage (Google Search Console requirement)
+  const profilePageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    dateCreated: "2024-01-15T00:00:00Z",
+    dateModified: "2026-01-04T00:00:00Z",
+    mainEntity: {
+      "@type": "Person",
+      name: greeting.full_name,
+      alternateName: BRAND_NAME,
+      url: BASE_URL,
+      image: siteImage,
+      description: siteDescription,
+    },
+  };
+
   return (
     <Helmet>
       {/* Basic metadata */}
@@ -103,6 +119,9 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
 
       {/* JSON-LD structured data */}
       <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
+      <script type="application/ld+json">
+        {JSON.stringify(profilePageSchema)}
+      </script>
     </Helmet>
   );
 };
