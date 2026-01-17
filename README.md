@@ -173,20 +173,6 @@ Edit `src/theme.js` to modify:
 - Light theme colors
 - Accent colors
 
----
-
-## 📱 Screenshots
-
-<div align="center">
-
-| Dark Theme                                 | Light Theme                                  |
-| ------------------------------------------ | -------------------------------------------- |
-| ![Dark](src/assests/images/dark-theme.png) | ![Light](src/assests/images/light-theme.png) |
-
-</div>
-
----
-
 ## 🔗 Connect With Me
 
 <div align="center">
