@@ -17,6 +17,11 @@ const greeting = {
   mail: "kumararyan1929@gmail.com",
 };
 
+const aboutSEO = {
+  paragraph:
+    "Aryan Kumar, known as AryanJSX, is a Software Engineer and Full Stack Developer from India. He builds web applications with React, Next.js, Node.js, and Python, and is passionate about DevOps and cloud technologies. Explore his portfolio for projects, resume, and contact.",
+};
+
 const socialMediaLinks = {
   /* Your Social Media Link */
   github: "https://github.com/aryanjsx",
@@ -546,6 +551,7 @@ const projects = {
 export {
   settings,
   greeting,
+  aboutSEO,
   socialMediaLinks,
   skills,
   degrees,

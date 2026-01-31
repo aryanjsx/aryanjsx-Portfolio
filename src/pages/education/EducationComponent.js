@@ -28,14 +28,14 @@ function Education(props) {
                   className="education-heading-text"
                   style={{ color: theme.text }}
                 >
-                  Education
+                  Aryan Kumar (AryanJSX)
                 </h1>
-                <h3
+                <h2
                   className="education-heading-sub-text"
                   style={{ color: theme.text }}
                 >
-                  Basic Qualification and Certifications
-                </h3>
+                  Education — Basic Qualification and Certifications
+                </h2>
                 <p
                   className="education-header-detail-text subTitle"
                   style={{ color: theme.secondaryText }}
@@ -51,9 +51,9 @@ function Education(props) {
           <section className="degrees-section">
             <Fade direction="up" duration={800} triggerOnce>
               <div className="section-header">
-                <h2 className="section-title" style={{ color: theme.text }}>
+                <h3 className="section-title" style={{ color: theme.text }}>
                   Degrees Received
-                </h2>
+                </h3>
                 <div
                   className="section-line"
                   style={{ backgroundColor: theme.accentColor }}
@@ -83,7 +83,7 @@ function Education(props) {
                         src={require(
                           `../../assests/images/${degree.logo_path}`,
                         )}
-                        alt={degree.alt_name}
+                        alt={`Aryan Kumar (AryanJSX) education — ${degree.title}, ${degree.subtitle}`}
                         loading="lazy"
                       />
                     </div>
@@ -153,9 +153,9 @@ function Education(props) {
           <section className="certifications-section">
             <Fade direction="up" duration={800} triggerOnce>
               <div className="section-header">
-                <h2 className="section-title" style={{ color: theme.text }}>
+                <h3 className="section-title" style={{ color: theme.text }}>
                   Certifications
-                </h2>
+                </h3>
                 <div
                   className="section-line"
                   style={{ backgroundColor: theme.accentColor }}
@@ -203,7 +203,7 @@ function Education(props) {
                           src={require(
                             `../../assests/images/${cert.logo_path}`,
                           )}
-                          alt={cert.alt_name}
+                          alt={`Aryan Kumar (AryanJSX) certification — ${cert.title} by ${cert.subtitle}`}
                           loading="lazy"
                         />
                       </div>

@@ -1,6 +1,6 @@
 /**
  * Smart Image Sitemap Generator (aryanjsx edition)
- * 
+ *
  *  - Scans /public and /src/assets/images
  *  - Fetches latest images from social media (GitHub, X, Instagram, LinkedIn)
  *  - Combines them into sitemap-images.xml for Google indexing
@@ -10,7 +10,7 @@ const fs = require("fs");
 const path = require("path");
 const fetch = require("node-fetch");
 
-const SITE_URL = "https://aryankr.netlify.app";
+const SITE_URL = "https://www.aryankr.in";
 const OUTPUT_FILE = path.join(__dirname, "public", "sitemap-images.xml");
 
 // ====================
@@ -28,7 +28,8 @@ function getLocalImages(dir, baseUrl) {
     if (stats.isDirectory()) {
       images = images.concat(getLocalImages(fullPath, baseUrl));
     } else if (/\.(jpg|jpeg|png|webp|gif)$/i.test(file)) {
-      const relativePath = fullPath.split("public")[1] || fullPath.split("src/assets")[1];
+      const relativePath =
+        fullPath.split("public")[1] || fullPath.split("src/assets")[1];
       const imageUrl = `${baseUrl}${relativePath.replace(/\\/g, "/")}`;
       images.push(imageUrl);
     }
@@ -95,7 +96,10 @@ function generateSitemap(images) {
 
   const urls = images
     .map((url) => {
-      const title = path.basename(url).replace(/\.[^/.]+$/, "").replace(/[-_]/g, " ");
+      const title = path
+        .basename(url)
+        .replace(/\.[^/.]+$/, "")
+        .replace(/[-_]/g, " ");
       return `
   <url>
     <loc>${SITE_URL}</loc>
@@ -115,7 +119,9 @@ function generateSitemap(images) {
 // Main Runner
 // ====================
 async function run() {
-  console.log("🔄 Generating dynamic sitemap with social media + local images...");
+  console.log(
+    "🔄 Generating dynamic sitemap with social media + local images...",
+  );
 
   const localImages = [
     ...getLocalImages(path.join(__dirname, "public"), SITE_URL),
@@ -126,9 +132,11 @@ async function run() {
 
   const allImages = [...new Set([...localImages, ...socialImages])];
   const sitemap = generateSitemap(allImages);
-  
+
   fs.writeFileSync(OUTPUT_FILE, sitemap, "utf8");
-  console.log(`✅ Sitemap created with ${allImages.length} images → ${OUTPUT_FILE}`);
+  console.log(
+    `✅ Sitemap created with ${allImages.length} images → ${OUTPUT_FILE}`,
+  );
 }
 
 run();

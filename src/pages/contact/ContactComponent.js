@@ -77,7 +77,7 @@ function Contact(props) {
                     src={require(
                       `../../assests/images/${ContactData.profile_image_path}`,
                     )}
-                    alt="Aryan Kumar (aryanjsx) - Software Engineer"
+                    alt="Aryan Kumar (AryanJSX) — Software Engineer & Full Stack Developer — Contact Aryan Kumar"
                     loading="lazy"
                     style={{
                       border: `4px solid ${theme.imageDark}`,
@@ -104,14 +104,14 @@ function Contact(props) {
                   className="contact-heading-text"
                   style={{ color: theme.text, marginTop: "20px" }}
                 >
-                  {ContactData.title}
+                  Aryan Kumar (AryanJSX)
                 </h1>
-                <h3
+                <h2
                   className="contact-heading-sub-text"
                   style={{ color: theme.accentColor }}
                 >
-                  Let's Work Together
-                </h3>
+                  Contact Aryan Kumar — Let's Work Together
+                </h2>
                 <p
                   className="contact-header-detail-text subTitle"
                   style={{ color: theme.secondaryText }}
@@ -155,9 +155,9 @@ function Contact(props) {
           <section className="contact-methods-section">
             <Fade direction="up" duration={800} triggerOnce>
               <div className="section-header">
-                <h2 className="section-title" style={{ color: theme.text }}>
+                <h3 className="section-title" style={{ color: theme.text }}>
                   Ways to Reach Me
-                </h2>
+                </h3>
                 <div
                   className="section-line"
                   style={{ backgroundColor: theme.accentColor }}
@@ -216,12 +216,12 @@ function Contact(props) {
             <Fade direction="up" duration={2000} triggerOnce>
               <div className="blog-heading-div">
                 <div className="blog-heading-text-div">
-                  <h2
+                  <h3
                     className="blog-heading-text"
                     style={{ color: theme.text }}
                   >
                     {blogSection.title}
-                  </h2>
+                  </h3>
                   <p
                     className="blog-header-detail-text subTitle"
                     style={{ color: theme.secondaryText }}

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Greeting.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
-import { greeting } from "../../portfolio";
+import { greeting, aboutSEO } from "../../portfolio";
 import { Fade } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
 import FeelingProud from "./FeelingProud";
@@ -31,15 +31,7 @@ export default function Greeting(props) {
               className="greeting-name"
               style={{ color: theme.text }}
             >
-              {greeting.title}
-              <br />
-              <span style={{ color: theme.accentColor }}>
-                {greeting.full_name}
-              </span>
-              <span className="visually-hidden">
-                {" "}
-                — aryanjsx, Full Stack Developer & Software Engineer
-              </span>
+              Aryan Kumar (AryanJSX)
             </h1>
 
             <span
@@ -52,6 +44,10 @@ export default function Greeting(props) {
             >
               @aryanjsx
             </span>
+
+            <h2 className="visually-hidden">
+              Software Engineer & Full Stack Developer
+            </h2>
 
             <p className="greeting-role" style={{ color: theme.text }}>
               I'm a{" "}
@@ -82,6 +78,13 @@ export default function Greeting(props) {
             >
               {greeting.subTitle}
             </p>
+
+            <div
+              className="greeting-about-seo"
+              style={{ color: theme.secondaryText }}
+            >
+              <p>{aboutSEO.paragraph}</p>
+            </div>
 
             <div className="greeting-social">
               <SocialMedia />

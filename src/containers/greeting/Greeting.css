@@ -1,3 +1,9 @@
+.greeting-about-seo {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 /* Visually Hidden - for SEO and accessibility */
 .visually-hidden {
   position: absolute;

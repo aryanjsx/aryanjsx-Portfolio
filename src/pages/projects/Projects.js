@@ -48,8 +48,9 @@ function Projects(props) {
                   className="projects-heading-text"
                   style={{ color: theme.text }}
                 >
-                  {projectsHeader.title}
+                  Aryan Kumar (AryanJSX)
                 </h1>
+                <h2 className="visually-hidden">Projects by AryanJSX</h2>
                 <p
                   className="projects-header-detail-text subTitle"
                   style={{ color: theme.secondaryText }}
@@ -64,9 +65,9 @@ function Projects(props) {
           <section className="projects-section">
             <Fade direction="up" duration={800} triggerOnce>
               <div className="section-header">
-                <h2 className="section-title" style={{ color: theme.text }}>
-                  Featured Projects
-                </h2>
+                <h3 className="section-title" style={{ color: theme.text }}>
+                  Projects by AryanJSX — Featured Projects
+                </h3>
                 <div
                   className="section-line"
                   style={{ backgroundColor: theme.accentColor }}

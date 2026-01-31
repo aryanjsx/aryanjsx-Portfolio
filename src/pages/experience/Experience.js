@@ -43,13 +43,16 @@ function Experience(props) {
                   className="experience-heading-text"
                   style={{ color: theme.text }}
                 >
-                  {experience.title}
+                  Aryan Kumar (AryanJSX)
                 </h1>
-                <h3
+                <h2
                   className="experience-heading-sub-text"
                   style={{ color: theme.text }}
                 >
-                  {experience.subtitle}
+                  {experience.title} — {experience.subtitle}
+                </h2>
+                <h3 className="visually-hidden">
+                  Software Engineer Experience
                 </h3>
                 <p
                   className="experience-header-detail-text subTitle"
@@ -65,9 +68,9 @@ function Experience(props) {
           <section className="experience-timeline-section">
             <Fade direction="up" duration={800} triggerOnce>
               <div className="section-header">
-                <h2 className="section-title" style={{ color: theme.text }}>
+                <h3 className="section-title" style={{ color: theme.text }}>
                   My Journey
-                </h2>
+                </h3>
                 <div
                   className="section-line"
                   style={{ backgroundColor: theme.accentColor }}
@@ -154,7 +157,7 @@ function Experience(props) {
                         <img
                           className="company-logo"
                           src={require(`../../assests/images/${exp.logo_path}`)}
-                          alt={`${exp.company} logo`}
+                          alt={`Aryan Kumar (AryanJSX) — ${exp.title} at ${exp.company} — Software Engineer experience`}
                           style={{
                             backgroundColor: theme.body,
                             border: `1px solid ${theme.text}10`,

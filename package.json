@@ -2,7 +2,7 @@
   "private": true,
   "name": "opportfolio",
   "version": "1.2.0",
-  "homepage": "http://aryankr.netlify.app/",
+  "homepage": "https://www.aryankr.in/",
   "scripts": {
     "build": "cross-env DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "predeploy": "npm run build",
@@ -14,23 +14,18 @@
     "test": "react-scripts test"
   },
   "dependencies": {
-    "baseui": "^16.0.0",
     "glamor": "^2.20.40",
     "node-fetch": "^2.7.0",
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.3.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^18.3.1",
-    "react-ga": "^3.3.1",
     "react-gtm-module": "^2.0.11",
     "react-helmet-async": "^2.0.5",
     "react-icons": "^5.5.0",
     "react-router-dom": "^6.28.0",
     "react-scripts": "^5.0.1",
-    "styled-components": "^6.3.8",
-    "styletron-engine-atomic": "^1.6.2",
-    "styletron-react": "^6.1.1",
-    "webpack": "^5.104.1"
+    "styled-components": "^6.3.8"
   },
   "optionalDependencies": {
     "fsevents": "^2.3.3"

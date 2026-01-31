@@ -1,29 +1,8 @@
-# robots.txt for https://aryankr.netlify.app
-# aryanjsx - Aryan Kumar Portfolio
-# Last updated: 2026-01-04
+# robots.txt for https://www.aryankr.in
+# Aryan Kumar (AryanJSX) — Software Engineer & Full Stack Developer Portfolio
 
 User-agent: *
 Allow: /
 
-# Allow all static resources for proper rendering
-Allow: /static/
-Allow: /*.js$
-Allow: /*.css$
-Allow: /*.png$
-Allow: /*.jpg$
-Allow: /*.svg$
-Allow: /*.webp$
-Allow: /*.woff$
-Allow: /*.woff2$
-
-# Disallow admin or backend routes
-Disallow: /api/
-Disallow: /admin/
-Disallow: /dashboard/
-
-# Sitemaps
-Sitemap: https://aryankr.netlify.app/sitemap.xml
-Sitemap: https://aryankr.netlify.app/sitemap-images.xml
-
-# Host directive for canonical domain
-Host: https://aryankr.netlify.app
+Sitemap: https://www.aryankr.in/sitemap.xml
+Sitemap: https://www.aryankr.in/sitemap-images.xml
