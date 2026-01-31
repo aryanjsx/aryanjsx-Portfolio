@@ -4,13 +4,13 @@
   "version": "1.2.0",
   "homepage": "http://aryankr.netlify.app/",
   "scripts": {
-    "build": "react-scripts build",
+    "build": "cross-env DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b gh-pages -d build",
     "eject": "react-scripts eject",
     "generate:sitemap-images": "node generate-image-sitemap.js",
     "prepare": "husky install",
-    "start": "react-scripts start",
+    "start": "cross-env DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "test": "react-scripts test"
   },
   "dependencies": {
@@ -36,6 +36,7 @@
     "fsevents": "^2.3.3"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "prettier": "3.8.1",
@@ -62,5 +63,8 @@
   "lint-staged": {
     "*.json": "prettier-package-json --write",
     "*.{js,css,md}": "prettier --write"
+  },
+  "overrides": {
+    "eslint": ">=9.26.0"
   }
 }
