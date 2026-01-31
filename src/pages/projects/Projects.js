@@ -48,7 +48,7 @@ function Projects(props) {
                   className="projects-heading-text"
                   style={{ color: theme.text }}
                 >
-                  Aryan Kumar (AryanJSX)
+                  Aryan Kumar{" "}
                 </h1>
                 <h2 className="visually-hidden">Projects by AryanJSX</h2>
                 <p

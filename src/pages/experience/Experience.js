@@ -43,7 +43,7 @@ function Experience(props) {
                   className="experience-heading-text"
                   style={{ color: theme.text }}
                 >
-                  Aryan Kumar (AryanJSX)
+                  Aryan Kumar{" "}
                 </h1>
                 <h2
                   className="experience-heading-sub-text"

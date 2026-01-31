@@ -31,7 +31,7 @@ export default function Greeting(props) {
               className="greeting-name"
               style={{ color: theme.text }}
             >
-              Aryan Kumar (AryanJSX)
+              Aryan Kumar{" "}
             </h1>
 
             <span

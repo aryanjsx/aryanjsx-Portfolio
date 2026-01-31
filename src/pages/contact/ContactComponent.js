@@ -104,7 +104,7 @@ function Contact(props) {
                   className="contact-heading-text"
                   style={{ color: theme.text, marginTop: "20px" }}
                 >
-                  Aryan Kumar (AryanJSX)
+                  Aryan Kumar{" "}
                 </h1>
                 <h2
                   className="contact-heading-sub-text"

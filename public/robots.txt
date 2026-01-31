@@ -1,8 +1,4 @@
-# robots.txt for https://www.aryankr.in
-# Aryan Kumar (AryanJSX) — Software Engineer & Full Stack Developer Portfolio
-
 User-agent: *
 Allow: /
 
 Sitemap: https://www.aryankr.in/sitemap.xml
-Sitemap: https://www.aryankr.in/sitemap-images.xml

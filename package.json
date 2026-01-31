@@ -4,10 +4,12 @@
   "version": "1.2.0",
   "homepage": "https://www.aryankr.in/",
   "scripts": {
+    "prebuild": "node generate-sitemap.js",
     "build": "cross-env DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -b gh-pages -d build",
     "eject": "react-scripts eject",
+    "generate:sitemap": "node generate-sitemap.js",
     "generate:sitemap-images": "node generate-image-sitemap.js",
     "prepare": "husky install",
     "start": "cross-env DISABLE_ESLINT_PLUGIN=true react-scripts start",

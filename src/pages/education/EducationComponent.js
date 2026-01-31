@@ -28,7 +28,7 @@ function Education(props) {
                   className="education-heading-text"
                   style={{ color: theme.text }}
                 >
-                  Aryan Kumar (AryanJSX)
+                  Aryan Kumar{" "}
                 </h1>
                 <h2
                   className="education-heading-sub-text"
