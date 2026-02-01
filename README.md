@@ -177,17 +177,17 @@ Edit `src/theme.js` to modify:
 
 <div align="center">
 
-| Platform             | Link                                                        |
-| -------------------- | ----------------------------------------------------------- |
-| 📧 **Email**         | [kumararyan1929@gmail.com](mailto:kumararyan1929@gmail.com) |
-| 💼 **LinkedIn**      | [aryanjsx](https://www.linkedin.com/in/aryanjsx)            |
-| 🐙 **GitHub**        | [aryanjsx](https://github.com/aryanjsx)                     |
-| 🐦 **Twitter**       | [aryanjsx](https://twitter.com/aryanjsx)                    |
-| 📸 **Instagram**     | [aryanjsx](https://www.instagram.com/aryanjsx)              |
-| 📝 **Medium**        | [aryanjsx](https://medium.com/@aryanjsx)                    |
-| 💻 **LeetCode**      | [aryanjsx](https://leetcode.com/u/aryanjsx)                 |
-| 🏆 **HackerRank**    | [aryanjsx](https://www.hackerrank.com/profile/aryanjsx)     |
-| 🧑‍💻 **GeeksforGeeks** | [aryanjsx](https://auth.geeksforgeeks.org/user/aryanjsx)    |
+| Platform             | Link                                                     |
+| -------------------- | -------------------------------------------------------- |
+| 📧 **Email**         | [me@aryankr.in](mailto:me@aryankr.in)                    |
+| 💼 **LinkedIn**      | [aryanjsx](https://www.linkedin.com/in/aryanjsx)         |
+| 🐙 **GitHub**        | [aryanjsx](https://github.com/aryanjsx)                  |
+| 🐦 **Twitter**       | [aryanjsx](https://twitter.com/aryanjsx)                 |
+| 📸 **Instagram**     | [aryanjsx](https://www.instagram.com/aryanjsx)           |
+| 📝 **Medium**        | [aryanjsx](https://medium.com/@aryanjsx)                 |
+| 💻 **LeetCode**      | [aryanjsx](https://leetcode.com/u/aryanjsx)              |
+| 🏆 **HackerRank**    | [aryanjsx](https://www.hackerrank.com/profile/aryanjsx)  |
+| 🧑‍💻 **GeeksforGeeks** | [aryanjsx](https://auth.geeksforgeeks.org/user/aryanjsx) |
 
 </div>
 

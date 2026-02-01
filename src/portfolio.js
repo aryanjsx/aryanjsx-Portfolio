@@ -14,7 +14,7 @@ const greeting = {
     "I am always enthusiastic to learn new technologies. I am always trying to create a project what I learned. I am interested in Python programming, Web development, and many more...   ",
   resumeLink:
     "https://drive.google.com/file/d/1dWjUUhN10ZzxB2I8O_UK0m7Xl98eA5Rx/view?usp=sharing",
-  mail: "kumararyan1929@gmail.com",
+  mail: "me@aryankr.in",
 };
 
 const aboutSEO = {
@@ -26,7 +26,7 @@ const socialMediaLinks = {
   /* Your Social Media Link */
   github: "https://github.com/aryanjsx",
   linkedin: "https://www.linkedin.com/in/aryanjsx",
-  gmail: "kumararyan1929@gmail.com",
+  gmail: "me@aryankr.in",
   facebook: "https://www.facebook.com/aryanjsx/",
   twitter: "https://twitter.com/aryanjsx",
   instagram: "https://www.instagram.com/aryanjsx/",
