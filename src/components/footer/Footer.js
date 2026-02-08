@@ -2,7 +2,6 @@ import React from "react";
 import "./Footer.css";
 import { Fade } from "react-awesome-reveal";
 import { greeting, socialMediaLinks } from "../../portfolio.js";
-/* eslint-disable jsx-a11y/accessible-emoji */
 
 const FOOTER_LINKS = [
   {
