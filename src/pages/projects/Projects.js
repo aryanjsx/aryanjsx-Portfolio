@@ -12,6 +12,14 @@ import {
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
 
+function getCardStyle(theme) {
+  return {
+    backgroundColor: theme.imageDark,
+    border: `1px solid ${theme.text}15`,
+    boxShadow: `0 4px 20px ${theme.text}08`,
+  };
+}
+
 function Projects(props) {
   const theme = props.theme;
 
@@ -160,11 +168,7 @@ function Projects(props) {
                 >
                   <div
                     className="project-card"
-                    style={{
-                      backgroundColor: theme.imageDark,
-                      border: `1px solid ${theme.text}15`,
-                      boxShadow: `0 4px 20px ${theme.text}08`,
-                    }}
+                    style={getCardStyle(theme)}
                     onClick={() => window.open(project.url, "_blank")}
                     role="button"
                     tabIndex={0}
@@ -277,11 +281,7 @@ function Projects(props) {
                       >
                         <div
                           className="npm-package-card"
-                          style={{
-                            backgroundColor: theme.imageDark,
-                            border: `1px solid ${theme.text}15`,
-                            boxShadow: `0 4px 20px ${theme.text}08`,
-                          }}
+                          style={getCardStyle(theme)}
                         >
                           <div className="npm-package-header">
                             <div

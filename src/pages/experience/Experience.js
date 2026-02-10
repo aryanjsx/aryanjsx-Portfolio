@@ -6,52 +6,20 @@ import "./Experience.css";
 import { experience } from "../../portfolio.js";
 import { Fade } from "react-awesome-reveal";
 import ExperienceImg from "./ExperienceImg";
+import { getEndDateSortKey } from "../../utils/experienceDateSort.js";
+
+// Static map for experience logos to avoid dynamic require (security hotspot).
+// Add new entries here when adding experiences with new logo_path in portfolio.js.
+const EXPERIENCE_LOGO_MAP = {
+  "cra.png": require("../../assests/images/cra.png"),
+  "lti.jpg": require("../../assests/images/lti.jpg"),
+};
+
+const DEFAULT_LOGO = EXPERIENCE_LOGO_MAP["cra.png"];
 
 function Experience(props) {
   const theme = props.theme;
   const [activeSection, setActiveSection] = useState("all");
-
-  // Parse duration string to a sortable end date (YYYY-MM). "Present" = newest.
-  const getEndDateSortKey = (duration) => {
-    if (!duration || typeof duration !== "string") return "0000-00";
-    const parts = duration.split(/\s*-\s*/).map((s) => s.trim());
-    const endPart = parts[parts.length - 1];
-    if (!endPart) return "0000-00";
-    if (/present/i.test(endPart)) return "9999-12";
-    const months = {
-      jan: "01",
-      january: "01",
-      feb: "02",
-      february: "02",
-      mar: "03",
-      march: "03",
-      apr: "04",
-      april: "04",
-      may: "05",
-      jun: "06",
-      june: "06",
-      jul: "07",
-      july: "07",
-      aug: "08",
-      august: "08",
-      sep: "09",
-      sept: "09",
-      september: "09",
-      oct: "10",
-      october: "10",
-      nov: "11",
-      november: "11",
-      dec: "12",
-      december: "12",
-    };
-    const match = endPart.match(/^([a-z]+)\s*(\d{4})$/i);
-    if (match) {
-      const monthKey = match[1].toLowerCase();
-      const month = months[monthKey] || "01";
-      return `${match[2]}-${month}`;
-    }
-    return "0000-00";
-  };
 
   // Flatten all experiences with their section type
   const allExperiences = experience.sections.flatMap((section) =>
@@ -203,7 +171,9 @@ function Experience(props) {
                       <div className="timeline-card-header">
                         <img
                           className="company-logo"
-                          src={require(`../../assests/images/${exp.logo_path}`)}
+                          src={
+                            EXPERIENCE_LOGO_MAP[exp.logo_path] || DEFAULT_LOGO
+                          }
                           alt={`Aryan Kumar (AryanJSX) — ${exp.title} at ${exp.company} — Software Engineer experience`}
                           style={{
                             backgroundColor: theme.body,
