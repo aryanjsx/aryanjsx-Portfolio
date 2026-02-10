@@ -15,6 +15,9 @@ package
 
 
 
+# SonarCloud / SonarQube (removed)
+sonar-project.properties
+
 # misc
 .DS_Store
 .env.local
