@@ -6,6 +6,16 @@ import "./Experience.css";
 import { experience } from "../../portfolio.js";
 import { Fade } from "react-awesome-reveal";
 import ExperienceImg from "./ExperienceImg";
+import { getEndDateSortKey } from "../../utils/experienceDateSort.js";
+
+// Static map for experience logos to avoid dynamic require (security hotspot).
+// Add new entries here when adding experiences with new logo_path in portfolio.js.
+const EXPERIENCE_LOGO_MAP = {
+  "cra.png": require("../../assests/images/cra.png"),
+  "lti.jpg": require("../../assests/images/lti.jpg"),
+};
+
+const DEFAULT_LOGO = EXPERIENCE_LOGO_MAP["cra.png"];
 
 function Experience(props) {
   const theme = props.theme;
@@ -19,11 +29,16 @@ function Experience(props) {
     })),
   );
 
+  // Sort so latest (most recent end date / Present) is on top
+  const sortedExperiences = [...allExperiences].sort((a, b) =>
+    getEndDateSortKey(b.duration).localeCompare(getEndDateSortKey(a.duration)),
+  );
+
   // Filter experiences based on active tab
   const filteredExperiences =
     activeSection === "all"
-      ? allExperiences
-      : allExperiences.filter((exp) => exp.sectionType === activeSection);
+      ? sortedExperiences
+      : sortedExperiences.filter((exp) => exp.sectionType === activeSection);
 
   return (
     <>
@@ -156,7 +171,9 @@ function Experience(props) {
                       <div className="timeline-card-header">
                         <img
                           className="company-logo"
-                          src={require(`../../assests/images/${exp.logo_path}`)}
+                          src={
+                            EXPERIENCE_LOGO_MAP[exp.logo_path] || DEFAULT_LOGO
+                          }
                           alt={`Aryan Kumar (AryanJSX) — ${exp.title} at ${exp.company} — Software Engineer experience`}
                           style={{
                             backgroundColor: theme.body,

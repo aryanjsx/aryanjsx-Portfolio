@@ -8,7 +8,7 @@ const greeting = {
   title: "Hello, I'm",
   title1: "Aryan",
   logo_name: "AK",
-  nickname: "aryan728",
+  nickname: "aryanjsx",
   full_name: "Aryan Kumar",
   subTitle:
     "I am always enthusiastic to learn new technologies. I am always trying to create a project what I learned. I am interested in Python programming, Web development, and many more...   ",
@@ -414,6 +414,43 @@ const projectsHeader = {
   avatar_image_path: "projects_image.svg",
 };
 
+// NPM Packages (showcase on Projects page)
+const npmPackages = {
+  enabled: true,
+  title: "NPM Packages",
+  description:
+    "Open-source packages I've published to npm. Install with npm or yarn. 📦",
+  data: [
+    {
+      name: "Api Response",
+      description:
+        "It provides a simple, consistent API for all your response needs with full TypeScript support. You can use it to create a response for your API.",
+      version: "1.0.0",
+      weeklyDownloads: 20,
+      installCommand: "npm i @aryanjsx/api-response",
+      repository: "https://github.com/aryanjsx/api-response",
+    },
+    {
+      name: "Know India",
+      description:
+        "It is a comprehensive npm package designed to provide structured, reliable data about India's states and union territories. It powers the Know India tourism platform and can be seamlessly integrated into dashboards, websites, APIs, and educational applications.",
+      version: "1.2.4",
+      weeklyDownloads: 245,
+      installCommand: "npm i @aryanjsx/knowindia",
+      repository: "https://github.com/aryanjsx/know-india",
+    },
+    {
+      name: "India Map",
+      description:
+        "It is an elegant, interactive SVG map of India for React applications. It can be used to display the map of India in your React application.",
+      version: "1.0.2",
+      weeklyDownloads: 220,
+      installCommand: "npm i @aryanjsx/indiamap",
+      repository: "https://github.com/aryanjsx/IndiaMap",
+    },
+  ],
+};
+
 // Contact Page
 const contactPageData = {
   contactSection: {
@@ -434,46 +471,14 @@ const contactPageData = {
 const projects = {
   data: [
     {
-      name: "Github Finder",
-      url: "https://findongit.netlify.app/",
-      description:
-        "This is a small virtual assistant for my laptop which can do small tasks. I made this virtual assistant in python ",
-      languages: [
-        {
-          name: "HTML5",
-          iconifyClass: "devicon:html5",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "devicon:css3",
-        },
-        {
-          name: "Bootstrap",
-          iconifyClass: "devicon:bootstrap",
-        },
-        {
-          name: "Javascript",
-          iconifyClass: "devicon:javascript",
-        },
-        {
-          name: "Jquery",
-          iconifyClass: "devicon:jquery-wordmark",
-        },
-      ],
-    },
-    {
       name: "Know India",
-      url: "https://knowindia.vercel.app",
+      url: "https://knowindia.aryankr.in/",
       description:
-        "Know India is an informative tourism website that highlights famous destinations, culture, and heritage across India. Powered by Driver.js and data management using TiDB.\n",
+        "This is a web application that provides information about different states and union territories of India.",
       languages: [
         {
           name: "ReactJS",
-          iconifyClass: "logos-react",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "devicon:css3",
+          iconifyClass: "devicon:react",
         },
         {
           name: "Tailwind CSS",
@@ -481,7 +486,7 @@ const projects = {
         },
         {
           name: "Material UI",
-          iconifyClass: "simple-icons:mui",
+          iconifyClass: "devicon:materialui",
         },
         {
           name: "Node.js",
@@ -495,56 +500,56 @@ const projects = {
           name: "Chart.js",
           iconifyClass: "logos-chartjs",
         },
+        {
+          name: "React Router",
+          iconifyClass: "devicon:reactrouter",
+        },
+        {
+          name: "React Hook Form",
+          iconifyClass: "devicon:reacthookform",
+        },
+        {
+          name: "React Query",
+          iconifyClass: "devicon:reactquery",
+        },
+        {
+          name: "React Icons",
+          iconifyClass: "devicon:reacticons",
+        },
+        {
+          name: "React Toastify",
+          iconifyClass: "devicon:reacttoastify",
+        },
+        {
+          name: "React Icons",
+          iconifyClass: "devicon:reacticons",
+        },
       ],
     },
     {
-      name: "Url to QR generator",
-      url: "https://urlgenerate.netlify.app/",
+      name: "Code Converter",
+      url: "https://convertcodex.vercel.app",
       description:
-        "It makes creating website URLs easy by letting users enter details like site name, domain, and path. It then generates a valid URL based on the inputs.",
+        "Code converter is a web application that converts code from one language to another.\n",
       languages: [
         {
           name: "ReactJS",
           iconifyClass: "logos-react",
         },
         {
-          name: "CSS3",
-          iconifyClass: "devicon:css3",
+          name: "Tailwind CSS",
+          iconifyClass: "devicon:tailwindcss",
+        },
+        {
+          name: "Material UI",
+          iconifyClass: "simple-icons:mui",
+        },
+        {
+          name: "Vercel",
+          iconifyClass: "simple-icons:vercel",
         },
       ],
     },
-    {
-      name: "Recipe Finder",
-      url: "https://khaana.netlify.app/",
-      description:
-        "It uses a third-party API to show recipe details, search, filter, favorite recipes, and display step-by-step cooking instructions.",
-      languages: [
-        {
-          name: "ReactJS",
-          iconifyClass: "logos-react",
-        },
-        {
-          name: "CSS3",
-          iconifyClass: "devicon:css3",
-        },
-      ],
-    },
-    // {
-    //   name: "Chat Whisper",
-    //   url: "https://github.com/Aryank728/chat-whisper",
-    //   description:
-    //     "This is a small realtime chatting web app which is used for chatting to friends. You can also send pictures in this.",
-    //   languages: [
-    //     {
-    //       name: "ReactJS",
-    //       iconifyClass: "logos-react",
-    //     },
-    //     {
-    //       name: "JavaScript",
-    //       iconifyClass: "logos-javascript",
-    //     },
-    //   ],
-    // },
   ],
 };
 
@@ -560,4 +565,5 @@ export {
   projectsHeader,
   contactPageData,
   projects,
+  npmPackages,
 };

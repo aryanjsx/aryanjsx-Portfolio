@@ -1,14 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import ProjectsSEO from "./ProjectsSEO";
 import { Fade } from "react-awesome-reveal";
-import { projectsHeader, projects, socialMediaLinks } from "../../portfolio.js";
+import {
+  projectsHeader,
+  projects,
+  npmPackages,
+  socialMediaLinks,
+} from "../../portfolio.js";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
+import NpmPackageCard from "./NpmPackageCard";
+import { getCardStyle } from "../../utils/cardStyle.js";
 
 function Projects(props) {
   const theme = props.theme;
+  const [copiedPackageName, setCopiedPackageName] = useState(null);
+
+  const npmUrl = (name) =>
+    `https://www.npmjs.com/package/${encodeURIComponent(name)}`;
+
+  const getInstallCommand = (pkg) =>
+    typeof pkg.installCommand === "string" && pkg.installCommand.trim() !== ""
+      ? pkg.installCommand.trim()
+      : `npm install ${pkg.name}`;
+
+  const copyInstallCommand = (pkg) => {
+    const cmd = getInstallCommand(pkg);
+    navigator.clipboard
+      .writeText(cmd)
+      .then(() => {
+        setCopiedPackageName(pkg.name);
+        setTimeout(() => setCopiedPackageName(null), 2000);
+      })
+      .catch(() => {});
+  };
 
   // Project icons based on name
   const getProjectIcon = (name) => {
@@ -50,7 +77,7 @@ function Projects(props) {
                 >
                   Aryan Kumar{" "}
                 </h1>
-                <h2 className="visually-hidden">Projects by AryanJSX</h2>
+                <h2 className="visually-hidden">Projects by Aryan</h2>
                 <p
                   className="projects-header-detail-text subTitle"
                   style={{ color: theme.secondaryText }}
@@ -133,11 +160,7 @@ function Projects(props) {
                 >
                   <div
                     className="project-card"
-                    style={{
-                      backgroundColor: theme.imageDark,
-                      border: `1px solid ${theme.text}15`,
-                      boxShadow: `0 4px 20px ${theme.text}08`,
-                    }}
+                    style={getCardStyle(theme)}
                     onClick={() => window.open(project.url, "_blank")}
                     role="button"
                     tabIndex={0}
@@ -218,6 +241,49 @@ function Projects(props) {
                 </Fade>
               ))}
             </div>
+
+            {/* NPM Packages Section */}
+            {npmPackages.enabled &&
+              npmPackages.data &&
+              npmPackages.data.length > 0 && (
+                <>
+                  <div className="section-header npm-section-header">
+                    <h3 className="section-title" style={{ color: theme.text }}>
+                      {npmPackages.title}
+                    </h3>
+                    <p
+                      className="npm-section-description"
+                      style={{ color: theme.secondaryText }}
+                    >
+                      {npmPackages.description}
+                    </p>
+                    <div
+                      className="section-line"
+                      style={{ backgroundColor: theme.accentColor }}
+                    />
+                  </div>
+                  <div className="npm-packages-grid">
+                    {npmPackages.data.map((pkg, index) => (
+                      <Fade
+                        key={pkg.name}
+                        direction="up"
+                        duration={600}
+                        delay={index * 100}
+                        triggerOnce
+                      >
+                        <NpmPackageCard
+                          theme={theme}
+                          pkg={pkg}
+                          installCommand={getInstallCommand(pkg)}
+                          npmUrl={npmUrl}
+                          onCopy={copyInstallCommand}
+                          isCopied={copiedPackageName === pkg.name}
+                        />
+                      </Fade>
+                    ))}
+                  </div>
+                </>
+              )}
 
             {/* GitHub Button */}
             <div className="github-btn-wrapper">
