@@ -11,6 +11,48 @@ function Experience(props) {
   const theme = props.theme;
   const [activeSection, setActiveSection] = useState("all");
 
+  // Parse duration string to a sortable end date (YYYY-MM). "Present" = newest.
+  const getEndDateSortKey = (duration) => {
+    if (!duration || typeof duration !== "string") return "0000-00";
+    const parts = duration.split(/\s*-\s*/).map((s) => s.trim());
+    const endPart = parts[parts.length - 1];
+    if (!endPart) return "0000-00";
+    if (/present/i.test(endPart)) return "9999-12";
+    const months = {
+      jan: "01",
+      january: "01",
+      feb: "02",
+      february: "02",
+      mar: "03",
+      march: "03",
+      apr: "04",
+      april: "04",
+      may: "05",
+      jun: "06",
+      june: "06",
+      jul: "07",
+      july: "07",
+      aug: "08",
+      august: "08",
+      sep: "09",
+      sept: "09",
+      september: "09",
+      oct: "10",
+      october: "10",
+      nov: "11",
+      november: "11",
+      dec: "12",
+      december: "12",
+    };
+    const match = endPart.match(/^([a-z]+)\s*(\d{4})$/i);
+    if (match) {
+      const monthKey = match[1].toLowerCase();
+      const month = months[monthKey] || "01";
+      return `${match[2]}-${month}`;
+    }
+    return "0000-00";
+  };
+
   // Flatten all experiences with their section type
   const allExperiences = experience.sections.flatMap((section) =>
     section.experiences.map((exp) => ({
@@ -19,11 +61,16 @@ function Experience(props) {
     })),
   );
 
+  // Sort so latest (most recent end date / Present) is on top
+  const sortedExperiences = [...allExperiences].sort((a, b) =>
+    getEndDateSortKey(b.duration).localeCompare(getEndDateSortKey(a.duration)),
+  );
+
   // Filter experiences based on active tab
   const filteredExperiences =
     activeSection === "all"
-      ? allExperiences
-      : allExperiences.filter((exp) => exp.sectionType === activeSection);
+      ? sortedExperiences
+      : sortedExperiences.filter((exp) => exp.sectionType === activeSection);
 
   return (
     <>

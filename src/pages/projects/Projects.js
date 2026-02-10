@@ -3,12 +3,39 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import ProjectsSEO from "./ProjectsSEO";
 import { Fade } from "react-awesome-reveal";
-import { projectsHeader, projects, socialMediaLinks } from "../../portfolio.js";
+import {
+  projectsHeader,
+  projects,
+  npmPackages,
+  socialMediaLinks,
+} from "../../portfolio.js";
 import "./Projects.css";
 import ProjectsImg from "./ProjectsImg";
 
 function Projects(props) {
   const theme = props.theme;
+
+  const npmUrl = (name) =>
+    `https://www.npmjs.com/package/${encodeURIComponent(name)}`;
+
+  const getInstallCommand = (pkg) =>
+    typeof pkg.installCommand === "string" && pkg.installCommand.trim() !== ""
+      ? pkg.installCommand.trim()
+      : `npm install ${pkg.name}`;
+
+  const copyInstallCommand = (pkg) => {
+    const cmd = getInstallCommand(pkg);
+    navigator.clipboard
+      .writeText(cmd)
+      .then(() => {
+        const el = document.getElementById(`copy-feedback-${pkg.name}`);
+        if (el) {
+          el.textContent = "Copied!";
+          setTimeout(() => (el.textContent = "Copy"), 2000);
+        }
+      })
+      .catch(() => {});
+  };
 
   // Project icons based on name
   const getProjectIcon = (name) => {
@@ -50,7 +77,7 @@ function Projects(props) {
                 >
                   Aryan Kumar{" "}
                 </h1>
-                <h2 className="visually-hidden">Projects by AryanJSX</h2>
+                <h2 className="visually-hidden">Projects by Aryan</h2>
                 <p
                   className="projects-header-detail-text subTitle"
                   style={{ color: theme.secondaryText }}
@@ -218,6 +245,165 @@ function Projects(props) {
                 </Fade>
               ))}
             </div>
+
+            {/* NPM Packages Section */}
+            {npmPackages.enabled &&
+              npmPackages.data &&
+              npmPackages.data.length > 0 && (
+                <>
+                  <div className="section-header npm-section-header">
+                    <h3 className="section-title" style={{ color: theme.text }}>
+                      {npmPackages.title}
+                    </h3>
+                    <p
+                      className="npm-section-description"
+                      style={{ color: theme.secondaryText }}
+                    >
+                      {npmPackages.description}
+                    </p>
+                    <div
+                      className="section-line"
+                      style={{ backgroundColor: theme.accentColor }}
+                    />
+                  </div>
+                  <div className="npm-packages-grid">
+                    {npmPackages.data.map((pkg, index) => (
+                      <Fade
+                        key={pkg.name}
+                        direction="up"
+                        duration={600}
+                        delay={index * 100}
+                        triggerOnce
+                      >
+                        <div
+                          className="npm-package-card"
+                          style={{
+                            backgroundColor: theme.imageDark,
+                            border: `1px solid ${theme.text}15`,
+                            boxShadow: `0 4px 20px ${theme.text}08`,
+                          }}
+                        >
+                          <div className="npm-package-header">
+                            <div
+                              className="npm-package-icon"
+                              style={{
+                                backgroundColor: "#CB3837",
+                              }}
+                            >
+                              <span className="npm-logo-text">npm</span>
+                            </div>
+                            <div className="npm-package-badges">
+                              {pkg.version && (
+                                <span
+                                  className="npm-version-badge"
+                                  style={{
+                                    backgroundColor: `${theme.accentColor}20`,
+                                    color: theme.text,
+                                  }}
+                                >
+                                  v{pkg.version}
+                                </span>
+                              )}
+                              {pkg.weeklyDownloads !== undefined &&
+                                pkg.weeklyDownloads !== null &&
+                                pkg.weeklyDownloads > 0 && (
+                                  <span
+                                    className="npm-downloads-badge"
+                                    style={{
+                                      backgroundColor: `${theme.text}15`,
+                                      color: theme.secondaryText,
+                                    }}
+                                  >
+                                    {pkg.weeklyDownloads}/week
+                                  </span>
+                                )}
+                            </div>
+                          </div>
+                          <div className="npm-package-body">
+                            <h3
+                              className="npm-package-name"
+                              style={{ color: theme.text }}
+                            >
+                              {pkg.name}
+                            </h3>
+                            <p
+                              className="npm-package-description"
+                              style={{ color: theme.secondaryText }}
+                            >
+                              {pkg.description}
+                            </p>
+                            <div
+                              className="npm-install-row"
+                              style={{
+                                borderTop: `1px solid ${theme.text}15`,
+                              }}
+                            >
+                              <code
+                                className="npm-install-command"
+                                style={{
+                                  backgroundColor: `${theme.text}10`,
+                                  color: theme.text,
+                                }}
+                              >
+                                {getInstallCommand(pkg)}
+                              </code>
+                              <button
+                                type="button"
+                                className="npm-copy-btn"
+                                style={{
+                                  backgroundColor: theme.accentColor,
+                                  color: "#fff",
+                                }}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  copyInstallCommand(pkg);
+                                }}
+                                aria-label={`Copy ${getInstallCommand(pkg)}`}
+                              >
+                                <span id={`copy-feedback-${pkg.name}`}>
+                                  Copy
+                                </span>
+                              </button>
+                            </div>
+                            <div className="npm-package-links">
+                              <a
+                                href={npmUrl(pkg.name)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="npm-link"
+                                style={{ color: theme.accentColor }}
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                View on npm
+                              </a>
+                              {pkg.repository && (
+                                <>
+                                  <span
+                                    className="npm-link-sep"
+                                    style={{ color: theme.secondaryText }}
+                                  >
+                                    ·
+                                  </span>
+                                  <a
+                                    href={pkg.repository}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="npm-link"
+                                    style={{ color: theme.accentColor }}
+                                    onClick={(e) => e.stopPropagation()}
+                                  >
+                                    Repository
+                                  </a>
+                                </>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      </Fade>
+                    ))}
+                  </div>
+                </>
+              )}
 
             {/* GitHub Button */}
             <div className="github-btn-wrapper">
