@@ -1,208 +1,157 @@
-# 🚀 Aryan Kumar | Developer Portfolio
+# Aryan JSX · Portfolio
 
 <div align="center">
 
-![Portfolio Preview](src/assests/images/hrishi2.png)
+**Software Engineer · Azure & DevOps · MERN Stack**
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-aryankr.in-00C7B7?style=for-the-badge)](https://aryankr.in)
+[![Live](https://img.shields.io/badge/Live-aryankr.in-00C7B7?style=for-the-badge&logo=link)](https://www.aryankr.in)
+[![Netlify](https://img.shields.io/badge/Netlify-aryankr-00C7B7?style=for-the-badge&logo=netlify)](https://aryankr.netlify.app)
 [![GitHub](https://img.shields.io/badge/GitHub-aryanjsx-181717?style=for-the-badge&logo=github)](https://github.com/aryanjsx)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-aryanjsx-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/aryanjsx)
-[![Node.js](https://img.shields.io/badge/Node.js->=18.0.0-339933?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
+[![Node](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
 
-**A modern, responsive, and SEO-optimized developer portfolio built with React.js**
+*A modern, responsive portfolio with entity SEO, Knowledge Graph signals, and media ownership verification.*
 
 </div>
 
 ---
 
-## ✨ Features
+## About
 
-### 🎨 Design & UI
-
-- **Modern Aesthetic** — Clean, professional design with attention to detail
-- **Dark & Light Themes** — Toggle between themes for comfortable viewing
-- **Animated Splash Screen** — Custom loading animation on initial visit
-- **Custom Cursor** — Unique cursor design for enhanced UX
-- **Smooth Animations** — Page transitions and reveal effects using React Awesome Reveal
-- **Responsive Design** — Fully optimized for desktop, tablet, and mobile devices
-
-### 📄 Pages
-
-- **🏠 Home** — Hero section with skills showcase and call-to-action buttons
-- **🎓 Education** — Academic background with timeline layout and certifications grid
-- **💼 Experience** — Work history with filter tabs (All/Internships/Jobs) and vertical timeline
-- **🚀 Projects** — Project portfolio with stats, tech tags, and GitHub integration
-- **📬 Contact** — Contact methods, social links, availability status, and blog section
-
-### 🔍 SEO Optimization
-
-- **Dynamic Meta Tags** — Unique title and description for each page
-- **Open Graph Tags** — Optimized social media sharing
-- **Twitter Cards** — Enhanced Twitter link previews
-- **JSON-LD Schema** — Structured data for search engines
-- **Semantic HTML** — Proper use of `<header>`, `<main>`, `<section>`, `<article>`, `<footer>`
-- **Sitemap.xml** — Auto-generated sitemap for search engine indexing
-- **Robots.txt** — Search engine crawling instructions
-
-### ⚡ Performance
-
-- **Lazy Loading** — Images load on demand for faster initial page load
-- **Code Splitting** — React Router for efficient bundle management
-- **Optimized Assets** — Compressed images and minified code
+Portfolio and **Entity Home Page** for **Aryan JSX** (`aryanjsx`) — Software Engineer at LTIMindtree, Azure & DevOps enthusiast, creator of [Rajya Tourism](https://github.com/aryanjsx) and npm packages. Built with React, optimized for search and identity discovery.
 
 ---
 
-## 🛠️ Tech Stack
+## Features
 
-### Frontend
+### Design & experience
 
-| Technology                  | Purpose                                        |
-| --------------------------- | ---------------------------------------------- |
-| ⚛️ **React.js 18**          | UI library for building interactive components |
-| 🎨 **CSS3**                 | Custom styling with animations and transitions |
-| 🌐 **React Router v6**      | Client-side routing and navigation             |
-| 🎭 **React Awesome Reveal** | Scroll-triggered animations                    |
-| 🖼️ **React Icons**          | Icon library (Font Awesome, Simple Icons)      |
-| 🎯 **React Helmet Async**   | Dynamic document head management               |
-| 💅 **Styled Components**    | CSS-in-JS styling solution                     |
-| 🎨 **Glamor**               | Inline styles with hover states                |
-| 🏗️ **BaseUI**               | UI component library                           |
+| Feature | Description |
+|--------|-------------|
+| **Themes** | Dark & light mode with smooth transitions |
+| **Splash** | Custom animated splash on first visit |
+| **Responsive** | Mobile-first, works on all devices |
+| **Animations** | Scroll reveals and page transitions (React Awesome Reveal) |
 
-### Development Tools
+### Pages
 
-| Tool             | Purpose                         |
-| ---------------- | ------------------------------- |
-| 📦 **npm**       | Package management              |
-| 🔧 **Webpack 5** | Module bundling                 |
-| ✨ **Prettier**  | Code formatting                 |
-| 🐶 **Husky**     | Git hooks for pre-commit checks |
-| 📝 **ESLint**    | Code linting                    |
+- **Home** — Hero, skills, and call-to-action
+- **Education** — Timeline, degrees, certifications
+- **Experience** — Work history with filter tabs (All / Internships / Jobs)
+- **Projects** — Repos, npm packages, tech tags, links
+- **Contact** — Social links, availability, blog
+
+### SEO & identity
+
+- **Entity Home Page** ([`/entity.html`](https://aryankr.netlify.app/entity.html)) — Central hub for the aryanjsx identity; sameAs, knowsAbout, subjectOf
+- **Image ownership** ([`/image-ownership.html`](https://aryankr.netlify.app/image-ownership.html)) — Media verification page with ImageObject schema
+- **JSON-LD** — Person, WebSite, ProfilePage, SocialMediaPosting, ImageObject, Organization, BreadcrumbList
+- **Sitemaps** — Sitemap index, pages sitemap, image sitemap for Google Images
+- **Meta** — Open Graph, Twitter Cards, canonical, `rel="me"` for X/Twitter
+- **Structured data** — Optimized for “aryanjsx” search and Knowledge Graph
 
 ---
 
-## 📁 Project Structure
+## Tech stack
+
+**Frontend:** React 18 · React Router v6 · Styled Components · React Helmet Async · React Awesome Reveal · React Icons  
+
+**Tooling:** Webpack 5 (CRA) · ESLint · Prettier · Husky
+
+---
+
+## Project structure
 
 ```
 aryanjsx-Portfolio/
 ├── public/
-│   ├── index.html          # HTML template with SEO meta tags
-│   ├── sitemap.xml         # Search engine sitemap
-│   ├── robots.txt          # Crawler instructions
-│   └── manifest.json       # PWA manifest
+│   ├── index.html              # Main app + JSON-LD (Person, WebSite, etc.)
+│   ├── entity.html             # Entity Home Page (EHP)
+│   ├── image-ownership.html    # Image ownership verification
+│   ├── sitemap.xml             # Sitemap index
+│   ├── sitemap-pages.xml       # Page URLs
+│   ├── image-sitemap.xml       # Image URLs (aryanjsx-*)
+│   ├── robots.txt
+│   ├── manifest.json
+│   └── _headers                # Netlify headers
 ├── src/
-│   ├── assests/            # Images, fonts, and static files
-│   ├── components/         # Reusable UI components
-│   │   ├── header/         # Navigation header
-│   │   ├── footer/         # Page footer with branding
-│   │   ├── SEO/            # SEO component with meta tags
-│   │   └── ...
-│   ├── containers/         # Feature containers
-│   │   ├── greeting/       # Hero section
-│   │   ├── skills/         # Skills showcase
-│   │   ├── education/      # Education timeline
-│   │   └── ...
-│   ├── pages/              # Route pages
-│   │   ├── home/           # Homepage
-│   │   ├── education/      # Education page
-│   │   ├── experience/     # Experience page
-│   │   ├── projects/       # Projects page
-│   │   └── contact/        # Contact page
-│   ├── portfolio.js        # Portfolio data configuration
-│   ├── theme.js            # Theme colors (dark/light)
-│   └── App.js              # Main application component
-└── package.json            # Dependencies and scripts
+│   ├── components/             # Header, Footer, SEO
+│   ├── containers/             # Greeting, Skills, Main
+│   ├── pages/                  # Home, Education, Experience, Projects, Contact, Splash
+│   ├── portfolio.js           # Data: profile, socials, skills, education, experience, projects
+│   ├── theme.js                # Dark/light theme
+│   └── App.js
+├── generate-sitemap.js         # Pages sitemap
+├── generate-image-sitemap.js  # Image sitemap
+├── netlify.toml                # Build + redirects
+└── package.json
 ```
 
 ---
 
-## 🚀 Quick Start
+## Quick start
 
-### Prerequisites
-
-- **Node.js** >= 18.0.0
-- **npm** >= 8.0.0
-
-### Installation
+**Prerequisites:** Node.js ≥ 18, npm ≥ 8
 
 ```bash
-# Clone the repository
 git clone https://github.com/aryanjsx/aryanjsx-Portfolio.git
-
-# Navigate to project directory
 cd aryanjsx-Portfolio
-
-# Install dependencies
 npm install
-
-# Start development server
 npm start
 ```
 
-The app will open at `http://localhost:3000`
+Runs at [http://localhost:3000](http://localhost:3000).
 
-### Build for Production
+**Production build:**
 
 ```bash
-# Create optimized production build
 npm run build
-
-# Deploy to GitHub Pages
-npm run deploy
 ```
 
+**Scripts:**
+
+| Script | Description |
+|--------|-------------|
+| `npm start` | Dev server |
+| `npm run build` | Production build (runs sitemap generation) |
+| `npm run generate:sitemap` | Generate pages sitemap |
+| `npm run generate:sitemap-images` | Generate image sitemap |
+| `npm run deploy` | Build + deploy to GitHub Pages (gh-pages) |
+
 ---
 
-## ⚙️ Configuration
+## Configuration
 
-### Customize Portfolio Data
+- **Profile & content:** Edit `src/portfolio.js` (name, socials, skills, education, experience, projects).
+- **Themes:** Edit `src/theme.js` for dark/light colors.
+- **Entity/ownership:** Update `public/entity.html` and `public/image-ownership.html` if you change identity URLs or image lists.
 
-Edit `src/portfolio.js` to update:
+---
 
-- Personal information (name, email, resume link)
-- Social media links
-- Skills and technologies
-- Education history
-- Work experience
-- Projects
+## Links
 
-### Theme Customization
+| Platform | Handle |
+|----------|--------|
+| **Website** | [aryankr.in](https://www.aryankr.in) · [aryankr.netlify.app](https://aryankr.netlify.app) |
+| **GitHub** | [aryanjsx](https://github.com/aryanjsx) |
+| **LinkedIn** | [aryanjsx](https://www.linkedin.com/in/aryanjsx) |
+| **X (Twitter)** | [aryanjsx](https://x.com/aryanjsx) |
+| **Instagram** | [aryanjsx](https://instagram.com/aryanjsx) |
+| **Medium** | [@aryanjsx](https://medium.com/@aryanjsx) |
+| **Dev.to** | [aryanjsx](https://dev.to/aryanjsx) |
+| **LeetCode** | [aryanjsx](https://leetcode.com/aryanjsx) |
+| **HackerRank** | [aryanjsx](https://www.hackerrank.com/aryanjsx) |
+| **npm** | [aryanjsx](https://www.npmjs.com/aryanjsx) |
+| **Docker Hub** | [aryanjsx](https://hub.docker.com/u/aryanjsx) |
 
-Edit `src/theme.js` to modify:
+---
 
-- Dark theme colors
-- Light theme colors
-- Accent colors
+## License
 
-## 🔗 Connect With Me
+[MIT](LICENSE)
 
 <div align="center">
 
-| Platform             | Link                                                     |
-| -------------------- | -------------------------------------------------------- |
-| 📧 **Email**         | [me@aryankr.in](mailto:me@aryankr.in)                    |
-| 💼 **LinkedIn**      | [aryanjsx](https://www.linkedin.com/in/aryanjsx)         |
-| 🐙 **GitHub**        | [aryanjsx](https://github.com/aryanjsx)                  |
-| 🐦 **Twitter**       | [aryanjsx](https://twitter.com/aryanjsx)                 |
-| 📸 **Instagram**     | [aryanjsx](https://www.instagram.com/aryanjsx)           |
-| 📝 **Medium**        | [aryanjsx](https://medium.com/@aryanjsx)                 |
-| 💻 **LeetCode**      | [aryanjsx](https://leetcode.com/u/aryanjsx)              |
-| 🏆 **HackerRank**    | [aryanjsx](https://www.hackerrank.com/profile/aryanjsx)  |
-| 🧑‍💻 **GeeksforGeeks** | [aryanjsx](https://auth.geeksforgeeks.org/user/aryanjsx) |
-
-</div>
-
----
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
----
-
-<div align="center">
-
-### ⭐ Star this repo if you find it helpful!
-
-Made by **Aryan Kumar (aryanjsx)**
+**Aryan JSX** · [aryankr.in](https://www.aryankr.in)
 
 </div>
