@@ -16,57 +16,43 @@
   </url>
 
   <url>
-    <loc>https://www.aryankr.in/#/home</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://www.aryankr.in/home</loc>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.aryankr.in/#/about</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://www.aryankr.in/experience</loc>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.aryankr.in/#/experience</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://www.aryankr.in/education</loc>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.aryankr.in/#/education</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/projects</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://www.aryankr.in/projects</loc>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.aryankr.in/#/contact</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://www.aryankr.in/contact</loc>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.aryankr.in/#/resume</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/splash</loc>
-    <lastmod>2026-01-31</lastmod>
+    <loc>https://www.aryankr.in/splash</loc>
+    <lastmod>2026-02-17</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>

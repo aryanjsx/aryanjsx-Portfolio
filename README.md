@@ -5,7 +5,7 @@
 **Software Engineer · Azure & DevOps · MERN Stack**
 
 [![Live](https://img.shields.io/badge/Live-aryankr.in-00C7B7?style=for-the-badge&logo=link)](https://www.aryankr.in)
-[![Netlify](https://img.shields.io/badge/Netlify-aryankr-00C7B7?style=for-the-badge&logo=netlify)](https://aryankr.netlify.app)
+[![Netlify](https://img.shields.io/badge/Netlify-aryankr-00C7B7?style=for-the-badge&logo=netlify)](https://aryankr.in)
 [![GitHub](https://img.shields.io/badge/GitHub-aryanjsx-181717?style=for-the-badge&logo=github)](https://github.com/aryanjsx)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-aryanjsx-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/aryanjsx)
 [![Node](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
@@ -43,8 +43,8 @@ Portfolio and **Entity Home Page** for **Aryan JSX** (`aryanjsx`) — Software E
 
 ### SEO & identity
 
-- **Entity Home Page** ([`/entity.html`](https://aryankr.netlify.app/entity.html)) — Central hub for the aryanjsx identity; sameAs, knowsAbout, subjectOf
-- **Image ownership** ([`/image-ownership.html`](https://aryankr.netlify.app/image-ownership.html)) — Media verification page with ImageObject schema
+- **Entity Home Page** ([`/entity.html`](https://aryankr.in/entity.html)) — Central hub for the aryanjsx identity; sameAs, knowsAbout, subjectOf
+- **Image ownership** ([`/image-ownership.html`](https://aryankr.in/image-ownership.html)) — Media verification page with ImageObject schema
 - **JSON-LD** — Person, WebSite, ProfilePage, SocialMediaPosting, ImageObject, Organization, BreadcrumbList
 - **Sitemaps** — Sitemap index, pages sitemap, image sitemap for Google Images
 - **Meta** — Open Graph, Twitter Cards, canonical, `rel="me"` for X/Twitter
@@ -132,7 +132,7 @@ npm run build
 
 | Platform | Handle |
 |----------|--------|
-| **Website** | [aryankr.in](https://www.aryankr.in) · [aryankr.netlify.app](https://aryankr.netlify.app) |
+| **Website** | [aryankr.in](https://www.aryankr.in) · [aryankr.in](https://aryankr.in) |
 | **GitHub** | [aryanjsx](https://github.com/aryanjsx) |
 | **LinkedIn** | [aryanjsx](https://www.linkedin.com/in/aryanjsx) |
 | **X (Twitter)** | [aryanjsx](https://x.com/aryanjsx) |

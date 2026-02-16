@@ -4,7 +4,7 @@ import SEO from "../../components/SEO/SEO";
 const ContactSEO = () => {
   return (
     <SEO
-      path="/#/contact"
+      path="/contact"
       keywords="aryanjsx, aryan kumar, contact aryan kumar, software engineer, full stack developer, hire"
     />
   );
