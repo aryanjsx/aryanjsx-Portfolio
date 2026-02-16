@@ -15,11 +15,12 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
   const siteDescription = description || GLOBAL_DESCRIPTION;
   const siteImage = image || DEFAULT_IMAGE;
 
-  const canonicalUrl = `${BASE_URL}/`;
   const siteUrl =
     path === "/" || path === ""
       ? BASE_URL
       : `${BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+  const canonicalUrl = siteUrl.replace(/\/$/, "") || BASE_URL;
+  const canonicalUrlWithTrailing = canonicalUrl === BASE_URL ? `${BASE_URL}/` : canonicalUrl;
 
   const defaultKeywords =
     "aryanjsx, aryan kumar, aryan kumar software engineer, aryan kumar portfolio, full stack developer, software engineer portfolio";
@@ -56,7 +57,7 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
       <meta name="twitter:creator" content="@aryanjsx" />
       <meta name="twitter:site" content="@aryanjsx" />
 
-      <link rel="canonical" href={canonicalUrl} />
+      <link rel="canonical" href={canonicalUrlWithTrailing} />
     </Helmet>
   );
 };

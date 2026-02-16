@@ -1,27 +1,28 @@
 /**
- * Dynamic sitemap.xml generator for https://www.aryankr.in
- * Run before deploy: npm run generate:sitemap (or runs automatically via prebuild)
- * Output: public/sitemap.xml with current date as lastmod
+ * Generates sitemap-pages.xml with path-based URLs (no hash) for SEO.
+ * Run before deploy: npm run generate:sitemap (or via prebuild)
+ * Output: public/sitemap-pages.xml
+ * Note: sitemap.xml is the index (static) pointing to sitemap-pages.xml and image-sitemap.xml
  */
 
 const fs = require("fs");
 const path = require("path");
 
 const SITE_URL = "https://www.aryankr.in";
-const OUTPUT_FILE = path.join(__dirname, "public", "sitemap.xml");
+const OUTPUT_FILE = path.join(__dirname, "public", "sitemap-pages.xml");
 
 const today = new Date().toISOString().split("T")[0];
 
 const routes = [
   { path: "/", changefreq: "weekly", priority: "1.0", image: true },
-  { path: "/#/home", changefreq: "weekly", priority: "0.9" },
-  { path: "/#/about", changefreq: "monthly", priority: "0.8" },
-  { path: "/#/experience", changefreq: "monthly", priority: "0.8" },
-  { path: "/#/education", changefreq: "monthly", priority: "0.8" },
-  { path: "/#/projects", changefreq: "weekly", priority: "0.9" },
-  { path: "/#/contact", changefreq: "monthly", priority: "0.7" },
-  { path: "/#/resume", changefreq: "monthly", priority: "0.7" },
-  { path: "/#/splash", changefreq: "yearly", priority: "0.5" },
+  { path: "/home", changefreq: "weekly", priority: "0.9" },
+  { path: "/experience", changefreq: "monthly", priority: "0.8" },
+  { path: "/education", changefreq: "monthly", priority: "0.8" },
+  { path: "/projects", changefreq: "weekly", priority: "0.9" },
+  { path: "/contact", changefreq: "monthly", priority: "0.7" },
+  { path: "/splash", changefreq: "yearly", priority: "0.5" },
+  { path: "/entity.html", changefreq: "monthly", priority: "0.9" },
+  { path: "/image-ownership.html", changefreq: "monthly", priority: "0.8" },
 ];
 
 function escapeXml(unsafe) {
@@ -66,7 +67,7 @@ ${urlEntries.join("\n\n")}
 `;
 
   fs.writeFileSync(OUTPUT_FILE, xml, "utf8");
-  console.log(`Sitemap written to ${OUTPUT_FILE} (lastmod: ${today})`);
+  console.log(`Sitemap written to ${OUTPUT_FILE} (path-based URLs, lastmod: ${today})`);
 }
 
 buildSitemap();

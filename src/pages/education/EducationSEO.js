@@ -4,7 +4,7 @@ import SEO from "../../components/SEO/SEO";
 const EducationSEO = () => {
   return (
     <SEO
-      path="/#/education"
+      path="/education"
       keywords="aryanjsx, aryan kumar, aryan kumar software engineer, education, certifications, full stack developer"
     />
   );

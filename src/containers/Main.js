@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes, HashRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
 import Home from "../pages/home/HomeComponent";
 import Splash from "../pages/splash/Splash";
 import Education from "../pages/education/EducationComponent";
@@ -8,11 +8,20 @@ import Contact from "../pages/contact/ContactComponent";
 import Projects from "../pages/projects/Projects";
 import { settings } from "../portfolio.js";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 export default function Main(propss) {
   if (settings.isSplash) {
     return (
       <div>
-        <HashRouter basename="/">
+        <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route
               path="/"
@@ -55,13 +64,14 @@ export default function Main(propss) {
               }
             />
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </div>
     );
   } else {
     return (
       <div>
-        <HashRouter basename="/">
+        <BrowserRouter>
+          <ScrollToTop />
           <Routes>
             <Route
               path="/"
@@ -96,7 +106,7 @@ export default function Main(propss) {
               }
             />
           </Routes>
-        </HashRouter>
+        </BrowserRouter>
       </div>
     );
   }
