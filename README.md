@@ -4,7 +4,7 @@
 
 ![Portfolio Preview](src/assests/images/hrishi2.png)
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-aryankr.netlify.app-00C7B7?style=for-the-badge)](https://aryankr.netlify.app)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-aryankr.in-00C7B7?style=for-the-badge)](https://aryankr.in)
 [![GitHub](https://img.shields.io/badge/GitHub-aryanjsx-181717?style=for-the-badge&logo=github)](https://github.com/aryanjsx)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-aryanjsx-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/aryanjsx)
 [![Node.js](https://img.shields.io/badge/Node.js->=18.0.0-339933?style=for-the-badge&logo=nodedotjs)](https://nodejs.org/)
