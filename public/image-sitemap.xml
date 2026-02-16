@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://aryankr.in</loc>
+    <image:image>
+      <image:loc>https://aryankr.in/images/aryanjsx-profile.jpg</image:loc>
+      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
+      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aryankr.in</loc>
+    <image:image>
+      <image:loc>https://aryankr.in/images/aryanjsx-hero.png</image:loc>
+      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
+      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aryankr.in</loc>
+    <image:image>
+      <image:loc>https://aryankr.in/images/aryanjsx-avatar.webp</image:loc>
+      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
+      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aryankr.in</loc>
+    <image:image>
+      <image:loc>https://aryankr.in/images/aryanjsx-portfolio.jpg</image:loc>
+      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
+      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aryankr.in</loc>
+    <image:image>
+      <image:loc>https://aryankr.in/images/aryanjsx-brand.png</image:loc>
+      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
+      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aryankr.in</loc>
+    <image:image>
+      <image:loc>https://aryankr.in/images/aryanjsx-og.webp</image:loc>
+      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
+      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

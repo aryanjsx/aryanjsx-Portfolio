@@ -1,74 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-
-  <url>
-    <loc>https://www.aryankr.in/</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://www.aryankr.in/logo512.png</image:loc>
-      <image:title>Aryan Kumar (AryanJSX) — Software Engineer &amp; Full Stack Developer Portfolio</image:title>
-      <image:caption>Aryan Kumar aka AryanJSX portfolio — Software Engineer, Full Stack Developer</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/home</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/about</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/experience</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/education</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/projects</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/contact</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/resume</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <url>
-    <loc>https://www.aryankr.in/#/splash</loc>
-    <lastmod>2026-01-31</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://aryankr.in/sitemap-pages.xml</loc>
+    <lastmod>2026-02-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://aryankr.in/image-sitemap.xml</loc>
+    <lastmod>2026-02-17</lastmod>
+  </sitemap>
+</sitemapindex>
