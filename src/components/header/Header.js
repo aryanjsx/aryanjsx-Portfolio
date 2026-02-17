@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 import { Fade } from "react-awesome-reveal";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { greeting, settings } from "../../portfolio.js";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
@@ -64,7 +64,7 @@ function Header(props) {
     <Fade direction="down" duration={1000} triggerOnce>
       <header className="header">
         {/* Logo - Left */}
-        <NavLink to={link} tag={Link} className="logo">
+        <NavLink to={link} className="logo">
           <span className="logo-name" style={{ color: theme.text }}>
             {greeting.logo_name}
           </span>
@@ -92,7 +92,6 @@ function Header(props) {
               <NavLink
                 className="homei"
                 to="/home"
-                tag={Link}
                 style={{ color: theme.text }}
               >
                 Home
@@ -102,7 +101,6 @@ function Header(props) {
               <NavLink
                 className="ec"
                 to="/education"
-                tag={Link}
                 style={{ color: theme.text }}
               >
                 Education
@@ -112,7 +110,6 @@ function Header(props) {
               <NavLink
                 className="xp"
                 to="/experience"
-                tag={Link}
                 style={{ color: theme.text }}
               >
                 Experience
@@ -122,7 +119,6 @@ function Header(props) {
               <NavLink
                 className="projects"
                 to="/projects"
-                tag={Link}
                 style={{ color: theme.text }}
               >
                 Projects
@@ -132,7 +128,6 @@ function Header(props) {
               <NavLink
                 className="cr"
                 to="/contact"
-                tag={Link}
                 style={{ color: theme.text }}
               >
                 Contact
