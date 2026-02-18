@@ -1,0 +1,54 @@
+{
+  "headers": [
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=UTF-8" }
+      ]
+    },
+    {
+      "source": "/image-sitemap.xml",
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml; charset=UTF-8" }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/entity.html",
+      "destination": "/entity.html"
+    },
+    {
+      "source": "/image-ownership.html",
+      "destination": "/image-ownership.html"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/image-sitemap.xml",
+      "destination": "/image-sitemap.xml"
+    },
+    {
+      "source": "/about",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/projects",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/resume",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/experience",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

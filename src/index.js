@@ -5,7 +5,6 @@ import TagManager from "react-gtm-module";
 
 import "./index.css";
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
 import "./assests/font-awesome/css/all.css";
 
 const tagManagerArgs = { gtmId: "GTM-TDZT2FJN" };
@@ -17,4 +16,3 @@ ReactDOM.render(
   </HelmetProvider>,
   document.getElementById("root"),
 );
-serviceWorker.unregister();
