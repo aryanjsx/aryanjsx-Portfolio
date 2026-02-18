@@ -1,15 +1,14 @@
 /**
- * Generates sitemap-pages.xml with path-based URLs (no hash) for SEO.
+ * Generates sitemap.xml with path-based URLs (no hash) for SEO.
  * Run before deploy: npm run generate:sitemap (or via prebuild)
- * Output: public/sitemap-pages.xml
- * Note: sitemap.xml is the index (static) pointing to sitemap-pages.xml and image-sitemap.xml
+ * Output: public/sitemap.xml
  */
 
 const fs = require("fs");
 const path = require("path");
 
 const SITE_URL = "https://www.aryankr.in";
-const OUTPUT_FILE = path.join(__dirname, "public", "sitemap-pages.xml");
+const OUTPUT_FILE = path.join(__dirname, "public", "sitemap.xml");
 
 const today = new Date().toISOString().split("T")[0];
 

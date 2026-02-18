@@ -68,12 +68,10 @@ aryanjsx-Portfolio/
 │   ├── index.html              # Main app + JSON-LD (Person, WebSite, etc.)
 │   ├── entity.html             # Entity Home Page (EHP)
 │   ├── image-ownership.html    # Image ownership verification
-│   ├── sitemap.xml             # Sitemap index
-│   ├── sitemap-pages.xml       # Page URLs
+│   ├── sitemap.xml             # Page URLs sitemap
 │   ├── image-sitemap.xml       # Image URLs (aryanjsx-*)
 │   ├── robots.txt
-│   ├── manifest.json
-│   └── _headers                # Netlify headers
+│   └── manifest.json
 ├── src/
 │   ├── components/             # Header, Footer, SEO
 │   ├── containers/             # Greeting, Skills, Main
@@ -83,7 +81,7 @@ aryanjsx-Portfolio/
 │   └── App.js
 ├── generate-sitemap.js         # Pages sitemap
 ├── generate-image-sitemap.js  # Image sitemap
-├── netlify.toml                # Build + redirects
+├── vercel.json                 # Vercel rewrites for SPA routing
 └── package.json
 ```
 
