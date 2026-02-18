@@ -45,7 +45,7 @@ Portfolio and **Entity Home Page** for **Aryan JSX** (`aryanjsx`) — Software E
 
 - **Entity Home Page** ([`/entity.html`](https://aryankr.in/entity.html)) — Central hub for the aryanjsx identity; sameAs, knowsAbout, subjectOf
 - **Image ownership** ([`/image-ownership.html`](https://aryankr.in/image-ownership.html)) — Media verification page with ImageObject schema
-- **JSON-LD** — Person, WebSite, ProfilePage, SocialMediaPosting, ImageObject, Organization, BreadcrumbList
+- **JSON-LD** — Person, WebSite, ProfilePage, ImageObject, BreadcrumbList
 - **Sitemaps** — Sitemap index, pages sitemap, image sitemap for Google Images
 - **Meta** — Open Graph, Twitter Cards, canonical, `rel="me"` for X/Twitter
 - **Structured data** — Optimized for “aryanjsx” search and Knowledge Graph
