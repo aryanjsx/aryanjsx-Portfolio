@@ -130,7 +130,7 @@ npm run build
 
 | Platform | Handle |
 |----------|--------|
-| **Website** | [aryankr.in](https://www.aryankr.in) · [aryankr.in](https://aryankr.in) |
+| **Website** | [aryankr.in](https://www.aryankr.in)|
 | **GitHub** | [aryanjsx](https://github.com/aryanjsx) |
 | **LinkedIn** | [aryanjsx](https://www.linkedin.com/in/aryanjsx) |
 | **X (Twitter)** | [aryanjsx](https://x.com/aryanjsx) |
@@ -150,6 +150,6 @@ npm run build
 
 <div align="center">
 
-**Aryan JSX** · [aryankr.in](https://www.aryankr.in)
+**Aryan Kumar (aryanjsx)** · [aryankr.in](https://www.aryankr.in)
 
 </div>
