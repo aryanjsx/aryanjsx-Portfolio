@@ -7,7 +7,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const SITE_URL = "https://www.aryankr.in";
+const SITE_URL = "https://aryankr.in";
 const OUTPUT_FILE = path.join(__dirname, "public", "sitemap.xml");
 
 const today = new Date().toISOString().split("T")[0];

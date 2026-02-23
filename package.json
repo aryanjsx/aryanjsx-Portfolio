@@ -2,7 +2,7 @@
   "private": true,
   "name": "opportfolio",
   "version": "1.2.0",
-  "homepage": "https://www.aryankr.in/",
+  "homepage": "https://aryankr.in/",
   "scripts": {
     "prebuild": "node generate-sitemap.js",
     "build": "cross-env DISABLE_ESLINT_PLUGIN=true react-scripts build",
