@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { greeting } from "../../portfolio";
 
-const BASE_URL = "https://www.aryankr.in";
+const BASE_URL = "https://aryankr.in";
 const DEFAULT_IMAGE = `${BASE_URL}/logo512.png`;
 
 const GLOBAL_TITLE =
@@ -19,9 +19,6 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
     path === "/" || path === ""
       ? BASE_URL
       : `${BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
-  const canonicalUrl = siteUrl.replace(/\/$/, "") || BASE_URL;
-  const canonicalUrlWithTrailing = canonicalUrl === BASE_URL ? `${BASE_URL}/` : canonicalUrl;
-
   const defaultKeywords =
     "aryanjsx, aryan kumar, aryan kumar software engineer, aryan kumar portfolio, full stack developer, software engineer portfolio";
   const siteKeywords = keywords || defaultKeywords;
@@ -57,7 +54,6 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
       <meta name="twitter:creator" content="@aryanjsx" />
       <meta name="twitter:site" content="@aryanjsx" />
 
-      <link rel="canonical" href={canonicalUrlWithTrailing} />
     </Helmet>
   );
 };
