@@ -25,7 +25,7 @@ const routes = [
 ];
 
 function escapeXml(unsafe) {
-  if (unsafe == null) return "";
+  if (unsafe === null || unsafe === undefined) return "";
   return String(unsafe)
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")

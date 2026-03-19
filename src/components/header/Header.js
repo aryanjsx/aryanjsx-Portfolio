@@ -36,11 +36,11 @@ function Header(props) {
   function changeTheme() {
     if (currTheme === "light") {
       props.setTheme("dark");
-      localStorage.setItem("theme", "dark");
+      try { localStorage.setItem("theme", "dark"); } catch { /* storage unavailable */ }
       setCurrTheme("dark");
     } else {
       props.setTheme("light");
-      localStorage.setItem("theme", "light");
+      try { localStorage.setItem("theme", "light"); } catch { /* storage unavailable */ }
       setCurrTheme("light");
     }
   }

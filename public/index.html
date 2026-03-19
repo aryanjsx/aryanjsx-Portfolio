@@ -34,6 +34,7 @@
   <meta name="google-adsense-account" content="ca-pub-3385842186855848">
   <meta name="p:domain_verify" content="418e0f35dde54082f7dbadfd645efa36" />
   <meta name="google-site-verification" content="qGQzl78dYX4EIXhyvMpsobnn5Z1dvz1lv5Gq45smSCE" />
+  <meta name="google-site-verification" content="kKoA_bu1dIXSUlTsCLD335y9QhOM3fHqM8cBO7J22Ak" />
   <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -51,17 +52,18 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#000000">
-  <meta name="p:domain_verify" content="418e0f35dde54082f7dbadfd645efa36" />
-  <meta name="google-site-verification" content="kKoA_bu1dIXSUlTsCLD335y9QhOM3fHqM8cBO7J22Ak" />
-  <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
+  <link rel="preconnect" href="https://code.iconify.design" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+  <script src="https://code.iconify.design/1/1.0.4/iconify.min.js" defer integrity="sha384-TXq3VNFRHcngq17oVaakLnIhU8UQ4rE6XYAIM0OjlDJEs7mclOAm/gXzpGm1MuHm" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js" defer integrity="sha384-2rRY1cWoRiRiX15xbKo75jnHdsG7nHX5W8oqEfoS3P8FIJWClcFmhcTXg1xh+5dO" crossorigin="anonymous"></script>
   <!-- Google Tag Manager -->
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
           new Date().getTime(), event: 'gtm.js'
       }); var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        j = d.createElement(s), dl = l !== 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
           'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-TDZT2FJN');</script>
   <!-- End Google Tag Manager -->
@@ -151,7 +153,30 @@
     <a href="/entity.html" rel="author">Entity Home Page</a>
     <a href="/image-ownership.html" rel="author">Image Ownership</a>
   </p>
-  <div id="root"></div>
+  <div id="root">
+    <style>
+      .initial-loader{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#171c28;flex-direction:column}
+      .initial-loader .bar{width:90px;height:10px;margin:7px auto;border-radius:50px;animation:il-right 1s infinite ease-in-out}
+      .initial-loader .bar:nth-child(1){background:#ff005d}
+      .initial-loader .bar:nth-child(2){background:#35ff99;animation-name:il-left;animation-duration:1.1s}
+      .initial-loader .bar:nth-child(3){background:#008597;animation-duration:1.05s}
+      .initial-loader .bar:nth-child(4){background:#ffcc00;animation-name:il-left;animation-duration:1.15s}
+      .initial-loader .bar:nth-child(5){background:#2d3443;animation-duration:1.1s}
+      .initial-loader .bar:nth-child(6){background:#ff7c35;animation-name:il-left;animation-duration:1.05s}
+      .initial-loader .bar:nth-child(7){background:#4d407c}
+      @keyframes il-right{0%,100%{transform:translateX(-15px)}50%{transform:translateX(15px)}}
+      @keyframes il-left{0%,100%{transform:translateX(15px)}50%{transform:translateX(-15px)}}
+    </style>
+    <div class="initial-loader" aria-label="Loading">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

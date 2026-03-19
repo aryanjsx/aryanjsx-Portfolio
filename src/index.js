@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import TagManager from "react-gtm-module";
 
@@ -10,9 +10,9 @@ import "./assests/font-awesome/css/all.css";
 const tagManagerArgs = { gtmId: "GTM-TDZT2FJN" };
 TagManager.initialize(tagManagerArgs);
 
-ReactDOM.render(
+const root = createRoot(document.getElementById("root"));
+root.render(
   <HelmetProvider>
     <App />
   </HelmetProvider>,
-  document.getElementById("root"),
 );
