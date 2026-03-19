@@ -6,8 +6,16 @@ import { themes } from "./theme";
 import { GlobalStyles } from "./global";
 import SEO from "./components/SEO/SEO";
 
+function getStoredTheme() {
+  try {
+    return localStorage.getItem("theme") || "dark";
+  } catch {
+    return "dark";
+  }
+}
+
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const [theme, setTheme] = useState(getStoredTheme);
 
   return (
     <ThemeProvider theme={themes[theme]}>

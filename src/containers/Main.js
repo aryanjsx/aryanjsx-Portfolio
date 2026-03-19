@@ -1,5 +1,11 @@
 import React from "react";
-import { Route, Routes, BrowserRouter, useLocation } from "react-router-dom";
+import {
+  Route,
+  Routes,
+  BrowserRouter,
+  useLocation,
+  Navigate,
+} from "react-router-dom";
 import Home from "../pages/home/HomeComponent";
 import Splash from "../pages/splash/Splash";
 import Education from "../pages/education/EducationComponent";
@@ -63,6 +69,7 @@ export default function Main(propss) {
                 <Projects theme={propss.theme} setTheme={propss.setTheme} />
               }
             />
+            <Route path="*" element={<Navigate to="/home" replace />} />
           </Routes>
         </BrowserRouter>
       </div>
@@ -105,6 +112,7 @@ export default function Main(propss) {
                 <Projects theme={propss.theme} setTheme={propss.setTheme} />
               }
             />
+            <Route path="*" element={<Navigate to="/home" replace />} />
           </Routes>
         </BrowserRouter>
       </div>
