@@ -1,22 +1,29 @@
 import React from "react";
 import { getCardStyle } from "../../utils/cardStyle.js";
 
+const REGISTRY_CONFIG = {
+  pypi: { label: "PyPI", color: "#3775A9", viewText: "View on PyPI" },
+  npm: { label: "npm", color: "#CB3837", viewText: "View on npm" },
+};
+
 function NpmPackageCard({
   theme,
   pkg,
   installCommand,
-  npmUrl,
+  registryUrl,
   onCopy,
   isCopied,
 }) {
+  const registry = REGISTRY_CONFIG[pkg.type] || REGISTRY_CONFIG.npm;
+
   return (
     <div className="npm-package-card" style={getCardStyle(theme)}>
       <div className="npm-package-header">
         <div
           className="npm-package-icon"
-          style={{ backgroundColor: "#CB3837" }}
+          style={{ backgroundColor: registry.color }}
         >
-          <span className="npm-logo-text">npm</span>
+          <span className="npm-logo-text">{registry.label}</span>
         </div>
         <div className="npm-package-badges">
           {pkg.version && (
@@ -86,14 +93,14 @@ function NpmPackageCard({
         </div>
         <div className="npm-package-links">
           <a
-            href={npmUrl(pkg.name)}
+            href={registryUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="npm-link"
             style={{ color: theme.accentColor }}
             onClick={(e) => e.stopPropagation()}
           >
-            View on npm
+            {registry.viewText}
           </a>
           {pkg.repository && (
             <>
