@@ -428,6 +428,16 @@ const npmPackages = {
       installCommand: "npm i @aryanjsx/indiamap",
       repository: "https://github.com/aryanjsx/IndiaMap",
     },
+    {
+      name: "AURA (orkio)",
+      type: "pypi",
+      description:
+        "Autonomous Unified Resource Architect — an AI-powered MCP server that interprets natural language tasks, validates them for safety, and executes them through a modular plugin architecture.",
+      version: "0.3.1",
+      installCommand: "pip install orkio",
+      registryUrl: "https://pypi.org/project/orkio/",
+      repository: "https://github.com/aryanjsx/aura-mcp",
+    },
   ],
 };
 
@@ -453,76 +463,127 @@ const projects = {
     {
       name: "Know India",
       url: "https://knowindia.aryankr.in/",
+      repo: "https://github.com/aryanjsx/know-India",
       description:
-        "This is a web application that provides information about tourism of different states and union territories of India.",
+        "Plan your India trip with AI! Explore 28 states, 8 union territories, generate personalized itineraries, save favorites, share & download as PDF. Powered by Mistral-7B, FAISS, React & Node.js.",
       languages: [
         {
           name: "ReactJS",
           iconifyClass: "devicon:react",
         },
         {
+          name: "Node.js",
+          iconifyClass: "logos-nodejs",
+        },
+        {
           name: "Tailwind CSS",
           iconifyClass: "devicon:tailwindcss",
+        },
+        {
+          name: "MySQL",
+          iconifyClass: "simple-icons:mysql",
         },
         {
           name: "Material UI",
           iconifyClass: "devicon:materialui",
         },
         {
-          name: "Node.js",
-          iconifyClass: "logos-nodejs",
+          name: "Chart.js",
+          iconifyClass: "logos-chartjs",
         },
         {
           name: "Vercel",
           iconifyClass: "simple-icons:vercel",
         },
         {
-          name: "Chart.js",
-          iconifyClass: "logos-chartjs",
-        },
-        {
           name: "React Router",
           iconifyClass: "devicon:reactrouter",
-        },
-        {
-          name: "React Hook Form",
-          iconifyClass: "devicon:reacthookform",
-        },
-        {
-          name: "React Query",
-          iconifyClass: "devicon:reactquery",
-        },
-        {
-          name: "React Icons",
-          iconifyClass: "devicon:reacticons",
-        },
-        {
-          name: "React Toastify",
-          iconifyClass: "devicon:reacttoastify",
-        },
-        {
-          name: "React Icons",
-          iconifyClass: "devicon:reacticons",
         },
       ],
     },
     {
       name: "Code Converter",
       url: "https://convertcodex.vercel.app",
+      repo: "https://github.com/aryanjsx/code-converter",
       description:
-        "Code converter is a web application that converts code from one language to another.\n",
+        "Browser-based multi-language code converter powered by LLMs. Upload full projects, preserve architecture & naming, compare original vs converted code side-by-side, and export as ZIP.",
       languages: [
+        {
+          name: "TypeScript",
+          iconifyClass: "devicon:typescript",
+        },
         {
           name: "ReactJS",
           iconifyClass: "logos-react",
+        },
+        {
+          name: "Vite",
+          iconifyClass: "devicon:vitejs",
+        },
+        {
+          name: "LLM",
+          iconifyClass: "simple-icons:openai",
         },
         {
           name: "Tailwind CSS",
           iconifyClass: "devicon:tailwindcss",
         },
         {
-          name: "Material UI",
-          iconifyClass: "simple-icons:mui",
+          name: "Vercel",
+          iconifyClass: "simple-icons:vercel",
+        },
+      ],
+    },
+    {
+      name: "AURA",
+      repo: "https://github.com/aryanjsx/AURA",
+      description:
+        "Autonomous Utility & Resource Assistant — A fully offline AI developer assistant that automates coding workflows using local LLMs, voice commands, and system automation.",
+      languages: [
+        {
+          name: "Python",
+          iconifyClass: "logos:python",
+        },
+        {
+          name: "Ollama",
+          iconifyClass: "simple-icons:ollama",
+        },
+        {
+          name: "Docker",
+          iconifyClass: "devicon:docker",
+        },
+        {
+          name: "PyQt6",
+          iconifyClass: "devicon:qt",
+        },
+        {
+          name: "ChromaDB",
+          iconifyClass: "simple-icons:chroma",
+        },
+        {
+          name: "Git",
+          iconifyClass: "devicon:git",
+        },
+      ],
+    },
+    {
+      name: "Arythm",
+      url: "https://arythm.vercel.app",
+      repo: "https://github.com/aryanjsx/Arythm",
+      description:
+        "A beautiful, open-source web music player powered by YouTube Music. Stream millions of songs, enjoy synced lyrics, and discover new music — all from your browser.",
+      languages: [
+        {
+          name: "TypeScript",
+          iconifyClass: "devicon:typescript",
+        },
+        {
+          name: "ReactJS",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "YouTube API",
+          iconifyClass: "logos:youtube-icon",
         },
         {
           name: "Vercel",
