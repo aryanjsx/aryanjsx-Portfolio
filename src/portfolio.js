@@ -7,7 +7,6 @@ const greeting = {
   title: "Hello, I'm",
   title1: "Aryan",
   logo_name: "AK",
-  nickname: "aryanjsx",
   full_name: "Aryan Kumar",
   subTitle:
     "I am always enthusiastic to learn new technologies. I am always trying to create a project what I learned. I am interested in Python programming, Web development, and many more...   ",
@@ -18,7 +17,7 @@ const greeting = {
 
 const aboutSEO = {
   paragraph:
-    "Aryan Kumar, known as AryanJSX, is a Software Engineer and Full Stack Developer from India. He builds web applications with React, Next.js, Node.js, and Python, and is passionate about DevOps and cloud technologies. Explore his portfolio for projects, resume, and contact.",
+    "Aryan Kumar, known as AryanJSX, is a Software Engineer and GEN AI Developer from India. He builds web applications with React, Next.js, Node.js, and Python, and is passionate about DevOps and cloud technologies. Explore his portfolio for projects, resume, and contact.",
 };
 
 const socialMediaLinks = {
@@ -297,24 +296,6 @@ const degrees = {
 const certifications = {
   certifications: [
     {
-      title: "SQL (Basics)",
-      subtitle: "HackerRank",
-      logo_path: "aws.png",
-      certificate_link:
-        "https://drive.google.com/file/d/1Hs0qSiXj-8dNxOxegezDv_vUKWZwT0kK/view?usp=sharing",
-      alt_name: "SQL",
-      color_code: "#ffc475",
-    },
-    {
-      title: "Python (Basics)",
-      subtitle: "HackerRank",
-      logo_path: "aws.png",
-      certificate_link:
-        "https://drive.google.com/file/d/16TMEb7WcJhfW4kNtkyYbVHIggJNy1tiA/view?usp=sharing",
-      alt_name: "Python",
-      color_code: "#ffc475",
-    },
-    {
       title: "Toycathon-21",
       subtitle: "Organized by Govt. of India",
       logo_path: "ino.png",
@@ -416,7 +397,7 @@ const projectsHeader = {
 // NPM Packages (showcase on Projects page)
 const npmPackages = {
   enabled: true,
-  title: "NPM Packages",
+  title: "Packages",
   description:
     "Open-source packages I've published to npm. Install with npm or yarn. 📦",
   data: [
@@ -473,7 +454,7 @@ const projects = {
       name: "Know India",
       url: "https://knowindia.aryankr.in/",
       description:
-        "This is a web application that provides information about different states and union territories of India.",
+        "This is a web application that provides information about tourism of different states and union territories of India.",
       languages: [
         {
           name: "ReactJS",
