@@ -296,6 +296,14 @@ const degrees = {
 const certifications = {
   certifications: [
     {
+      title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+      subtitle: "Microsoft",
+      logo_path: "azure.svg",
+      certificate_link: "/AZ-900.pdf",
+      alt_name: "Microsoft Azure",
+      color_code: "#0078D4",
+    },
+    {
       title: "Toycathon-21",
       subtitle: "Organized by Govt. of India",
       logo_path: "ino.png",
