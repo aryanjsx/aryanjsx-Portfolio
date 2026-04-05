@@ -298,7 +298,7 @@ const certifications = {
     {
       title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
       subtitle: "Microsoft",
-      logo_path: "azure.svg",
+      logo_path: "az-900.svg",
       certificate_link: "/AZ-900.pdf",
       alt_name: "Microsoft Azure",
       color_code: "#0078D4",
