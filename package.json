@@ -9,6 +9,7 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "jest",
     "test:ci": "jest --ci --coverage",
     "analyze": "ANALYZE=true next build --webpack",
@@ -37,6 +38,7 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.4",
+    "eslint-plugin-unused-imports": "^4.4.1",
     "husky": "^9.1.7",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
@@ -50,6 +52,7 @@
   },
   "lint-staged": {
     "*.json": "prettier-package-json --write",
-    "*.{js,css,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
+    "*.{css,md}": "prettier --write"
   }
 }
