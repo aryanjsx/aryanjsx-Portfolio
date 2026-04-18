@@ -16,7 +16,7 @@ function Education(props) {
       <div className="education-main">
         <Header theme={props.theme} setTheme={props.setTheme} />
 
-        <div className="basic-education">
+        <main id="main-content" className="basic-education">
           {/* Hero Section - Same as Experience Page */}
           <Fade direction="down" duration={2000} triggerOnce>
             <div className="education-heading-div">
@@ -81,7 +81,7 @@ function Education(props) {
                     >
                       <img
                         src={require(
-                          `../../assests/images/${degree.logo_path}`,
+                          `../../assets/images/${degree.logo_path}`,
                         )}
                         alt={`Aryan Kumar (AryanJSX) education — ${degree.title}, ${degree.subtitle}`}
                         loading="lazy"
@@ -201,7 +201,7 @@ function Education(props) {
                       >
                         <img
                           src={require(
-                            `../../assests/images/${cert.logo_path}`,
+                            `../../assets/images/${cert.logo_path}`,
                           )}
                           alt={`Aryan Kumar (AryanJSX) certification — ${cert.title} by ${cert.subtitle}`}
                           loading="lazy"
@@ -227,7 +227,7 @@ function Education(props) {
               ))}
             </div>
           </section>
-        </div>
+        </main>
 
         <Footer theme={props.theme} />
       </div>

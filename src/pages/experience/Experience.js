@@ -11,8 +11,8 @@ import { getEndDateSortKey } from "../../utils/experienceDateSort.js";
 // Static map for experience logos to avoid dynamic require (security hotspot).
 // Add new entries here when adding experiences with new logo_path in portfolio.js.
 const EXPERIENCE_LOGO_MAP = {
-  "cra.png": require("../../assests/images/cra.png"),
-  "lti.jpg": require("../../assests/images/lti.jpg"),
+  "cra.png": require("../../assets/images/cra.png"),
+  "lti.jpg": require("../../assets/images/lti.jpg"),
 };
 
 const DEFAULT_LOGO = EXPERIENCE_LOGO_MAP["cra.png"];
@@ -46,7 +46,7 @@ function Experience(props) {
       <div className="experience-main">
         <Header theme={theme} setTheme={props.setTheme} />
 
-        <div className="basic-experience">
+        <main id="main-content" className="basic-experience">
           {/* Hero Section - Same structure as Education Page */}
           <Fade direction="down" duration={2000} triggerOnce>
             <div className="experience-heading-div">
@@ -255,7 +255,7 @@ function Experience(props) {
               ))}
             </div>
           </section>
-        </div>
+        </main>
 
         <Footer theme={props.theme} />
       </div>
