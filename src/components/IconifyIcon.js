@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 export default function IconifyIcon({ icon, style, className = "" }) {
   const [mounted, setMounted] = useState(false);
+  const ref = useRef(null);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (mounted && ref.current && window.Iconify && typeof window.Iconify.scan === "function") {
+      window.Iconify.scan(ref.current);
+    }
+  }, [mounted]);
 
   if (!mounted) {
     return (
@@ -18,6 +25,7 @@ export default function IconifyIcon({ icon, style, className = "" }) {
 
   return (
     <span
+      ref={ref}
       className={`iconify ${className}`}
       data-icon={icon}
       style={style}

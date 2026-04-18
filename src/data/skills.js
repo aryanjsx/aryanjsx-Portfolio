@@ -13,7 +13,7 @@ export const skills = {
       ],
       softwareSkills: [
         { skillName: "HTML5", fontAwesomeClassname: "simple-icons:html5", style: { color: "#E34F26" } },
-        { skillName: "CSS3", fontAwesomeClassname: "fa-css3", style: { color: "#1572B6" } },
+        { skillName: "CSS3", fontAwesomeClassname: "simple-icons:css3", style: { color: "#1572B6" } },
         { skillName: "Tailwind CSS", fontAwesomeClassname: "devicon:tailwindcss", style: { color: "#1572B6" } },
         { skillName: "Bootstrap", fontAwesomeClassname: "devicon:bootstrap", style: { color: "#1572B6" } },
         { skillName: "MUI", fontAwesomeClassname: "simple-icons:mui", style: { color: "#1572B6" } },
@@ -39,6 +39,7 @@ export const skills = {
         { skillName: "Intellij", fontAwesomeClassname: "devicon:intellij", style: { color: "#38AFBB" } },
         { skillName: "Notion", fontAwesomeClassname: "devicon:notion", style: { color: "#38AFBB" } },
         { skillName: "Git", fontAwesomeClassname: "simple-icons:git", style: { color: "#E94E32" } },
+        { skillName: "Linux", fontAwesomeClassname: "simple-icons:linux", style: { color: "#FCC624" } },
         { skillName: "Azure", fontAwesomeClassname: "simple-icons:microsoftazure", style: { color: "#38AFBB" } },
       ],
     },

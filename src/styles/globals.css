@@ -190,7 +190,29 @@ body {
   width: 100%;
   padding: 15px 40px;
   box-sizing: border-box;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Page wrappers — full width + push footer to bottom on short pages */
+.home-main,
+.education-main,
+.experience-main,
+.projects-main,
+.contact-main,
+.developer-main,
+.case-study-main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#main-content {
+  flex: 1;
 }
 
 /* Logo - Left Side (Fixed Position) */
@@ -392,6 +414,7 @@ body {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     justify-content: flex-start;
+    background: inherit;
   }
 
   .nav-links {
@@ -3209,6 +3232,99 @@ body {
 }
 
 /* =============================================================================
+   14b. Developer Dashboard page
+   ============================================================================= */
+
+.basic-developer {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.developer-heading-div {
+  display: flex;
+}
+
+.developer-heading-div > * {
+  flex: 1;
+}
+
+.developer-heading-img-div {
+  align-items: center;
+  justify-content: center;
+}
+
+.developer-heading-text-div {
+  text-align: center;
+}
+
+.developer-heading-img-div > * {
+  max-width: 100%;
+  height: auto;
+}
+
+.developer-heading-text {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: "Google Sans Medium", sans-serif;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.developer-heading-sub-text {
+  font-size: 30px;
+  font-family: "Google Sans Regular", sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.developer-header-detail-text {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Google Sans Medium", sans-serif;
+}
+
+.developer-content-section {
+  padding: 3rem 0;
+}
+
+@media (max-width: 1380px) {
+  .developer-heading-text {
+    font-size: 50px;
+    margin-top: 80px;
+  }
+  .developer-heading-sub-text {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .developer-heading-text {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .developer-heading-sub-text {
+    font-size: 20px;
+  }
+
+  .developer-heading-div {
+    flex-direction: column;
+  }
+
+  .developer-header-detail-text {
+    font-size: 16px;
+    margin-right: 0px;
+    margin-left: 0px;
+    line-height: normal;
+    text-align: center;
+  }
+}
+
+/* =============================================================================
    15. src/pages/splash/Splash.css
    ============================================================================= */
 
@@ -3230,9 +3346,6 @@ body {
 body {
   padding: 0;
   margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .screen {
