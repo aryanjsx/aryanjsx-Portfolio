@@ -1,4 +1,3 @@
-import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import { Fade } from "react-awesome-reveal";
 
@@ -31,7 +30,7 @@ export default function BrandSEO() {
             fontWeight: 700,
             textAlign: "center",
             marginBottom: "0.5rem",
-            fontFamily: "'Google Sans Bold', sans-serif",
+            fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 700,
           }}
         >
           About AryanJSX
@@ -54,7 +53,7 @@ export default function BrandSEO() {
             textAlign: "center",
             maxWidth: 800,
             margin: "0 auto 2.5rem",
-            fontFamily: "'Google Sans Regular', sans-serif",
+            fontFamily: "var(--font-google-sans), sans-serif",
           }}
         >
           <p>
@@ -65,7 +64,7 @@ export default function BrandSEO() {
           </p>
           <p style={{ marginTop: "1rem" }}>
             The aryanjsx portfolio showcases production-grade projects built with React, Next.js, Node.js,
-            Python, and cloud-native technologies. Whether it's building scalable web applications, designing
+            Python, and cloud-native technologies. Whether it&apos;s building scalable web applications, designing
             CI/CD pipelines, or crafting developer tools — aryanjsx delivers engineering excellence.
           </p>
         </div>
@@ -77,7 +76,7 @@ export default function BrandSEO() {
             fontWeight: 600,
             textAlign: "center",
             marginBottom: "1.25rem",
-            fontFamily: "'Google Sans Medium', sans-serif",
+            fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 500,
           }}
         >
           Find aryanjsx on
@@ -108,7 +107,7 @@ export default function BrandSEO() {
                 color: theme.text,
                 textDecoration: "none",
                 fontSize: "0.85rem",
-                fontFamily: "'Google Sans Regular', sans-serif",
+                fontFamily: "var(--font-google-sans), sans-serif",
                 transition: "border-color 0.2s",
               }}
             >

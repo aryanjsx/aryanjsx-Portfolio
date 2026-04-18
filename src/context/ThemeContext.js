@@ -1,9 +1,8 @@
-import React, {
+import {
   createContext,
   useContext,
   useState,
   useCallback,
-  useEffect,
 } from "react";
 
 const lightTheme = {
@@ -42,19 +41,19 @@ const themes = { light: lightTheme, dark: darkTheme };
 
 const ThemeContext = createContext(undefined);
 
-export function ThemeProvider({ children }) {
-  const [themeName, setThemeName] = useState("dark");
+function getInitialTheme() {
+  if (typeof window === "undefined") return "dark";
+  try {
+    const stored = localStorage.getItem("theme");
+    if (stored && themes[stored]) return stored;
+  } catch {
+    /* storage unavailable */
+  }
+  return "dark";
+}
 
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem("theme");
-      if (stored && themes[stored]) {
-        setThemeName(stored);
-      }
-    } catch {
-      /* storage unavailable */
-    }
-  }, []);
+export function ThemeProvider({ children }) {
+  const [themeName, setThemeName] = useState(getInitialTheme);
 
   const theme = themes[themeName] || themes.dark;
 

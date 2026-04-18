@@ -1,8 +1,7 @@
-import React from "react";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import { greeting, aboutSEO } from "../../data/greeting";
 import { Fade } from "react-awesome-reveal";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useTheme } from "../../context/ThemeContext";
 import FeelingProud from "../../assets/illustrations/FeelingProud";
 
@@ -33,7 +32,7 @@ export default function Greeting() {
             </span>
             <h2 className="visually-hidden">Software Engineer & Full Stack Developer</h2>
             <p className="greeting-role" style={{ color: theme.text }}>
-              I'm a{" "}
+              I&apos;m a{" "}
               <span className="role-highlight" style={{ color: theme.accentColor }}>
                 Full Stack Developer
                 <span
