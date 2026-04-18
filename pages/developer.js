@@ -1,4 +1,3 @@
-import React from "react";
 import dynamic from "next/dynamic";
 import { Fade } from "react-awesome-reveal";
 import Header from "../src/components/header/Header";
@@ -52,7 +51,7 @@ export default function DeveloperPage() {
                   Developer Dashboard
                 </h2>
                 <p className="developer-header-detail-text subTitle" style={{ color: theme.secondaryText }}>
-                  Open-source activity, published packages, technical writing, and what I'm building right now.
+                  Open-source activity, published packages, technical writing, and what I&apos;m building right now.
                 </p>
               </div>
             </div>

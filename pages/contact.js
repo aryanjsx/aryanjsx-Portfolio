@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import Header from "../src/components/header/Header";
 import Footer from "../src/components/footer/Footer";
@@ -50,7 +49,7 @@ export default function ContactPage() {
                 </div>
                 <h1 className="contact-heading-text" style={{ color: theme.text, marginTop: "20px" }}>Aryan Kumar </h1>
                 <h2 className="contact-heading-sub-text" style={{ color: theme.accentColor }}>
-                  Contact Aryan Kumar — Let's Work Together
+                  Contact Aryan Kumar — Let&apos;s Work Together
                 </h2>
                 <p className="contact-header-detail-text subTitle" style={{ color: theme.secondaryText }}>{ContactData.description}</p>
                 <div className="contact-social"><SocialMedia /></div>
