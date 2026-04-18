@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import Header from "../src/components/header/Header";
-import Footer from "../src/components/footer/Footer";
-import SEO from "../src/components/SEO/SEO";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Header from "../../src/components/header/Header";
+import Footer from "../../src/components/footer/Footer";
+import SEO from "../../src/components/SEO/SEO";
 import { Fade } from "react-awesome-reveal";
-import { projectsHeader, projects, npmPackages } from "../src/data/projects";
-import { socialMediaLinks } from "../src/data/socialMedia";
-import ProjectsImg from "../src/assets/illustrations/ProjectsImg";
-import NpmPackageCard from "../src/components/projects/NpmPackageCard";
-import { getCardStyle } from "../src/utils/cardStyle";
-import { useTheme } from "../src/context/ThemeContext";
-import IconifyIcon from "../src/components/IconifyIcon";
+import { projectsHeader, projects, npmPackages } from "../../src/data/projects";
+import { socialMediaLinks } from "../../src/data/socialMedia";
+import ProjectsImg from "../../src/assets/illustrations/ProjectsImg";
+import NpmPackageCard from "../../src/components/projects/NpmPackageCard";
+import { getCardStyle } from "../../src/utils/cardStyle";
+import { useTheme } from "../../src/context/ThemeContext";
+import IconifyIcon from "../../src/components/IconifyIcon";
 
 const getProjectIcon = (name) => {
   const iconMap = { github: "🔍", finder: "🔍", know: "🇮🇳", india: "🇮🇳", url: "🔗", qr: "📱", recipe: "🍳", chat: "💬" };
@@ -22,6 +24,7 @@ const getProjectIcon = (name) => {
 
 export default function ProjectsPage() {
   const { theme } = useTheme();
+  const router = useRouter();
   const [copiedPackageName, setCopiedPackageName] = useState(null);
   const [expandedTech, setExpandedTech] = useState({});
 
@@ -80,9 +83,9 @@ export default function ProjectsPage() {
               {projects.data.map((project, index) => (
                 <Fade key={project.name} direction="up" duration={600} delay={index * 100} triggerOnce>
                   <article className="project-card" style={getCardStyle(theme)}
-                    onClick={() => window.open(project.url || project.repo, "_blank")}
+                    onClick={() => { if (project.id) router.push(`/projects/${project.id}`); }}
                     role="link" tabIndex={0} aria-label={`${project.name} — ${project.description}`}
-                    onKeyDown={(e) => { if (e.key === "Enter") window.open(project.url || project.repo, "_blank"); }}>
+                    onKeyDown={(e) => { if (e.key === "Enter" && project.id) router.push(`/projects/${project.id}`); }}>
                     <div className="project-card-header">
                       <div className="project-icon" style={{ backgroundColor: `${theme.accentColor}20` }}>{getProjectIcon(project.name)}</div>
                       <div className="project-header-links">
@@ -121,6 +124,14 @@ export default function ProjectsPage() {
                           </span>
                         )}
                       </div>
+                      {project.id && (
+                        <Link href={`/projects/${project.id}`}
+                          className="case-study-link"
+                          onClick={(e) => e.stopPropagation()}
+                          style={{ color: theme.accentColor, fontSize: "0.85rem", marginTop: "0.75rem", display: "inline-block", textDecoration: "none", fontFamily: "'Google Sans Medium', sans-serif" }}>
+                          View Case Study →
+                        </Link>
+                      )}
                     </div>
                   </article>
                 </Fade>
