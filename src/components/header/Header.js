@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { useTheme } from "../../context/ThemeContext";
-import { greeting } from "../../data/greeting";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
 
@@ -32,9 +32,14 @@ function Header() {
       style={{ backgroundColor: `${theme.body}e6` }}
     >
       <Link href="/" className="logo" aria-label="Go to homepage">
-        <span className="logo-name" style={{ color: theme.text }}>
-          {greeting.logo_name}
-        </span>
+        <Image
+          src="/logo.png"
+          alt="aryanjsx logo"
+          width={40}
+          height={40}
+          className="logo-img"
+          priority
+        />
       </Link>
 
       <input

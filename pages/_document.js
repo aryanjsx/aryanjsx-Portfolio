@@ -1,5 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
+import { personSchema, websiteSchema } from "../src/utils/structuredData";
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -32,10 +33,18 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <link rel="icon" href="/favicon.ico" />
-          <meta name="author" content="aryanjsx" />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <link rel="icon" type="image/png" href="/logo.png" />
+          <link rel="apple-touch-icon" href="/logo.png" />
+          <meta name="author" content="Aryan Kumar (aryanjsx)" />
           <meta name="creator" content="aryanjsx" />
+          <link rel="me" href="https://github.com/aryanjsx" />
+          <link rel="me" href="https://www.linkedin.com/in/aryanjsx" />
           <link rel="me" href="https://x.com/aryanjsx" />
+          <link rel="me" href="https://aryanjsx.medium.com" />
+          <link rel="me" href="https://dev.to/aryanjsx" />
+          <link rel="me" href="https://www.npmjs.com/~aryanjsx" />
+          <link rel="me" href="https://app.daily.dev/aryanjsx" />
           <meta
             name="google-adsense-account"
             content="ca-pub-3385842186855848"
@@ -52,80 +61,11 @@ export default class MyDocument extends Document {
             name="google-site-verification"
             content="kKoA_bu1dIXSUlTsCLD335y9QhOM3fHqM8cBO7J22Ak"
           />
-          <link
-            rel="apple-touch-icon"
-            sizes="57x57"
-            href="/apple-icon-57x57.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="60x60"
-            href="/apple-icon-60x60.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="72x72"
-            href="/apple-icon-72x72.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="76x76"
-            href="/apple-icon-76x76.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="114x114"
-            href="/apple-icon-114x114.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="120x120"
-            href="/apple-icon-120x120.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="144x144"
-            href="/apple-icon-144x144.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="152x152"
-            href="/apple-icon-152x152.png"
-          />
-          <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/apple-icon-180x180.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="192x192"
-            href="/android-icon-192x192.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="/favicon-32x32.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="96x96"
-            href="/favicon-96x96.png"
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="/favicon-16x16.png"
-          />
           <link rel="manifest" href="/manifest.json" />
-          <meta name="msapplication-TileColor" content="#ffffff" />
+          <meta name="msapplication-TileColor" content="#000000" />
           <meta
             name="msapplication-TileImage"
-            content="/ms-icon-144x144.png"
+            content="/logo.png"
           />
           <meta name="theme-color" content="#000000" />
           <link
@@ -134,77 +74,40 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link
+            rel="dns-prefetch"
+            href="https://code.iconify.design"
+          />
+          <link
             rel="preconnect"
             href="https://cdnjs.cloudflare.com"
             crossOrigin="anonymous"
+          />
+          <link
+            rel="dns-prefetch"
+            href="https://cdnjs.cloudflare.com"
           />
           <link
             rel="preconnect"
             href="https://www.googletagmanager.com"
             crossOrigin="anonymous"
           />
+          <link
+            rel="preconnect"
+            href="https://api.github.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            rel="dns-prefetch"
+            href="https://api.github.com"
+          />
 {/* Iconify and anime.js loaded via next/script in _app.js */}
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "@id": "https://aryankr.in/#person",
-                name: "Aryan Kumar",
-                alternateName: ["aryanjsx", "AryanJSX", "Aryan Kumar"],
-                url: "https://aryankr.in",
-                identifier: "aryanjsx",
-                jobTitle: "Software Engineer",
-                description: "Software Engineer",
-                sameAs: [
-                  "https://github.com/aryanjsx",
-                  "https://x.com/aryanjsx",
-                  "https://instagram.com/aryanjsx",
-                  "https://facebook.com/aryanjsx",
-                  "https://pinterest.com/aryanjsx",
-                  "https://leetcode.com/aryanjsx",
-                  "https://www.hackerrank.com/aryanjsx",
-                  "https://medium.com/@aryanjsx",
-                  "https://dev.to/aryanjsx",
-                  "https://www.npmjs.com/aryanjsx",
-                  "https://hub.docker.com/u/aryanjsx",
-                  "https://linkedin.com/in/aryanjsx",
-                ],
-                image: {
-                  "@type": "ImageObject",
-                  url: "https://aryankr.in/logo512.png",
-                  contentUrl: "https://aryankr.in/logo512.png",
-                },
-              }),
-            }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
           />
           <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{
-              __html: JSON.stringify({
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "@id": "https://aryankr.in/#website",
-                name: "Aryan Kumar Portfolio",
-                alternateName: "Aryan Kumar Portfolio",
-                url: "https://aryankr.in",
-                description:
-                  "Personal portfolio and profile page for Aryan Kumar — Software Engineer.",
-                publisher: { "@id": "https://aryankr.in/#person" },
-                author: { "@id": "https://aryankr.in/#person" },
-                inLanguage: "en-US",
-                potentialAction: {
-                  "@type": "SearchAction",
-                  target: {
-                    "@type": "EntryPoint",
-                    urlTemplate:
-                      "https://aryankr.in/?q={search_term_string}",
-                  },
-                  "query-input": "required name=search_term_string",
-                },
-              }),
-            }}
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
           />
         </Head>
         <body>

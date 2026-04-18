@@ -1,4 +1,10 @@
+# *
 User-agent: *
 Allow: /
 
-Sitemap: https://www.aryankr.in/sitemap.xml
+# Host
+Host: https://aryankr.in
+
+# Sitemaps
+Sitemap: https://aryankr.in/sitemap.xml
+Sitemap: https://aryankr.in/image-sitemap.xml

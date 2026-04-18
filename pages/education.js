@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Header from "../src/components/header/Header";
 import Footer from "../src/components/footer/Footer";
 import EducationImg from "../src/assets/illustrations/EducationImg";
@@ -44,7 +45,7 @@ export default function EducationPage() {
                 <Fade key={degree.title} direction={index % 2 === 0 ? "left" : "right"} duration={800} delay={index * 100} triggerOnce>
                   <div className="degree-item">
                     <div className="degree-logo-wrapper" style={{ backgroundColor: theme.imageDark || "#1a1a2e", border: `3px solid ${theme.accentColor}`, boxShadow: `0 4px 20px ${theme.accentColor}30` }}>
-                      <img src={`/images/${degree.logo_path}`} alt={`Aryan Kumar (AryanJSX) education — ${degree.title}, ${degree.subtitle}`} loading="lazy" />
+                      <Image src={`/images/${degree.logo_path}`} alt={`Aryan Kumar (AryanJSX) education — ${degree.title}, ${degree.subtitle}`} width={80} height={80} style={{ objectFit: "contain" }} />
                     </div>
                     <div className="degree-card" style={{ backgroundColor: theme.imageDark || "#1a1a2e", border: `1px solid ${theme.text}20`, boxShadow: `0 4px 20px ${theme.text}10` }}>
                       <div className="degree-card-header">
@@ -82,7 +83,7 @@ export default function EducationPage() {
                     <span className="cert-badge" style={{ backgroundColor: cert.color_code, color: "#fff" }}>Verified</span>
                     <a href={cert.certificate_link} target="_blank" rel="noopener noreferrer" className="cert-card-inner">
                       <div className="cert-header" style={{ backgroundColor: `${cert.color_code}15` }}>
-                        <img src={`/images/${cert.logo_path}`} alt={`Aryan Kumar (AryanJSX) certification — ${cert.title} by ${cert.subtitle}`} loading="lazy" />
+                        <Image src={`/images/${cert.logo_path}`} alt={`Aryan Kumar (AryanJSX) certification — ${cert.title} by ${cert.subtitle}`} width={60} height={60} style={{ objectFit: "contain" }} />
                       </div>
                       <div className="cert-body">
                         <h3 className="cert-title" style={{ color: theme.text }}>{cert.title}</h3>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { useTheme } from "../../context/ThemeContext";
 
 const GITHUB_USERNAME = "aryanjsx";
@@ -86,7 +87,7 @@ export default function GithubActivity() {
       {/* Profile header */}
       <div style={profileRowStyle}>
         {profile.avatar_url && (
-          <img
+          <Image
             src={profile.avatar_url}
             alt={profile.name || GITHUB_USERNAME}
             width={80}

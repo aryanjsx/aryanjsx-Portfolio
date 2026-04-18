@@ -1,4 +1,6 @@
-export const npmPackagesList = [
+import { NpmPackage } from "../types";
+
+export const npmPackagesList: NpmPackage[] = [
   {
     name: "@aryanjsx/api-response",
     displayName: "Api Response",

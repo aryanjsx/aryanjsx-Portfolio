@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { useTheme } from "../../context/ThemeContext";
 
 export default function ArchitectureDiagram({ src, alt, caption }) {
@@ -10,6 +11,7 @@ export default function ArchitectureDiagram({ src, alt, caption }) {
     <figure style={{ margin: 0 }}>
       <div
         style={{
+          position: "relative",
           backgroundColor: theme.imageDark,
           border: `1px solid ${theme.text}15`,
           borderRadius: 12,
@@ -17,17 +19,15 @@ export default function ArchitectureDiagram({ src, alt, caption }) {
           padding: "1.5rem",
         }}
       >
-        <img
-          src={src}
-          alt={alt || "Architecture diagram"}
-          loading="lazy"
-          style={{
-            width: "100%",
-            height: "auto",
-            display: "block",
-            borderRadius: 8,
-          }}
-        />
+        <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
+          <Image
+            src={src}
+            alt={alt || "Architecture diagram"}
+            fill
+            sizes="(max-width: 900px) 100vw, 800px"
+            style={{ objectFit: "contain", borderRadius: 8 }}
+          />
+        </div>
       </div>
       {caption && (
         <figcaption

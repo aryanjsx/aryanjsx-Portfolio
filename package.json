@@ -6,13 +6,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
+    "test": "jest",
+    "test:ci": "jest --ci --coverage",
+    "analyze": "ANALYZE=true next build",
     "generate:sitemap": "node generate-sitemap.js",
     "prepare": "husky install"
   },
   "dependencies": {
     "next": "^14.2.35",
+    "next-sitemap": "^4.2.3",
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.3.1",
     "react-dom": "^18.3.1",
@@ -24,10 +29,18 @@
     "fsevents": "^2.3.3"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^16.2.4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.2.14",
     "husky": "^9.1.7",
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
     "lint-staged": "^16.2.7",
     "prettier": "3.8.1",
-    "prettier-package-json": "^2.8.0"
+    "prettier-package-json": "^2.8.0",
+    "typescript": "^6.0.3"
   },
   "engines": {
     "node": ">=18.0.0"

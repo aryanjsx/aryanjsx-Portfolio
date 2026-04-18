@@ -1,4 +1,6 @@
-export const currentlyBuilding = [
+import { CurrentProject } from "../types";
+
+export const currentlyBuilding: CurrentProject[] = [
   {
     title: "AURA",
     description:

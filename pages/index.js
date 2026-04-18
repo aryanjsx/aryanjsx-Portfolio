@@ -5,21 +5,17 @@ import Skills from "../src/containers/skills/Skills";
 import Footer from "../src/components/footer/Footer";
 import SEO from "../src/components/SEO/SEO";
 import Head from "next/head";
-
-const profilePageSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  dateModified: "2026-02-18",
-  mainEntity: { "@id": "https://aryankr.in/#person" },
-  url: "https://aryankr.in",
-};
+import { profilePageSchema } from "../src/utils/structuredData";
+import BrandSEO from "../src/components/BrandSEO";
 
 export default function HomePage() {
   return (
     <>
       <SEO
         path="/"
-        keywords="aryanjsx, aryan kumar, aryan kumar software engineer, aryan kumar portfolio, full stack developer, software engineer portfolio"
+        title="Aryan Kumar (aryanjsx) | Software Engineer | DevOps | Full-Stack Developer"
+        description="Official portfolio of Aryan Kumar (aryanjsx), Software Engineer specializing in DevOps, Azure, system architecture, and full-stack development. Explore projects, open-source work, and contact."
+        keywords="aryanjsx, aryan kumar developer, aryanjsx github, aryanjsx portfolio, aryan kumar devops engineer, aryan kumar software engineer, full stack developer, aryan kumar azure, aryanjsx npm, aryan kumar open source"
       />
       <Head>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageSchema) }} />
@@ -29,6 +25,7 @@ export default function HomePage() {
         <main id="main-content">
           <Greeting />
           <Skills />
+          <BrandSEO />
         </main>
         <Footer />
       </div>

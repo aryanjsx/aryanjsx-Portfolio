@@ -3,6 +3,7 @@ import Script from "next/script";
 import { ThemeProvider as SCThemeProvider } from "styled-components";
 import { ThemeProvider, useTheme } from "../src/context/ThemeContext";
 import { GlobalStyles } from "../src/styles/global";
+import ErrorBoundary from "../src/components/ErrorBoundary";
 import TagManager from "react-gtm-module";
 import "../src/styles/globals.css";
 
@@ -12,7 +13,9 @@ function InnerApp({ Component, pageProps }) {
   return (
     <SCThemeProvider theme={theme}>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <ErrorBoundary>
+        <Component {...pageProps} />
+      </ErrorBoundary>
     </SCThemeProvider>
   );
 }

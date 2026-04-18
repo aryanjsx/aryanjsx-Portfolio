@@ -219,17 +219,15 @@ body {
 .header .logo {
   display: flex;
   align-items: center;
-  font-size: 1.5em;
   text-decoration: none;
   position: absolute;
   left: 40px;
 }
 
-.header .logo-name {
-  font-family: "Google Sans Regular";
-  font-weight: bold;
-  padding: 0 10px;
-  letter-spacing: 3px;
+.header .logo-img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
 }
 
 /* Navigation Menu - Center (Takes Full Width, Centered Content) */
@@ -391,7 +389,6 @@ body {
   .header .logo {
     position: relative;
     left: auto;
-    font-size: 1.25em;
     order: 1;
   }
 
@@ -461,9 +458,9 @@ body {
     padding: 10px 15px;
   }
 
-  .header .logo-name {
-    letter-spacing: 2px;
-    font-size: 0.9em;
+  .header .logo-img {
+    height: 32px;
+    width: 32px;
   }
 }
 

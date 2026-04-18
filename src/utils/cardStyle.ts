@@ -1,7 +1,9 @@
-/**
- * Shared card style for project and npm package cards.
- */
-export function getCardStyle(theme) {
+interface Theme {
+  imageDark: string;
+  text: string;
+}
+
+export function getCardStyle(theme: Theme): React.CSSProperties {
   return {
     backgroundColor: theme.imageDark,
     border: `1px solid ${theme.text}15`,

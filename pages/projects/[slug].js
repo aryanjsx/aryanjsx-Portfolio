@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import Head from "next/head";
+import dynamic from "next/dynamic";
 import { Fade } from "react-awesome-reveal";
 import Header from "../../src/components/header/Header";
 import Footer from "../../src/components/footer/Footer";
@@ -7,13 +9,15 @@ import SEO from "../../src/components/SEO/SEO";
 import Section from "../../src/components/ui/Section";
 import SectionHeader from "../../src/components/ui/SectionHeader";
 import Badge from "../../src/components/ui/Badge";
-import Gallery from "../../src/components/projects/Gallery";
-import ArchitectureDiagram from "../../src/components/projects/ArchitectureDiagram";
 import {
   getProjectBySlug,
   getAllProjectSlugs,
 } from "../../src/data/projects";
+import { projectSchema } from "../../src/utils/structuredData";
 import { useTheme } from "../../src/context/ThemeContext";
+
+const Gallery = dynamic(() => import("../../src/components/projects/Gallery"), { ssr: false });
+const ArchitectureDiagram = dynamic(() => import("../../src/components/projects/ArchitectureDiagram"));
 
 export async function getStaticPaths() {
   return {
@@ -35,11 +39,14 @@ export default function CaseStudyPage({ project }) {
   return (
     <>
       <SEO
-        title={`${p.name} — Case Study | Aryan Kumar (AryanJSX)`}
+        title={`${p.name} — Case Study | Aryan Kumar (aryanjsx)`}
         description={p.shortDescription || p.description}
         path={`/projects/${p.id}`}
-        keywords={`${p.name}, ${p.techStack ? p.techStack.join(", ") : ""}, aryanjsx, aryan kumar, case study`}
+        keywords={`${p.name}, ${p.techStack ? p.techStack.join(", ") : ""}, aryanjsx, aryan kumar, case study, aryanjsx projects`}
       />
+      <Head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(projectSchema(p)) }} />
+      </Head>
 
       <div className="case-study-main">
         <Header />

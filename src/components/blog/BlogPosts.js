@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { useTheme } from "../../context/ThemeContext";
 
 const RSS_URL =
@@ -73,10 +74,11 @@ export default function BlogPosts() {
         >
           {post.thumbnail && (
             <div style={thumbWrapStyle}>
-              <img
+              <Image
                 src={post.thumbnail}
                 alt={post.title}
-                loading="lazy"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
                 style={thumbStyle}
               />
             </div>
@@ -137,6 +139,7 @@ function cardStyle(theme) {
 }
 
 const thumbWrapStyle = {
+  position: "relative",
   width: "100%",
   aspectRatio: "16/9",
   overflow: "hidden",

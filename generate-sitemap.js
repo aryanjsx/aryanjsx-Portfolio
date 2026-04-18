@@ -45,7 +45,7 @@ function buildSitemap() {
     if (route.image && route.path === "/") {
       entry += `
     <image:image>
-      <image:loc>${escapeXml(`${SITE_URL}/logo512.png`)}</image:loc>
+      <image:loc>${escapeXml(`${SITE_URL}/logo.png`)}</image:loc>
       <image:title>Aryan Kumar (AryanJSX) — Software Engineer &amp; Full Stack Developer Portfolio</image:title>
       <image:caption>Aryan Kumar aka AryanJSX portfolio — Software Engineer, Full Stack Developer</image:caption>
     </image:image>`;

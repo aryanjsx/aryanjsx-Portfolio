@@ -1,16 +1,29 @@
 import React from "react";
+import dynamic from "next/dynamic";
 import { Fade } from "react-awesome-reveal";
 import Header from "../src/components/header/Header";
 import Footer from "../src/components/footer/Footer";
 import SEO from "../src/components/SEO/SEO";
 import Section from "../src/components/ui/Section";
 import SectionHeader from "../src/components/ui/SectionHeader";
-import GithubActivity from "../src/components/developer/GithubActivity";
-import NpmStats from "../src/components/developer/NpmStats";
-import BlogPosts from "../src/components/blog/BlogPosts";
 import CurrentlyBuilding from "../src/components/developer/CurrentlyBuilding";
 import BlogsImg from "../src/assets/illustrations/BlogsImg";
 import { useTheme } from "../src/context/ThemeContext";
+
+const GithubActivity = dynamic(
+  () => import("../src/components/developer/GithubActivity"),
+  { loading: () => <div style={{ textAlign: "center", padding: "3rem 0", color: "#888" }}>Loading GitHub activity...</div> }
+);
+
+const NpmStats = dynamic(
+  () => import("../src/components/developer/NpmStats"),
+  { loading: () => <div style={{ textAlign: "center", padding: "3rem 0", color: "#888" }}>Loading npm stats...</div> }
+);
+
+const BlogPosts = dynamic(
+  () => import("../src/components/blog/BlogPosts"),
+  { loading: () => <div style={{ textAlign: "center", padding: "3rem 0", color: "#888" }}>Loading blog posts...</div> }
+);
 
 export default function DeveloperPage() {
   const { theme } = useTheme();
@@ -18,10 +31,10 @@ export default function DeveloperPage() {
   return (
     <>
       <SEO
-        title="Developer Dashboard | Aryan Kumar (AryanJSX)"
-        description="GitHub activity, open-source packages, technical writing, and current projects by Aryan Kumar (AryanJSX)."
+        title="Developer Dashboard | Aryan Kumar (aryanjsx) — GitHub, npm, Open Source"
+        description="Live developer dashboard for aryanjsx (Aryan Kumar). GitHub activity, npm packages, technical writing, and current open-source projects by aryanjsx."
         path="/developer"
-        keywords="aryanjsx developer dashboard, github activity, npm packages, open source, aryan kumar developer"
+        keywords="aryanjsx developer dashboard, aryanjsx github, aryanjsx npm packages, aryanjsx open source, aryan kumar developer, aryanjsx blog, aryanjsx projects"
       />
 
       <div className="developer-main">

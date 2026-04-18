@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Header from "../src/components/header/Header";
 import Footer from "../src/components/footer/Footer";
 import SocialMedia from "../src/components/socialMedia/SocialMedia";
@@ -35,9 +36,10 @@ export default function ContactPage() {
               <div className="contact-heading-img-div">
                 <div className="profile-pic-wrapper">
                   <div className="profile-pic-ring" style={{ borderColor: theme.accentColor }} />
-                  <img className="profile-pic" src={`/images/${ContactData.profile_image_path}`}
+                  <Image className="profile-pic" src={`/images/${ContactData.profile_image_path}`}
                     alt="Aryan Kumar (AryanJSX) — Software Engineer & Full Stack Developer — Contact Aryan Kumar"
-                    loading="lazy"
+                    width={200} height={200}
+                    priority
                     style={{ border: `4px solid ${theme.imageDark}`, boxShadow: `0 20px 50px ${theme.text}20` }} />
                 </div>
               </div>

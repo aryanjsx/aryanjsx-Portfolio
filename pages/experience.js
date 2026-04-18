@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Image from "next/image";
 import Header from "../src/components/header/Header";
 import Footer from "../src/components/footer/Footer";
 import SEO from "../src/components/SEO/SEO";
@@ -81,11 +82,11 @@ export default function ExperiencePage() {
                     <div className="timeline-dot" style={{ backgroundColor: theme.accentColor }} />
                     <div className="timeline-card" style={{ backgroundColor: theme.imageDark, border: `1px solid ${exp.color || theme.accentColor}40`, boxShadow: `0 4px 20px ${theme.text}08` }}>
                       <div className="timeline-card-header">
-                        <img className="company-logo"
+                        <Image className="company-logo"
                           src={EXPERIENCE_LOGO_MAP[exp.logo_path] || DEFAULT_LOGO}
                           alt={`Aryan Kumar (AryanJSX) — ${exp.title} at ${exp.company} — Software Engineer experience`}
-                          style={{ backgroundColor: theme.body, border: `1px solid ${theme.text}10` }}
-                          loading="lazy" />
+                          width={48} height={48}
+                          style={{ backgroundColor: theme.body, border: `1px solid ${theme.text}10`, objectFit: "contain" }} />
                         <div className="timeline-card-info">
                           <h3 className="timeline-card-title" style={{ color: theme.text }}>{exp.title}</h3>
                           <p className="timeline-card-company">

@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
+import Image from "next/image";
 import { useTheme } from "../../context/ThemeContext";
 
 export default function Gallery({ screenshots = [], projectName = "" }) {
@@ -51,12 +52,15 @@ export default function Gallery({ screenshots = [], projectName = "" }) {
               border: `1px solid ${theme.text}15`,
             }}
           >
-            <img
-              src={src}
-              alt={`${projectName} screenshot ${i + 1}`}
-              loading="lazy"
-              style={thumbImgStyle}
-            />
+            <div style={{ position: "relative", width: "100%", aspectRatio: "16/9" }}>
+              <Image
+                src={src}
+                alt={`${projectName} screenshot ${i + 1}`}
+                fill
+                sizes="(max-width: 768px) 100vw, 280px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
           </button>
         ))}
       </div>
