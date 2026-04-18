@@ -1,43 +1,20 @@
 import React from "react";
-import "./Footer.css";
 import { Fade } from "react-awesome-reveal";
-import { greeting, socialMediaLinks } from "../../portfolio.js";
+import { useTheme } from "../../context/ThemeContext";
+import { greeting } from "../../data/greeting";
+import { socialMediaLinks } from "../../data/socialMedia";
+import { FaGithub, FaLinkedinIn, FaEnvelope, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const FOOTER_LINKS = [
-  {
-    label: "GitHub",
-    href: socialMediaLinks.github,
-    icon: "fab fa-github",
-    aria: "Visit aryanjsx's GitHub",
-  },
-  {
-    label: "LinkedIn",
-    href: socialMediaLinks.linkedin,
-    icon: "fab fa-linkedin-in",
-    aria: "Visit aryanjsx's LinkedIn",
-  },
-  {
-    label: "Email",
-    href: `mailto:${socialMediaLinks.gmail}`,
-    icon: "fas fa-envelope",
-    aria: "Email aryanjsx",
-  },
-  {
-    label: "Twitter",
-    href: socialMediaLinks.twitter,
-    icon: "fab fa-twitter",
-    aria: "Visit aryanjsx's Twitter",
-  },
-  {
-    label: "Instagram",
-    href: socialMediaLinks.instagram,
-    icon: "fab fa-instagram",
-    aria: "Visit aryanjsx's Instagram",
-  },
+  { label: "GitHub", href: socialMediaLinks.github, Icon: FaGithub, aria: "Visit aryanjsx's GitHub" },
+  { label: "LinkedIn", href: socialMediaLinks.linkedin, Icon: FaLinkedinIn, aria: "Visit aryanjsx's LinkedIn" },
+  { label: "Email", href: `mailto:${socialMediaLinks.gmail}`, Icon: FaEnvelope, aria: "Email aryanjsx" },
+  { label: "Twitter", href: socialMediaLinks.twitter, Icon: FaTwitter, aria: "Visit aryanjsx's Twitter" },
+  { label: "Instagram", href: socialMediaLinks.instagram, Icon: FaInstagram, aria: "Visit aryanjsx's Instagram" },
 ];
 
-export default function Footer(props) {
-  const theme = props.theme;
+export default function Footer() {
+  const { theme } = useTheme();
 
   return (
     <footer
@@ -55,10 +32,7 @@ export default function Footer(props) {
         <div className="footer__accent-line" />
         <div className="footer__row">
           <div className="footer__left">
-            <p
-              className="footer__copyright"
-              style={{ color: theme.secondaryText }}
-            >
+            <p className="footer__copyright" style={{ color: theme.secondaryText }}>
               © {new Date().getFullYear()} aryanjsx
             </p>
           </div>
@@ -74,12 +48,8 @@ export default function Footer(props) {
             >
               {greeting.full_name}
             </a>
-            <span
-              className="footer__handle"
-              style={{ color: theme.secondaryText }}
-            >
-              {" "}
-              (aryanjsx)
+            <span className="footer__handle" style={{ color: theme.secondaryText }}>
+              {" "}(aryanjsx)
             </span>
           </p>
           <nav className="footer__social" aria-label="Social links">
@@ -93,7 +63,7 @@ export default function Footer(props) {
                 aria-label={item.aria}
                 style={{ color: theme.secondaryText }}
               >
-                <i className={item.icon} aria-hidden="true" />
+                <item.Icon aria-hidden="true" />
               </a>
             ))}
           </nav>

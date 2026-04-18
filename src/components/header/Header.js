@@ -1,27 +1,15 @@
-import React, { useState } from "react";
-import "./Header.css";
+import React from "react";
 import { Fade } from "react-awesome-reveal";
-import { NavLink } from "react-router-dom";
-import { greeting, settings } from "../../portfolio.js";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useTheme } from "../../context/ThemeContext";
+import { greeting } from "../../data/greeting";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
 
-function Header(props) {
-  const theme = props.theme;
-  const link = settings.isSplash ? "/splash" : "home";
-
-  const [currTheme, setCurrTheme] = useState(theme.name);
-
-  function changeTheme() {
-    const next = currTheme === "light" ? "dark" : "light";
-    props.setTheme(next);
-    try {
-      localStorage.setItem("theme", next);
-    } catch {
-      /* storage unavailable */
-    }
-    setCurrTheme(next);
-  }
+function Header() {
+  const { theme, toggleTheme } = useTheme();
+  const router = useRouter();
 
   const icon =
     theme.name === "dark" ? (
@@ -30,14 +18,22 @@ function Header(props) {
       <CgSun strokeWidth={1} size={20} color="#F9D784" />
     );
 
+  const navLinks = [
+    { href: "/", label: "Home" },
+    { href: "/education", label: "Education" },
+    { href: "/experience", label: "Experience" },
+    { href: "/projects", label: "Projects" },
+    { href: "/contact", label: "Contact" },
+  ];
+
   return (
     <Fade direction="down" duration={1000} triggerOnce>
       <header className="header">
-        <NavLink to={link} className="logo" aria-label="Go to homepage">
+        <Link href="/" className="logo" aria-label="Go to homepage">
           <span className="logo-name" style={{ color: theme.text }}>
             {greeting.logo_name}
           </span>
-        </NavLink>
+        </Link>
 
         <input
           className="menu-btn"
@@ -49,11 +45,10 @@ function Header(props) {
         <div className="theme-btn-wrapper">
           <button
             className="theme-toggle-btn"
-            onClick={changeTheme}
+            onClick={toggleTheme}
             aria-label="Toggle theme"
             style={{
-              backgroundColor:
-                theme.name === "light" ? "#7CD1F7" : "#292C3F",
+              backgroundColor: theme.name === "light" ? "#7CD1F7" : "#292C3F",
             }}
           >
             {icon}
@@ -71,31 +66,17 @@ function Header(props) {
 
         <nav className="menu" aria-label="Main navigation">
           <ul className="nav-links">
-            <li>
-              <NavLink to="/home" style={{ color: theme.text }}>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/education" style={{ color: theme.text }}>
-                Education
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/experience" style={{ color: theme.text }}>
-                Experience
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/projects" style={{ color: theme.text }}>
-                Projects
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact" style={{ color: theme.text }}>
-                Contact
-              </NavLink>
-            </li>
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={router.pathname === link.href ? "active" : ""}
+                  style={{ color: theme.text }}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </header>

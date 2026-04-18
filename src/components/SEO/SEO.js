@@ -1,6 +1,5 @@
-import React from "react";
-import { Helmet } from "react-helmet-async";
-import { greeting } from "../../portfolio";
+import Head from "next/head";
+import { greeting } from "../../data/greeting";
 
 const BASE_URL = "https://aryankr.in";
 const DEFAULT_IMAGE = `${BASE_URL}/logo512.png`;
@@ -10,11 +9,10 @@ const GLOBAL_TITLE =
 const GLOBAL_DESCRIPTION =
   "Aryan Kumar aka AryanJSX — Software Engineer, Full Stack Developer, DevOps enthusiast. Explore portfolio, projects, resume and contact.";
 
-const SEO = ({ title, description, image, path = "/", keywords }) => {
+const SEO = ({ title, description, image, path = "/", keywords, children }) => {
   const siteTitle = title || GLOBAL_TITLE;
   const siteDescription = description || GLOBAL_DESCRIPTION;
   const siteImage = image || DEFAULT_IMAGE;
-
   const siteUrl =
     path === "/" || path === ""
       ? BASE_URL
@@ -24,26 +22,21 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
   const siteKeywords = keywords || defaultKeywords;
 
   return (
-    <Helmet>
+    <Head>
       <title>{siteTitle}</title>
       <meta name="description" content={siteDescription} />
       <meta name="keywords" content={siteKeywords} />
       <meta name="author" content={`${greeting.full_name} (AryanJSX)`} />
       <meta name="robots" content="index, follow" />
+      <link rel="canonical" href={siteUrl} />
 
       <meta property="og:type" content="website" />
       <meta property="og:url" content={siteUrl} />
       <meta property="og:title" content={siteTitle} />
       <meta property="og:description" content={siteDescription} />
       <meta property="og:image" content={siteImage} />
-      <meta
-        property="og:image:alt"
-        content="Aryan Kumar (AryanJSX) — Software Engineer & Full Stack Developer Portfolio"
-      />
-      <meta
-        property="og:site_name"
-        content="Aryan Kumar (AryanJSX) Portfolio"
-      />
+      <meta property="og:image:alt" content="Aryan Kumar (AryanJSX) — Software Engineer & Full Stack Developer Portfolio" />
+      <meta property="og:site_name" content="Aryan Kumar (AryanJSX) Portfolio" />
       <meta property="og:locale" content="en_US" />
 
       <meta name="twitter:card" content="summary_large_image" />
@@ -53,8 +46,8 @@ const SEO = ({ title, description, image, path = "/", keywords }) => {
       <meta name="twitter:image" content={siteImage} />
       <meta name="twitter:creator" content="@aryanjsx" />
       <meta name="twitter:site" content="@aryanjsx" />
-
-    </Helmet>
+      {children}
+    </Head>
   );
 };
 

@@ -1,0 +1,95 @@
+import React, {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  useEffect,
+} from "react";
+
+const lightTheme = {
+  name: "light",
+  body: "#F2F2F5",
+  text: "#1D1D1F",
+  dark: "#000000",
+  secondaryText: "#6E6E73",
+  accentColor: "#E3405F",
+  accentBright: "#FC1056",
+  skinColor: "#F7B799",
+  skinColor2: "#FA9161",
+  imageDark: "#E8E8ED",
+  imageClothes: "#E8E8ED",
+  avatarMisc: "#E5E5EA",
+  avatarShoes: "#D1D1D6",
+};
+
+const darkTheme = {
+  name: "dark",
+  body: "#1D1D1D",
+  text: "#FFFFFF",
+  dark: "#000000",
+  secondaryText: "#8D8D8D",
+  accentColor: "#E3405F",
+  accentBright: "#FC1056",
+  skinColor: "#F7B799",
+  skinColor2: "#FCB696",
+  imageDark: "#292A2D",
+  imageClothes: "#000000",
+  avatarMisc: "#212121",
+  avatarShoes: "#2B2B2B",
+};
+
+const themes = { light: lightTheme, dark: darkTheme };
+
+const ThemeContext = createContext(undefined);
+
+export function ThemeProvider({ children }) {
+  const [themeName, setThemeName] = useState("dark");
+
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("theme");
+      if (stored && themes[stored]) {
+        setThemeName(stored);
+      }
+    } catch {
+      /* storage unavailable */
+    }
+  }, []);
+
+  const theme = themes[themeName] || themes.dark;
+
+  const toggleTheme = useCallback(() => {
+    setThemeName((prev) => {
+      const next = prev === "light" ? "dark" : "light";
+      try {
+        localStorage.setItem("theme", next);
+      } catch {
+        /* storage unavailable */
+      }
+      return next;
+    });
+  }, []);
+
+  const setTheme = useCallback((name) => {
+    setThemeName(name);
+    try {
+      localStorage.setItem("theme", name);
+    } catch {
+      /* storage unavailable */
+    }
+  }, []);
+
+  return (
+    <ThemeContext.Provider value={{ theme, themeName, toggleTheme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+export function useTheme() {
+  const ctx = useContext(ThemeContext);
+  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
+  return ctx;
+}
+
+export { themes };
