@@ -22,6 +22,9 @@ function App() {
       <>
         <SEO />
         <GlobalStyles />
+        <a className="skip-to-content" href="#main-content">
+          Skip to content
+        </a>
         <div>
           <Main theme={themes[theme]} setTheme={setTheme} />
         </div>

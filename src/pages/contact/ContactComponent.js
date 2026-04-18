@@ -62,7 +62,7 @@ function Contact(props) {
       <div className="contact-main">
         <Header theme={theme} setTheme={props.setTheme} />
 
-        <div className="basic-contact">
+        <main id="main-content" className="basic-contact">
           {/* Hero Section - Same structure as Experience/Education */}
           <Fade direction="down" duration={2000} triggerOnce>
             <div className="contact-heading-div">
@@ -75,7 +75,7 @@ function Contact(props) {
                   <img
                     className="profile-pic"
                     src={require(
-                      `../../assests/images/${ContactData.profile_image_path}`,
+                      `../../assets/images/${ContactData.profile_image_path}`,
                     )}
                     alt="Aryan Kumar (AryanJSX) — Software Engineer & Full Stack Developer — Contact Aryan Kumar"
                     loading="lazy"
@@ -361,7 +361,7 @@ function Contact(props) {
               </a>
             </div>
           </Fade>
-        </div>
+        </main>
 
         <Footer theme={props.theme} />
       </div>

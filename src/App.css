@@ -2,6 +2,24 @@
   text-align: center;
 }
 
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #e44160;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 10000;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
 .App-logo {
   height: 40vmin;
 }

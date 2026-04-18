@@ -2,16 +2,17 @@ import React from "react";
 import "./SocialMedia.css";
 import { socialMediaLinks } from "../../portfolio";
 
-export default function socialMedia() {
+export default function SocialMedia() {
   return (
-    <div className="social-media-div">
+    <div className="social-media-div" role="list" aria-label="Social media links">
       <a
         href={socialMediaLinks.github}
         className="icon-button github"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="GitHub profile"
       >
-        <i className="fab fa-github"></i>
+        <i className="fab fa-github" aria-hidden="true"></i>
         <span></span>
       </a>
       <a
@@ -19,8 +20,9 @@ export default function socialMedia() {
         className="icon-button linkedin"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="LinkedIn profile"
       >
-        <i className="fab fa-linkedin-in"></i>
+        <i className="fab fa-linkedin-in" aria-hidden="true"></i>
         <span></span>
       </a>
       <a
@@ -28,8 +30,9 @@ export default function socialMedia() {
         className="icon-button google"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Send email"
       >
-        <i className="fab fa-google"></i>
+        <i className="fab fa-google" aria-hidden="true"></i>
         <span></span>
       </a>
       <a
@@ -37,8 +40,9 @@ export default function socialMedia() {
         className="icon-button twitter"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Twitter profile"
       >
-        <i className="fab fa-twitter"></i>
+        <i className="fab fa-twitter" aria-hidden="true"></i>
         <span></span>
       </a>
       <a
@@ -46,8 +50,9 @@ export default function socialMedia() {
         className="icon-button instagram"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Instagram profile"
       >
-        <i className="fab fa-instagram"></i>
+        <i className="fab fa-instagram" aria-hidden="true"></i>
         <span></span>
       </a>
       <a
@@ -55,8 +60,9 @@ export default function socialMedia() {
         className="icon-button codechef"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="CodeChef profile"
       >
-        <i className="fas fa-code"></i>
+        <i className="fas fa-code" aria-hidden="true"></i>
         <span></span>
       </a>
       <a
@@ -64,8 +70,9 @@ export default function socialMedia() {
         className="icon-button leetcode"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="LeetCode profile"
       >
-        <i className="fas fa-code"></i>
+        <i className="fas fa-code" aria-hidden="true"></i>
         <span></span>
       </a>
       <a
@@ -73,8 +80,9 @@ export default function socialMedia() {
         className="icon-button hackerrank"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="HackerRank profile"
       >
-        <i className="fab fa-hackerrank"></i>
+        <i className="fab fa-hackerrank" aria-hidden="true"></i>
         <span></span>
       </a>
       <a
@@ -82,8 +90,9 @@ export default function socialMedia() {
         className="icon-button gfg"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="GeeksforGeeks profile"
       >
-        <i className="fas fa-code"></i>
+        <i className="fas fa-code" aria-hidden="true"></i>
         <span></span>
       </a>
       <a
@@ -91,8 +100,9 @@ export default function socialMedia() {
         className="icon-button medium"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Medium blog"
       >
-        <i className="fab fa-medium"></i>
+        <i className="fab fa-medium" aria-hidden="true"></i>
         <span></span>
       </a>
     </div>

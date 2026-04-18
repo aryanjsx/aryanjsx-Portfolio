@@ -67,7 +67,7 @@ function Projects(props) {
       <div className="projects-main">
         <Header theme={theme} setTheme={props.setTheme} />
 
-        <div className="basic-projects">
+        <main id="main-content" className="basic-projects">
           {/* Hero Section - Same structure as Education/Experience */}
           <Fade direction="down" duration={2000} triggerOnce>
             <div className="projects-heading-div">
@@ -162,14 +162,15 @@ function Projects(props) {
                   delay={index * 100}
                   triggerOnce
                 >
-                  <div
+                  <article
                     className="project-card"
                     style={getCardStyle(theme)}
                     onClick={() =>
                       window.open(project.url || project.repo, "_blank")
                     }
-                    role="button"
+                    role="link"
                     tabIndex={0}
+                    aria-label={`${project.name} — ${project.description}`}
                     onKeyDown={(e) => {
                       if (e.key === "Enter")
                         window.open(project.url || project.repo, "_blank");
@@ -299,7 +300,7 @@ function Projects(props) {
                         )}
                       </div>
                     </div>
-                  </div>
+                  </article>
                 </Fade>
               ))}
             </div>
@@ -366,7 +367,7 @@ function Projects(props) {
               </a>
             </div>
           </section>
-        </div>
+        </main>
 
         <Footer theme={props.theme} />
       </div>

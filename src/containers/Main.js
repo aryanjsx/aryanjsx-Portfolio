@@ -22,100 +22,35 @@ function ScrollToTop() {
   return null;
 }
 
-export default function Main(propss) {
-  if (settings.isSplash) {
-    return (
-      <div>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Splash theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route
-              path="/home"
-              element={<Home theme={propss.theme} setTheme={propss.setTheme} />}
-            />
-            <Route
-              path="/experience"
-              element={
-                <Experience theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route
-              path="/education"
-              element={
-                <Education theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <Contact theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route
-              path="/splash"
-              element={
-                <Splash theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <Projects theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route path="*" element={<Navigate to="/home" replace />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    );
-  } else {
-    return (
-      <div>
-        <BrowserRouter>
-          <ScrollToTop />
-          <Routes>
-            <Route
-              path="/"
-              element={<Home theme={propss.theme} setTheme={propss.setTheme} />}
-            />
-            <Route
-              path="/home"
-              element={<Home theme={propss.theme} setTheme={propss.setTheme} />}
-            />
-            <Route
-              path="/experience"
-              element={
-                <Experience theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route
-              path="/education"
-              element={
-                <Education theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <Contact theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <Projects theme={propss.theme} setTheme={propss.setTheme} />
-              }
-            />
-            <Route path="*" element={<Navigate to="/home" replace />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    );
-  }
+export default function Main(props) {
+  const pageProps = { theme: props.theme, setTheme: props.setTheme };
+
+  return (
+    <div>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              settings.isSplash ? (
+                <Splash {...pageProps} />
+              ) : (
+                <Home {...pageProps} />
+              )
+            }
+          />
+          <Route path="/home" element={<Home {...pageProps} />} />
+          <Route path="/experience" element={<Experience {...pageProps} />} />
+          <Route path="/education" element={<Education {...pageProps} />} />
+          <Route path="/contact" element={<Contact {...pageProps} />} />
+          <Route path="/projects" element={<Projects {...pageProps} />} />
+          {settings.isSplash && (
+            <Route path="/splash" element={<Splash {...pageProps} />} />
+          )}
+          <Route path="*" element={<Navigate to="/home" replace />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  );
 }
