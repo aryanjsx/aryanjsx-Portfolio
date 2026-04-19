@@ -7,7 +7,7 @@ export const npmPackages = {
   enabled: true,
   title: "Packages",
   description:
-    "Open-source packages I've published to npm. Install with npm or yarn. 📦",
+    "A collection of open-source packages I’ve published on npm & PyPI, available to install using npm, yarn, or pip. 📦",
   data: [
     {
       name: "Api Response",

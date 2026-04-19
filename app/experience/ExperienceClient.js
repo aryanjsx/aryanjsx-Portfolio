@@ -7,7 +7,7 @@ import Footer from "../../src/components/footer/Footer";
 import { experience } from "../../src/data/experience";
 import { Fade } from "react-awesome-reveal";
 import ExperienceImg from "../../src/assets/illustrations/ExperienceImg";
-import { getEndDateSortKey } from "../../src/utils/experienceDateSort";
+import { getEndDateSortKey, formatDuration } from "../../src/utils/experienceDateSort";
 import { useTheme } from "../../src/context/ThemeContext";
 
 const EXPERIENCE_LOGO_MAP = {
@@ -41,9 +41,9 @@ export default function ExperienceClient() {
               <ExperienceImg theme={theme} />
             </div>
             <div className="experience-heading-text-div">
-              <h1 className="experience-heading-text" style={{ color: theme.text }}>Aryan Kumar </h1>
+              <h1 className="experience-heading-text" style={{ color: theme.text }}>{experience.title}</h1>
               <h2 className="experience-heading-sub-text" style={{ color: theme.text }}>
-                {experience.title} — {experience.subtitle}
+                {experience.subtitle}
               </h2>
               <h3 className="visually-hidden">Software Engineer Experience</h3>
               <p className="experience-header-detail-text subTitle" style={{ color: theme.secondaryText }}>
@@ -55,8 +55,8 @@ export default function ExperienceClient() {
         <section className="experience-timeline-section">
           <Fade direction="up" duration={800} triggerOnce>
             <div className="section-header">
-              <h3 className="section-title" style={{ color: theme.text }}>My Journey</h3>
-              <div className="section-line" style={{ backgroundColor: theme.accentColor }} />
+              {/* <h3 className="section-title" style={{ color: theme.text }}>My Journey</h3> */}
+              {/* <div className="section-line" style={{ backgroundColor: theme.accentColor }} /> */}
             </div>
             <div className="experience-tabs">
               <button
@@ -83,7 +83,7 @@ export default function ExperienceClient() {
                     <div className="timeline-card-header">
                       <Image className="company-logo"
                         src={EXPERIENCE_LOGO_MAP[exp.logo_path] || DEFAULT_LOGO}
-                        alt={`Aryan Kumar (AryanJSX) — ${exp.title} at ${exp.company} — Software Engineer experience`}
+                        alt={`Aryan Kumar — ${exp.title} at ${exp.company} — Software Engineer experience`}
                         width={48} height={48}
                         style={{ backgroundColor: theme.body, border: `1px solid ${theme.text}10`, objectFit: "contain" }} />
                       <div className="timeline-card-info">
@@ -95,6 +95,7 @@ export default function ExperienceClient() {
                     </div>
                     <div className="timeline-card-meta">
                       <span className="meta-badge" style={{ backgroundColor: `${theme.accentColor}15`, color: theme.accentColor }}>📅 {exp.duration}</span>
+                      {exp.startDate && <span className="meta-badge" style={{ backgroundColor: `${theme.text}10`, color: theme.secondaryText }}>⏳ {formatDuration(exp.startDate, exp.endDate)}</span>}
                       <span className="meta-badge" style={{ backgroundColor: `${theme.text}10`, color: theme.secondaryText }}>📍 {exp.location}</span>
                       <span className="meta-badge" style={{ backgroundColor: `${exp.color || theme.accentColor}20`, color: exp.color || theme.accentColor }}>{exp.sectionType}</span>
                     </div>

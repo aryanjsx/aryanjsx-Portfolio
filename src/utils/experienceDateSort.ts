@@ -13,6 +13,26 @@ const MONTH_TO_NUM: Record<string, string> = {
   dec: "12", december: "12",
 };
 
+export function formatDuration(startDate: string, endDate: string | null): string {
+  const start = new Date(startDate);
+  const end = endDate ? new Date(endDate) : new Date();
+
+  let years = end.getFullYear() - start.getFullYear();
+  let months = end.getMonth() - start.getMonth();
+
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+
+  if (months === 0 && years === 0) return "< 1 mo";
+
+  const parts: string[] = [];
+  if (years > 0) parts.push(`${years} yr${years > 1 ? "s" : ""}`);
+  if (months > 0) parts.push(`${months} mo${months > 1 ? "s" : ""}`);
+  return parts.join(" ");
+}
+
 export function getEndDateSortKey(duration: string | null | undefined): string {
   if (!duration || typeof duration !== "string") return "0000-00";
   const parts = duration.split(/\s*-\s*/).map((s) => s.trim());

@@ -31,13 +31,13 @@ const agustina = localFont({
 
 export const metadata = {
   metadataBase: new URL("https://aryankr.in"),
-  title: "Aryan Kumar (aryanjsx) | Software Engineer | DevOps | Full-Stack Developer",
+  title: "Aryan Kumar | Software Engineer | GEN AI Developer | Full-Stack Developer",
   description:
-    "Official portfolio of Aryan Kumar (aryanjsx), Software Engineer specializing in DevOps, Azure, system architecture, and full-stack development. Explore projects, resume, and contact.",
+    "Official portfolio of Aryan Kumar, Software Engineer specializing in GEN AI, DevOps, Azure, system architecture, and full-stack development. Explore projects, resume, and contact.",
   keywords:
-    "aryanjsx, aryan kumar developer, aryanjsx github, aryanjsx portfolio, aryan kumar devops engineer, aryan kumar software engineer, full stack developer, software engineer portfolio, aryan kumar azure, aryanjsx npm",
-  authors: [{ name: "Aryan Kumar (aryanjsx)" }],
-  creator: "aryanjsx",
+    "aryan kumar, aryan kumar developer, aryan kumar github, aryan kumar portfolio, aryan kumar gen ai developer, aryan kumar devops engineer, aryan kumar software engineer, full stack developer, software engineer portfolio, aryan kumar azure, aryan kumar npm",
+  authors: [{ name: "Aryan Kumar" }],
+  creator: "aryan kumar",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -53,16 +53,16 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://aryankr.in",
-    siteName: "Aryan Kumar (aryanjsx) Portfolio",
-    title: "Aryan Kumar (aryanjsx) | Software Engineer | DevOps | Full-Stack Developer",
+    siteName: "Aryan Kumar Portfolio",
+    title: "Aryan Kumar | Software Engineer | GEN AI Developer | Full-Stack Developer",
     description:
-      "Official portfolio of Aryan Kumar (aryanjsx), Software Engineer specializing in DevOps, Azure, system architecture, and full-stack development.",
+      "Official portfolio of Aryan Kumar, Software Engineer specializing in GEN AI, DevOps, Azure, system architecture, and full-stack development.",
     images: [
       {
         url: "/seo/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "Aryan Kumar (aryanjsx) — Software Engineer & Full Stack Developer Portfolio",
+        alt: "Aryan Kumar — Software Engineer & Full Stack Developer",
       },
     ],
   },
@@ -124,9 +124,9 @@ export default function RootLayout({ children }) {
         </noscript>
         <noscript>
           <div style={{ padding: "40px", textAlign: "center", fontFamily: "sans-serif" }}>
-            <h1>Aryan Kumar (AryanJSX)</h1>
+            <h1>Aryan Kumar</h1>
             <p>
-              Software Engineer &amp; Full Stack Developer. Aryan Kumar aka AryanJSX — portfolio,
+              Software Engineer &amp; GEN AI Developer. Aryan Kumar — portfolio,
               projects, resume and contact.
             </p>
             <p>

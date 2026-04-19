@@ -3,6 +3,7 @@ export interface NpmPackage {
   displayName: string;
   description: string;
   repository: string;
+  registry?: "npm" | "pypi";
 }
 
 export interface CurrentProject {

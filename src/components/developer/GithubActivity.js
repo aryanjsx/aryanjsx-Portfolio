@@ -4,7 +4,8 @@ import { useTheme } from "../../context/ThemeContext";
 
 const GITHUB_USERNAME = "aryanjsx";
 const PROFILE_URL = `https://api.github.com/users/${GITHUB_USERNAME}`;
-const REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=stars&per_page=8&direction=desc`;
+const REPOS_URL = `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=stars&per_page=12&direction=desc`;
+const EXCLUDED_REPOS = ["Arythm-Proxy"];
 
 export default function GithubActivity() {
   const { theme } = useTheme();
@@ -40,7 +41,7 @@ export default function GithubActivity() {
           setProfile(profileData);
           const sorted = Array.isArray(reposData)
             ? reposData
-                .filter((r) => !r.fork)
+                .filter((r) => !r.fork && !EXCLUDED_REPOS.includes(r.name))
                 .sort((a, b) => b.stargazers_count - a.stargazers_count)
                 .slice(0, 6)
             : [];
@@ -83,7 +84,7 @@ export default function GithubActivity() {
   const totalStars = repos.reduce((sum, r) => sum + r.stargazers_count, 0);
 
   return (
-    <div>
+    <div style={{ maxWidth: 800, margin: "0 auto" }}>
       {/* Profile header */}
       <div style={profileRowStyle}>
         {profile.avatar_url && (
@@ -211,7 +212,9 @@ function errorBoxStyle(theme) {
 
 const profileRowStyle = {
   display: "flex",
+  flexDirection: "column",
   alignItems: "center",
+  textAlign: "center",
   gap: "1.25rem",
   marginBottom: "2rem",
   flexWrap: "wrap",

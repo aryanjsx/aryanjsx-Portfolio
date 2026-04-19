@@ -2,9 +2,9 @@ const BASE_URL = "https://aryankr.in";
 const DEFAULT_IMAGE = `${BASE_URL}/seo/og-image.svg`;
 
 const GLOBAL_TITLE =
-  "Aryan Kumar (aryanjsx) | Software Engineer | DevOps | Full-Stack Developer";
+  "Aryan Kumar | Software Engineer | Gen AI Developer | Full-Stack Developer";
 const GLOBAL_DESCRIPTION =
-  "Official portfolio of Aryan Kumar (aryanjsx), Software Engineer specializing in DevOps, Azure, system architecture, and full-stack development. Explore projects, resume, and contact.";
+  "Official portfolio of Aryan Kumar, Software Engineer specializing in DevOps, Azure, system architecture, and full-stack development. Explore projects, resume, and contact.";
 
 export function generatePageMetadata({
   title,
@@ -28,7 +28,7 @@ export function generatePageMetadata({
     title: siteTitle,
     description: siteDescription,
     keywords: siteKeywords,
-    authors: [{ name: "Aryan Kumar (AryanJSX)" }],
+    authors: [{ name: "Aryan Kumar" }],
     robots: "index, follow",
     alternates: { canonical: siteUrl },
     openGraph: {
@@ -42,10 +42,10 @@ export function generatePageMetadata({
           width: 1200,
           height: 630,
           type: "image/svg+xml",
-          alt: "Aryan Kumar (aryanjsx) — Software Engineer & Full Stack Developer Portfolio",
+          alt: "Aryan Kumar — Software Engineer | Full Stack Developer | Gen AI Developer",
         },
       ],
-      siteName: "Aryan Kumar (aryanjsx) Portfolio",
+      siteName: "Aryan Kumar (aryanjsx)",
       locale: "en_US",
     },
     twitter: {

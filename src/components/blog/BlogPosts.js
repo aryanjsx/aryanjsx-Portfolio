@@ -27,7 +27,7 @@ export default function BlogPosts() {
         }
 
         if (!cancelled) {
-          setPosts(data.items.slice(0, 5));
+          setPosts(data.items.slice(0, 4));
           setLoading(false);
         }
       } catch (err) {

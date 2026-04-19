@@ -3,8 +3,9 @@ import { useTheme } from "../../context/ThemeContext";
 import { getCardStyle } from "../../utils/cardStyle";
 import { npmPackagesList } from "../../data/npmPackages";
 
-const REGISTRY_BASE = "https://registry.npmjs.org";
-const DOWNLOADS_BASE = "https://api.npmjs.org/downloads/point/last-week";
+const NPM_REGISTRY = "https://registry.npmjs.org";
+const NPM_DOWNLOADS = "https://api.npmjs.org/downloads/point/last-week";
+const PYPI_API = "https://pypi.org/pypi";
 
 export default function NpmStats() {
   const { theme } = useTheme();
@@ -15,10 +16,10 @@ export default function NpmStats() {
   useEffect(() => {
     let cancelled = false;
 
-    async function fetchPackageData(pkg) {
+    async function fetchNpmPackage(pkg) {
       const [metaRes, dlRes] = await Promise.allSettled([
-        fetch(`${REGISTRY_BASE}/${encodeURIComponent(pkg.name)}`),
-        fetch(`${DOWNLOADS_BASE}/${encodeURIComponent(pkg.name)}`),
+        fetch(`${NPM_REGISTRY}/${encodeURIComponent(pkg.name)}`),
+        fetch(`${NPM_DOWNLOADS}/${encodeURIComponent(pkg.name)}`),
       ]);
 
       const meta =
@@ -31,27 +32,40 @@ export default function NpmStats() {
           ? await dlRes.value.json()
           : null;
 
-      const latestVersion = meta
-        ? meta["dist-tags"]?.latest || "—"
-        : "—";
+      return {
+        name: pkg.name,
+        displayName: pkg.displayName,
+        description: meta?.description || pkg.description,
+        version: meta ? meta["dist-tags"]?.latest || "—" : "—",
+        weeklyDownloads: dl?.downloads ?? null,
+        repository: pkg.repository,
+        registry: "npm",
+        registryUrl: `https://www.npmjs.com/package/${encodeURIComponent(pkg.name)}`,
+      };
+    }
 
-      const description = meta?.description || pkg.description;
+    async function fetchPypiPackage(pkg) {
+      const res = await fetch(`${PYPI_API}/${encodeURIComponent(pkg.name)}/json`).catch(() => null);
+      const meta = res && res.ok ? await res.json() : null;
 
       return {
         name: pkg.name,
         displayName: pkg.displayName,
-        description,
-        version: latestVersion,
-        weeklyDownloads: dl?.downloads ?? null,
+        description: meta?.info?.summary || pkg.description,
+        version: meta?.info?.version || "—",
+        weeklyDownloads: null,
         repository: pkg.repository,
-        npmUrl: `https://www.npmjs.com/package/${encodeURIComponent(pkg.name)}`,
+        registry: "pypi",
+        registryUrl: `https://pypi.org/project/${encodeURIComponent(pkg.name)}/`,
       };
     }
 
     async function fetchAll() {
       try {
         const results = await Promise.all(
-          npmPackagesList.map(fetchPackageData)
+          npmPackagesList.map((pkg) =>
+            pkg.registry === "pypi" ? fetchPypiPackage(pkg) : fetchNpmPackage(pkg)
+          )
         );
         if (!cancelled) {
           setPackages(results);
@@ -95,7 +109,9 @@ export default function NpmStats() {
       {packages.map((pkg) => (
         <div key={pkg.name} style={cardStyle(theme)}>
           <div style={cardHeaderStyle}>
-            <div style={npmBadgeStyle}>npm</div>
+            <div style={pkg.registry === "pypi" ? pypiBadgeStyle : npmBadgeStyle}>
+              {pkg.registry === "pypi" ? "pypi" : "npm"}
+            </div>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
               {pkg.version !== "—" && (
                 <span style={versionBadgeStyle(theme)}>v{pkg.version}</span>
@@ -113,12 +129,12 @@ export default function NpmStats() {
 
           <div style={linksRowStyle}>
             <a
-              href={pkg.npmUrl}
+              href={pkg.registryUrl}
               target="_blank"
               rel="noopener noreferrer"
               style={linkStyle(theme)}
             >
-              View on npm
+              View on {pkg.registry === "pypi" ? "PyPI" : "npm"}
             </a>
             {pkg.repository && (
               <>
@@ -178,6 +194,16 @@ const cardHeaderStyle = {
 const npmBadgeStyle = {
   padding: "0.3rem 0.7rem",
   backgroundColor: "#CB3837",
+  color: "#fff",
+  borderRadius: 6,
+  fontSize: "0.75rem",
+  fontWeight: 700,
+  letterSpacing: "0.04em",
+};
+
+const pypiBadgeStyle = {
+  padding: "0.3rem 0.7rem",
+  backgroundColor: "#3775A9",
   color: "#fff",
   borderRadius: 6,
   fontSize: "0.75rem",

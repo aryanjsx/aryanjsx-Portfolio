@@ -18,11 +18,18 @@ export const currentlyBuilding: CurrentProject[] = [
     link: "https://github.com/aryanjsx/aura-mcp",
   },
   {
-    title: "OpenClaude",
-    description:
-      "Claude-style AI coding environment with an OpenAI-compatible API shim for flexible LLM provider integration.",
+    title: "Code Converter",
+    description: "Browser-based multi-language code converter powered by AI.",
     status: "Active",
-    techStack: ["TypeScript", "React", "OpenAI API"],
-    link: "https://github.com/aryanjsx/Openclaude",
+    techStack: ["TypeScript", "React", "AI API"],
+    link: "https://github.com/aryanjsx/code-converter",
+  },
+  {
+    title: "Know India",
+    description:
+      "Know India is a tourism platform that helps users explore famous places across India with rich details, images, and location insights.",
+    status: "Active",
+    techStack: ["React.js", "Node.js", "Express.js", "MySQL", "REST APIs"],
+    link: "https://github.com/aryanjsx/know-India",
   },
 ];

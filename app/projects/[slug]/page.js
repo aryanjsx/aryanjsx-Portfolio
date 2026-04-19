@@ -12,7 +12,7 @@ export async function generateMetadata({ params }) {
   const project = getProjectBySlug(slug);
   if (!project) return {};
   return generatePageMetadata({
-    title: `${project.name} — Case Study | Aryan Kumar (aryanjsx)`,
+    title: `${project.name} — Case Study | Aryan Kumar`,
     description: project.shortDescription || project.description,
     path: `/projects/${project.id}`,
     keywords: `${project.name}, ${project.techStack ? project.techStack.join(", ") : ""}, aryanjsx, aryan kumar, case study, aryanjsx projects`,

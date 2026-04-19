@@ -60,7 +60,7 @@ export default function ProjectsClient() {
         <section className="projects-section">
           <Fade direction="up" duration={800} triggerOnce>
             <div className="section-header">
-              <h3 className="section-title" style={{ color: theme.text }}>Projects by AryanJSX — Featured Projects</h3>
+              <h3 className="section-title" style={{ color: theme.text }}>Featured Projects</h3>
               <div className="section-line" style={{ backgroundColor: theme.accentColor }} />
             </div>
             <div className="projects-stats">

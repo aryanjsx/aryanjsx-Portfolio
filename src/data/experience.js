@@ -2,7 +2,7 @@ export const experience = {
   title: "Experience",
   subtitle: "Work & Internship",
   description:
-    "I'm an IT fresher who is working as an Software Developer intern. I have prior knowledge of programing languages as well as full stack development.",
+    "I am a Software Engineer with experience in full-stack development, cloud technologies, and modern web frameworks. I focus on building efficient, scalable applications while continuously learning and exploring new technologies.",
   sections: [
     {
       title: "Internships",
@@ -12,7 +12,9 @@ export const experience = {
           company: "Helper4U Services LLP",
           company_url: "https://www.helper4u.in/",
           logo_path: "cra.png",
-          duration: "Dec 2022 - Mar 2024",
+          startDate: "2023-12-04",
+          endDate: "2024-03-04",
+          duration: "Dec 2023 - Mar 2024",
           location: "Remote",
           description: `
           ⚡ Contributed expertise in web and android development, enhancing project outcomes. \n
@@ -26,13 +28,15 @@ export const experience = {
       ],
     },
     {
-      title: "JOBS",
+      title: "Full TIme",
       experiences: [
         {
           title: "Software Engineer",
           company: "LTIMindtree",
           company_url: "https://www.ltimindtree.com/",
           logo_path: "lti.jpg",
+          startDate: "2024-09-01",
+          endDate: null,
           duration: "Sept 2024 - Present",
           location: "On-site",
           description: `
@@ -49,6 +53,8 @@ export const experience = {
           company: "LTIMindtree",
           company_url: "https://www.ltimindtree.com/",
           logo_path: "lti.jpg",
+          startDate: "2024-06-01",
+          endDate: "2024-09-01",
           duration: "Jun 2024 - Sept 2024",
           location: "On-site",
           description: `

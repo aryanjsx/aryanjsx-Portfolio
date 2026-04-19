@@ -22,4 +22,12 @@ export const npmPackagesList: NpmPackage[] = [
       "Interactive SVG map of India for React applications.",
     repository: "https://github.com/aryanjsx/IndiaMap",
   },
+  {
+    name: "orkio",
+    displayName: "Orkio (AURA MCP)",
+    description:
+      "Autonomous Unified Resource Architect — an extensible MCP platform that reads Notion tasks and executes them.",
+    repository: "https://github.com/aryanjsx/aura-mcp",
+    registry: "pypi",
+  },
 ];

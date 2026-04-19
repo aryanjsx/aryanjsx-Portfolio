@@ -7,8 +7,8 @@ const routes = [
   { path: "/experience", changefreq: "monthly", priority: "0.8" },
   { path: "/education", changefreq: "monthly", priority: "0.8" },
   { path: "/contact", changefreq: "monthly", priority: "0.7" },
-  { path: "/entity.html", changefreq: "monthly", priority: "0.9" },
-  { path: "/image-ownership.html", changefreq: "monthly", priority: "0.8" },
+  { path: "/entity.html", changefreq: "weekly", priority: "0.9" },
+  { path: "/image-ownership.html", changefreq: "weekly", priority: "0.8" },
 ];
 
 function escapeXml(unsafe) {
@@ -35,8 +35,8 @@ module.exports = (req, res) => {
       entry += `
     <image:image>
       <image:loc>${escapeXml(`${SITE_URL}/logo.png`)}</image:loc>
-      <image:title>Aryan Kumar (AryanJSX) — Software Engineer &amp; Full Stack Developer Portfolio</image:title>
-      <image:caption>Aryan Kumar aka AryanJSX portfolio — Software Engineer, Full Stack Developer</image:caption>
+      <image:title>Aryan Kumar — Software Engineer &amp; Full Stack Developer &amp GEN AI Developer</image:title>
+      <image:caption>Aryan Kumar — Software Engineer, Full Stack Developer, GEN AI Developer</image:caption>
     </image:image>`;
     }
     entry += `
@@ -55,6 +55,9 @@ ${urlEntries.join("\n\n")}
 `;
 
   res.setHeader("Content-Type", "application/xml; charset=UTF-8");
-  res.setHeader("Cache-Control", "public, s-maxage=3600, stale-while-revalidate=86400");
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=3600, stale-while-revalidate=86400",
+  );
   res.status(200).send(xml);
 };

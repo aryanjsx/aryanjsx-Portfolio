@@ -5,13 +5,14 @@ export const personSchema = {
   "@type": "Person",
   "@id": `${SITE_URL}/#person`,
   name: "Aryan Kumar",
-  alternateName: ["aryanjsx", "AryanJSX", "Aryan Kumar"],
+  alternateName: ["aryanjsx", "AryanJSX", "Aryan Kumar", "Aryan Kumar Developer", "ARYAN KUMAR", "aryan kumar", "aryan kumar developer"],
   url: SITE_URL,
   identifier: "aryanjsx",
-  jobTitle: "Software Engineer",
+  jobTitle: "Software Engineer & Generative AI Developer",
   description:
-    "Software Engineer specializing in DevOps, Azure, system architecture, and full-stack development.",
+    "Software Engineer & Generative AI Developer specializing in DevOps, Azure, system architecture, and full-stack development.",
   knowsAbout: [
+    "Generative AI",
     "DevOps",
     "Azure",
     "System Architecture",
@@ -39,6 +40,7 @@ export const personSchema = {
     "https://leetcode.com/u/aryanjsx",
     "https://www.hackerrank.com/profile/aryanjsx",
     "https://hub.docker.com/u/aryanjsx",
+    "https://pypi.org/user/aryanjsx/",
   ],
   image: {
     "@type": "ImageObject",
@@ -58,7 +60,7 @@ export const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": `${SITE_URL}/#website`,
-  name: "Aryan Kumar (aryanjsx) — Portfolio",
+  name: "Aryan Kumar — Portfolio",
   alternateName: [
     "aryanjsx portfolio",
     "Aryan Kumar Portfolio",
@@ -66,7 +68,7 @@ export const websiteSchema = {
   ],
   url: SITE_URL,
   description:
-    "Official portfolio of Aryan Kumar (aryanjsx), Software Engineer specializing in DevOps, Azure, system architecture, and full-stack development.",
+    "Official portfolio of Aryan Kumar, Software Engineer specializing in DevOps, Azure, system architecture, and full-stack development.",
   publisher: { "@id": `${SITE_URL}/#person` },
   author: { "@id": `${SITE_URL}/#person` },
   inLanguage: "en-US",

@@ -4,12 +4,12 @@ export const greeting = {
   logo_name: "AK",
   full_name: "Aryan Kumar",
   subTitle:
-    "I am always enthusiastic to learn new technologies. I am always trying to create a project what I learned. I am interested in Python programming, Web development, and many more...   ",
+    "I am a Software Engineer and Generative AI Developer. I build modern web applications using React, Next.js, Node.js, and Python, and am passionate about DevOps, cloud technologies, and system architecture. Explore my portfolio to view projects, resume, and contact details.",
   resumeLink: "/Aryan_Kumar_Resume.pdf",
   mail: "me@aryankr.in",
 };
 
 export const aboutSEO = {
   paragraph:
-    "Aryan Kumar is a Software Engineer and GEN AI Developer from India. He builds web applications with React, Next.js, Node.js, and Python, and is passionate about DevOps and cloud technologies. Explore his portfolio for projects, resume, and contact.",
+    "I am always eager to learn new technologies and apply them by building real-world projects. My interests include Python programming, web development, cloud technologies, and exploring modern tools that improve software development.",
 };

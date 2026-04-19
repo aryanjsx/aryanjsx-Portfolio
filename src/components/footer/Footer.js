@@ -5,11 +5,11 @@ import { socialMediaLinks } from "../../data/socialMedia";
 import { FaGithub, FaLinkedinIn, FaEnvelope, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const FOOTER_LINKS = [
-  { label: "GitHub", href: socialMediaLinks.github, Icon: FaGithub, aria: "Visit aryanjsx's GitHub" },
-  { label: "LinkedIn", href: socialMediaLinks.linkedin, Icon: FaLinkedinIn, aria: "Visit aryanjsx's LinkedIn" },
-  { label: "Email", href: `mailto:${socialMediaLinks.gmail}`, Icon: FaEnvelope, aria: "Email aryanjsx" },
-  { label: "Twitter", href: socialMediaLinks.twitter, Icon: FaTwitter, aria: "Visit aryanjsx's Twitter" },
-  { label: "Instagram", href: socialMediaLinks.instagram, Icon: FaInstagram, aria: "Visit aryanjsx's Instagram" },
+  { label: "GitHub", href: socialMediaLinks.github, Icon: FaGithub, aria: "Visit Aryan's GitHub" },
+  { label: "LinkedIn", href: socialMediaLinks.linkedin, Icon: FaLinkedinIn, aria: "Visit Aryan's LinkedIn" },
+  { label: "Email", href: `mailto:${socialMediaLinks.gmail}`, Icon: FaEnvelope, aria: "Email Aryan" },
+  { label: "Twitter", href: socialMediaLinks.twitter, Icon: FaTwitter, aria: "Visit Aryan's Twitter" },
+  { label: "Instagram", href: socialMediaLinks.instagram, Icon: FaInstagram, aria: "Visit Aryan's Instagram" },
 ];
 
 export default function Footer() {
@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="footer__row">
           <div className="footer__left">
             <p className="footer__copyright" style={{ color: theme.secondaryText }}>
-              © {new Date().getFullYear()} aryanjsx
+              © {new Date().getFullYear()}
             </p>
           </div>
           <p className="footer__tagline" style={{ color: theme.secondaryText }}>
@@ -43,12 +43,12 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="footer__link"
               style={{ color: theme.accentColor }}
-              aria-label="Visit aryanjsx's GitHub profile"
+              aria-label="Visit Aryan's GitHub profile"
             >
               {greeting.full_name}
             </a>
             <span className="footer__handle" style={{ color: theme.secondaryText }}>
-              {" "}(aryanjsx)
+              {" "}
             </span>
           </p>
           <nav className="footer__social" aria-label="Social links">
