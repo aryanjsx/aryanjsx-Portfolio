@@ -1,4 +1,3 @@
-import React from "react";
 import SkillSection from "./SkillSection";
 import { Fade } from "react-awesome-reveal";
 import { useTheme } from "../../context/ThemeContext";

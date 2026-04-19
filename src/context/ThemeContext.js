@@ -3,6 +3,7 @@ import {
   useContext,
   useState,
   useCallback,
+  useEffect,
 } from "react";
 
 const lightTheme = {
@@ -43,6 +44,8 @@ const ThemeContext = createContext(undefined);
 
 function getInitialTheme() {
   if (typeof window === "undefined") return "dark";
+  const attr = document.documentElement.getAttribute("data-theme");
+  if (attr && themes[attr]) return attr;
   try {
     const stored = localStorage.getItem("theme");
     if (stored && themes[stored]) return stored;
@@ -52,10 +55,21 @@ function getInitialTheme() {
   return "dark";
 }
 
+function applyThemeAttribute(name) {
+  if (typeof document !== "undefined") {
+    document.documentElement.setAttribute("data-theme", name);
+    document.documentElement.style.colorScheme = name;
+  }
+}
+
 export function ThemeProvider({ children }) {
   const [themeName, setThemeName] = useState(getInitialTheme);
 
   const theme = themes[themeName] || themes.dark;
+
+  useEffect(() => {
+    applyThemeAttribute(themeName);
+  }, [themeName]);
 
   const toggleTheme = useCallback(() => {
     setThemeName((prev) => {
@@ -65,6 +79,7 @@ export function ThemeProvider({ children }) {
       } catch {
         /* storage unavailable */
       }
+      applyThemeAttribute(next);
       return next;
     });
   }, []);
@@ -76,6 +91,7 @@ export function ThemeProvider({ children }) {
     } catch {
       /* storage unavailable */
     }
+    applyThemeAttribute(name);
   }, []);
 
   return (
@@ -90,5 +106,3 @@ export function useTheme() {
   if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
   return ctx;
 }
-
-export { themes };

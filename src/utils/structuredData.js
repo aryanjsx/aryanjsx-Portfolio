@@ -88,15 +88,3 @@ export const profilePageSchema = {
   url: SITE_URL,
 };
 
-export function projectSchema(project) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: project.name,
-    description: project.shortDescription || project.description,
-    url: project.liveUrl || project.url || `${SITE_URL}/projects/${project.id}`,
-    author: { "@id": `${SITE_URL}/#person` },
-    applicationCategory: "DeveloperApplication",
-    operatingSystem: "Web",
-  };
-}

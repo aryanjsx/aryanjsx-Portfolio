@@ -1,0 +1,50 @@
+﻿/* =============================================================================
+   17. react-icons social media styling
+   ============================================================================= */
+
+.icon-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.icon-button .social-icon-circle {
+  border-radius: 2.6rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  height: 2.6rem;
+  width: 2.6rem;
+  margin: 0 5px;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+.github .social-icon-circle { background-color: #333; }
+.github .social-icon-circle:hover { box-shadow: 0 5px 15px #333; }
+.linkedin .social-icon-circle { background-color: #0e76a8; }
+.linkedin .social-icon-circle:hover { box-shadow: 0 5px 15px #0e76a8; }
+.google .social-icon-circle { background-color: #ea4335; }
+.google .social-icon-circle:hover { box-shadow: 0 5px 15px #ea4335; }
+.twitter .social-icon-circle { background-color: #1da1f2; }
+.twitter .social-icon-circle:hover { box-shadow: 0 5px 15px #1da1f2; }
+.instagram .social-icon-circle { background-color: #e4405f; }
+.instagram .social-icon-circle:hover { box-shadow: 0 5px 15px #e4405f; }
+.codechef .social-icon-circle { background-color: #5B4638; }
+.codechef .social-icon-circle:hover { box-shadow: 0 5px 15px #5B4638; }
+.leetcode .social-icon-circle { background-color: #FFA116; }
+.leetcode .social-icon-circle:hover { box-shadow: 0 5px 15px #FFA116; }
+.hackerrank .social-icon-circle { background-color: #2EC866; }
+.hackerrank .social-icon-circle:hover { box-shadow: 0 5px 15px #2EC866; }
+.gfg .social-icon-circle { background-color: #2F8D46; }
+.gfg .social-icon-circle:hover { box-shadow: 0 5px 15px #2F8D46; }
+.medium .social-icon-circle { background-color: #000; }
+.medium .social-icon-circle:hover { box-shadow: 0 5px 15px #000; }
+
+[data-theme="dark"] .github .social-icon-circle { background-color: #6e7681; }
+[data-theme="dark"] .github .social-icon-circle:hover { box-shadow: 0 5px 15px #6e7681; }
+[data-theme="dark"] .medium .social-icon-circle { background-color: #4a4a4a; }
+[data-theme="dark"] .medium .social-icon-circle:hover { box-shadow: 0 5px 15px #4a4a4a; }
+[data-theme="dark"] .codechef .social-icon-circle { background-color: #8B7355; }
+[data-theme="dark"] .codechef .social-icon-circle:hover { box-shadow: 0 5px 15px #8B7355; }

@@ -6,54 +6,27 @@
   <url>
     <loc>https://aryankr.in</loc>
     <image:image>
-      <image:loc>https://aryankr.in/images/aryanjsx-profile.jpg</image:loc>
-      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
-      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
+      <image:loc>https://aryankr.in/logo.png</image:loc>
+      <image:title>Aryan Kumar (aryanjsx) — Software Engineer Portfolio Logo</image:title>
+      <image:caption>Official logo for Aryan Kumar (aryanjsx), Software Engineer specializing in DevOps, Azure, and full-stack development.</image:caption>
     </image:image>
   </url>
 
   <url>
     <loc>https://aryankr.in</loc>
     <image:image>
-      <image:loc>https://aryankr.in/images/aryanjsx-hero.png</image:loc>
-      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
-      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
+      <image:loc>https://aryankr.in/seo/og-image.svg</image:loc>
+      <image:title>Aryan Kumar (aryanjsx) — Portfolio Open Graph Image</image:title>
+      <image:caption>Open Graph image for Aryan Kumar (aryanjsx) portfolio — Software Engineer, Full Stack Developer.</image:caption>
     </image:image>
   </url>
 
   <url>
-    <loc>https://aryankr.in</loc>
+    <loc>https://aryankr.in/contact</loc>
     <image:image>
-      <image:loc>https://aryankr.in/images/aryanjsx-avatar.webp</image:loc>
-      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
-      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://aryankr.in</loc>
-    <image:image>
-      <image:loc>https://aryankr.in/images/aryanjsx-portfolio.jpg</image:loc>
-      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
-      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://aryankr.in</loc>
-    <image:image>
-      <image:loc>https://aryankr.in/images/aryanjsx-brand.png</image:loc>
-      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
-      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
-    </image:image>
-  </url>
-
-  <url>
-    <loc>https://aryankr.in</loc>
-    <image:image>
-      <image:loc>https://aryankr.in/images/aryanjsx-og.webp</image:loc>
-      <image:title>Aryan JSX - aryanjsx personal brand image</image:title>
-      <image:caption>Image associated with aryanjsx identity. Software Engineer at LTIMindtree. Azure DevOps Portfolio.</image:caption>
+      <image:loc>https://aryankr.in/images/hrishi2.png</image:loc>
+      <image:title>Aryan Kumar (aryanjsx) — Profile Photo</image:title>
+      <image:caption>Profile photo of Aryan Kumar (aryanjsx), Software Engineer and Full Stack Developer.</image:caption>
     </image:image>
   </url>
 

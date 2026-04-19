@@ -1,4 +1,3 @@
-import React from "react";
 import IconifyIcon from "../IconifyIcon";
 
 function SoftwareSkill(props) {

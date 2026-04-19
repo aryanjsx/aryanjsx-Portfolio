@@ -29,7 +29,7 @@ export default class ErrorBoundary extends React.Component {
             minHeight: "60vh",
             padding: "2rem",
             textAlign: "center",
-            fontFamily: "'Google Sans Regular', sans-serif",
+            fontFamily: "var(--font-google-sans), sans-serif",
           }}
         >
           <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "#E3405F" }}>

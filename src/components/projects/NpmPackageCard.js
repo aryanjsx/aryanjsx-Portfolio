@@ -1,4 +1,3 @@
-import React from "react";
 import { getCardStyle } from "../../utils/cardStyle";
 
 const REGISTRY_CONFIG = {

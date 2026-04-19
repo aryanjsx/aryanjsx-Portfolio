@@ -10,6 +10,5 @@ export const contactPageData = {
     subtitle:
       "I don't blog frequently but when I do something awesome, I do try my best to write a blog about it.",
     link: "https://aryanjsx.medium.com",
-    avatar_image_path: "blogs_image.svg",
   },
 };

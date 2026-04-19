@@ -12,11 +12,10 @@
     "lint:fix": "eslint . --fix",
     "test": "jest",
     "test:ci": "jest --ci --coverage",
-    "analyze": "ANALYZE=true next build --webpack",
-    "generate:sitemap": "node generate-sitemap.js",
-    "prepare": "husky install"
+    "analyze": "ANALYZE=true next build --webpack"
   },
   "dependencies": {
+    "@iconify/react": "^6.0.2",
     "next": "^16.0.10",
     "next-sitemap": "^4.2.3",
     "react": "^19.2.5",
@@ -38,21 +37,12 @@
     "@types/react-dom": "^19.2.3",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.2.4",
-    "eslint-plugin-unused-imports": "^4.4.1",
-    "husky": "^9.1.7",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
-    "lint-staged": "^16.2.7",
     "prettier": "3.8.1",
-    "prettier-package-json": "^2.8.0",
     "typescript": "^6.0.3"
   },
   "engines": {
     "node": ">=20.9.0"
-  },
-  "lint-staged": {
-    "*.json": "prettier-package-json --write",
-    "*.{js,jsx,ts,tsx}": ["eslint --fix", "prettier --write"],
-    "*.{css,md}": "prettier --write"
   }
 }

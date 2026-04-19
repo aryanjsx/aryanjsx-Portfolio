@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -96,7 +96,7 @@ export default function GithubActivity() {
           />
         )}
         <div>
-          <h4 style={{ color: theme.text, margin: 0, fontSize: "1.25rem", fontFamily: "'Google Sans Bold', sans-serif" }}>
+          <h4 style={{ color: theme.text, margin: 0, fontSize: "1.25rem", fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 700 }}>
             {profile.name || GITHUB_USERNAME}
           </h4>
           <a
@@ -108,7 +108,7 @@ export default function GithubActivity() {
             @{profile.login}
           </a>
           {profile.bio && (
-            <p style={{ color: theme.secondaryText, margin: "0.5rem 0 0", fontSize: "0.9rem", lineHeight: 1.5, fontFamily: "'Google Sans Regular', sans-serif" }}>
+            <p style={{ color: theme.secondaryText, margin: "0.5rem 0 0", fontSize: "0.9rem", lineHeight: 1.5, fontFamily: "var(--font-google-sans), sans-serif" }}>
               {profile.bio}
             </p>
           )}
@@ -124,7 +124,7 @@ export default function GithubActivity() {
           { label: "Stars", value: totalStars },
         ].map((stat) => (
           <div key={stat.label} style={statCardStyle(theme)}>
-            <span style={{ color: theme.accentColor, fontSize: "1.5rem", fontWeight: 700, fontFamily: "'Google Sans Bold', sans-serif" }}>
+            <span style={{ color: theme.accentColor, fontSize: "1.5rem", fontWeight: 700, fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 700 }}>
               {stat.value}
             </span>
             <span style={{ color: theme.secondaryText, fontSize: "0.8rem", marginTop: 4 }}>
@@ -151,7 +151,7 @@ export default function GithubActivity() {
                   <svg width="16" height="16" viewBox="0 0 16 16" fill={theme.secondaryText}>
                     <path d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1h-8a1 1 0 00-1 1v6.708A2.486 2.486 0 014.5 9h8V1.5z" />
                   </svg>
-                  <span style={{ color: theme.accentColor, fontWeight: 600, fontSize: "0.95rem", fontFamily: "'Google Sans Medium', sans-serif" }}>
+                  <span style={{ color: theme.accentColor, fontWeight: 600, fontSize: "0.95rem", fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 500 }}>
                     {repo.name}
                   </span>
                 </div>
@@ -248,7 +248,7 @@ function subHeadingStyle(theme) {
     fontSize: "1.1rem",
     fontWeight: 600,
     marginBottom: "1rem",
-    fontFamily: "'Google Sans Medium', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 500,
   };
 }
 
@@ -278,7 +278,7 @@ function repoDescStyle(theme) {
     fontSize: "0.85rem",
     lineHeight: 1.5,
     margin: 0,
-    fontFamily: "'Google Sans Regular', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif",
   };
 }
 

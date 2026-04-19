@@ -1,35 +1,13 @@
-import { useEffect, useRef, useSyncExternalStore } from "react";
+"use client";
 
-const subscribe = () => () => {};
-const getSnapshot = () => true;
-const getServerSnapshot = () => false;
+import { Icon } from "@iconify/react";
 
 export default function IconifyIcon({ icon, style, className = "" }) {
-  const mounted = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (mounted && ref.current && window.Iconify && typeof window.Iconify.scan === "function") {
-      window.Iconify.scan(ref.current);
-    }
-  }, [mounted]);
-
-  if (!mounted) {
-    return (
-      <span
-        className={className}
-        style={{ ...style, display: "inline-block", width: "1em", height: "1em" }}
-      />
-    );
-  }
-
   return (
-    <span
-      ref={ref}
-      className={`iconify ${className}`}
-      data-icon={icon}
-      style={style}
-      data-inline="false"
+    <Icon
+      icon={icon}
+      className={className}
+      style={{ fontSize: "1em", ...style }}
     />
   );
 }

@@ -1,4 +1,3 @@
-import React from "react";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import { skills } from "../../data/skills";
 import { Fade } from "react-awesome-reveal";
@@ -24,9 +23,8 @@ function SkillSection() {
         return (
           <Fade key={skill.title} direction="up" duration={1000} triggerOnce delay={index * 100}>
             <div
-              className="skills-main-div"
+              className={`skills-main-div ${isEven ? "skills-row" : "skills-row-reverse"}`}
               style={{
-                flexDirection: isEven ? "row" : "row-reverse",
                 backgroundColor: `${theme.text}05`,
                 border: `1px solid ${theme.text}10`,
               }}

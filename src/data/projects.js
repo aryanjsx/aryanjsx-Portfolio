@@ -1,8 +1,6 @@
 export const projectsHeader = {
-  title: "Projects",
   description:
     "My projects make use of a vast variety of the latest technology tools. 🚀 I excel in creating both Web Development and Software Development projects. Below, you'll find some of my projects. Please note that not all mentioned projects are on GitHub yet. 🌐🛠️",
-  avatar_image_path: "projects_image.svg",
 };
 
 export const npmPackages = {

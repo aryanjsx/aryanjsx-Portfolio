@@ -1,0 +1,354 @@
+﻿/* =============================================================================
+   13. src/pages/experience/Experience.css
+   (duplicate .section-header / .section-title / .section-line omitted — same as Contact)
+   ============================================================================= */
+
+.experience-main {
+  width: 100%;
+}
+
+.basic-experience {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* Hero Section - Matching Education Page */
+.experience-heading-div {
+  display: flex;
+}
+
+.experience-heading-div > * {
+  flex: 1;
+}
+
+.experience-heading-img-div {
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-heading-text-div {
+  text-align: center;
+}
+
+.experience-heading-img-div > * {
+  max-width: 100%;
+  height: auto;
+}
+
+.experience-heading-text {
+  font-size: 56px;
+  font-weight: 400;
+  font-family: var(--font-google-sans), sans-serif;
+  font-weight: 500;
+  line-height: 1.1;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.experience-heading-sub-text {
+  font-size: 30px;
+  font-family: var(--font-google-sans), sans-serif;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.experience-header-detail-text {
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: var(--font-google-sans), sans-serif;
+  font-weight: 500;
+}
+
+/* Timeline Section */
+.experience-timeline-section {
+  padding: 3rem 0;
+}
+
+/* Filter Tabs */
+.experience-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.experience-tab {
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  border: 2px solid;
+  background: transparent;
+  font-family: var(--font-google-sans), sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.experience-tab:hover {
+  transform: translateY(-2px);
+}
+
+.experience-tab.active {
+  color: #fff;
+}
+
+/* Timeline */
+.experience-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  border-radius: 2px;
+  opacity: 0.3;
+}
+
+/* Timeline Item */
+.timeline-item {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-dot::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+/* Timeline Card */
+.timeline-card {
+  width: calc(50% - 50px);
+  padding: 1.5rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Header */
+.timeline-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  object-fit: contain;
+  padding: 5px;
+  flex-shrink: 0;
+}
+
+.timeline-card-info {
+  flex: 1;
+}
+
+.timeline-card-title {
+  font-size: 1.3rem;
+  font-family: var(--font-google-sans), sans-serif;
+  font-weight: 500;
+  margin: 0 0 0.3rem 0;
+}
+
+.timeline-card-company {
+  font-size: 1rem;
+  font-family: var(--font-google-sans), sans-serif;
+  margin: 0;
+}
+
+.timeline-card-company a {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.timeline-card-company a:hover {
+  text-decoration: underline;
+}
+
+/* Card Meta */
+.timeline-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-family: var(--font-google-sans), sans-serif;
+}
+
+/* Card Description */
+.timeline-card-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  font-family: var(--font-google-sans), sans-serif;
+}
+
+.timeline-card-description p {
+  margin: 0.5rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1380px) {
+  .experience-heading-text {
+    font-size: 50px;
+    margin-top: 80px;
+  }
+  .experience-heading-sub-text {
+    font-size: 25px;
+  }
+  .section-title {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .experience-timeline::before {
+    left: 30px;
+  }
+
+  .timeline-dot {
+    left: 30px;
+  }
+
+  .timeline-item,
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 70px;
+  }
+
+  .timeline-card {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .experience-heading-text {
+    font-size: 30px;
+    margin-top: 20px;
+  }
+
+  .experience-heading-sub-text {
+    font-size: 20px;
+  }
+
+  .experience-heading-div {
+    flex-direction: column;
+  }
+
+  .experience-header-detail-text {
+    font-size: 16px;
+    margin-right: 0px;
+    line-height: normal;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 30px;
+  }
+
+  .timeline-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .company-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .timeline-card-title {
+    font-size: 1.1rem;
+  }
+
+  .timeline-card-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .experience-tabs {
+    gap: 0.5rem;
+  }
+
+  .experience-tab {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-item,
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    padding-left: 50px;
+  }
+
+  .experience-timeline::before {
+    left: 15px;
+  }
+
+  .timeline-dot {
+    left: 15px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .timeline-dot::after {
+    width: 8px;
+    height: 8px;
+  }
+}
+

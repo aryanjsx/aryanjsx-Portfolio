@@ -2,12 +2,11 @@ const SITE_URL = "https://aryankr.in";
 
 const routes = [
   { path: "/", changefreq: "weekly", priority: "1.0", image: true },
-  { path: "/home", changefreq: "weekly", priority: "0.9" },
+  { path: "/projects", changefreq: "weekly", priority: "0.9" },
+  { path: "/developer", changefreq: "weekly", priority: "0.9" },
   { path: "/experience", changefreq: "monthly", priority: "0.8" },
   { path: "/education", changefreq: "monthly", priority: "0.8" },
-  { path: "/projects", changefreq: "weekly", priority: "0.9" },
   { path: "/contact", changefreq: "monthly", priority: "0.7" },
-  { path: "/splash", changefreq: "yearly", priority: "0.5" },
   { path: "/entity.html", changefreq: "monthly", priority: "0.9" },
   { path: "/image-ownership.html", changefreq: "monthly", priority: "0.8" },
 ];

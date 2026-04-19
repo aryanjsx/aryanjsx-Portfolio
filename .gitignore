@@ -11,10 +11,9 @@
 # testing
 /coverage
 
-
-
-# SonarCloud / SonarQube (removed)
-sonar-project.properties
+# build cache
+/.swc
+tsconfig.tsbuildinfo
 
 # misc
 .DS_Store

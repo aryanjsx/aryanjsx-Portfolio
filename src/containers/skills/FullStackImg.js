@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function FullStackImg(props) {
   const theme = props.theme;
   return (

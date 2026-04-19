@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function CloudInfraImg(props) {
   const theme = props.theme;
   return (

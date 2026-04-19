@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "../../context/ThemeContext";
+import { getCardStyle } from "../../utils/cardStyle";
 import { npmPackagesList } from "../../data/npmPackages";
 
 const REGISTRY_BASE = "https://registry.npmjs.org";
@@ -157,11 +158,10 @@ const gridStyle = {
 
 function cardStyle(theme) {
   return {
+    ...getCardStyle(theme),
     display: "flex",
     flexDirection: "column",
     padding: "1.5rem",
-    backgroundColor: theme.imageDark,
-    border: `1px solid ${theme.text}12`,
     borderRadius: 12,
   };
 }
@@ -211,7 +211,7 @@ function packageNameStyle(theme) {
     fontSize: "1.05rem",
     fontWeight: 600,
     margin: "0 0 0.5rem",
-    fontFamily: "'Google Sans Medium', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 500,
   };
 }
 
@@ -222,7 +222,7 @@ function descStyle(theme) {
     lineHeight: 1.5,
     margin: "0 0 1rem",
     flex: 1,
-    fontFamily: "'Google Sans Regular', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif",
   };
 }
 
@@ -237,6 +237,6 @@ function linkStyle(theme) {
   return {
     color: theme.accentColor,
     textDecoration: "none",
-    fontFamily: "'Google Sans Medium', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 500,
   };
 }

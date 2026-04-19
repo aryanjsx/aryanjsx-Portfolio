@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -36,7 +35,7 @@ export default function ArchitectureDiagram({ src, alt, caption }) {
             fontSize: "0.85rem",
             textAlign: "center",
             marginTop: "0.75rem",
-            fontFamily: "'Google Sans Regular', sans-serif",
+            fontFamily: "var(--font-google-sans), sans-serif",
           }}
         >
           {caption}

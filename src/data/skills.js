@@ -34,7 +34,7 @@ export const skills = {
         { skillName: "Netlify", fontAwesomeClassname: "simple-icons:netlify", style: { color: "#38AFBB" } },
         { skillName: "VS Code", fontAwesomeClassname: "devicon:vscode", style: { color: "#38AFBB" } },
         { skillName: "Visual Studio", fontAwesomeClassname: "devicon:visualstudio", style: { color: "#38AFBB" } },
-        { skillName: "Github", fontAwesomeClassname: "devicon:github", style: { color: "#38AFBB" } },
+        { skillName: "Github", fontAwesomeClassname: "mdi:github", style: { color: "#8B949E" } },
         { skillName: "Pycharm", fontAwesomeClassname: "logos:pycharm", style: { color: "#38AFBB" } },
         { skillName: "Intellij", fontAwesomeClassname: "devicon:intellij", style: { color: "#38AFBB" } },
         { skillName: "Notion", fontAwesomeClassname: "devicon:notion", style: { color: "#38AFBB" } },

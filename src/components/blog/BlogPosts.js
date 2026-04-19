@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { getCardStyle } from "../../utils/cardStyle";
 import { useTheme } from "../../context/ThemeContext";
 
 const RSS_URL =
@@ -67,7 +68,7 @@ export default function BlogPosts() {
       {posts.map((post) => (
         <a
           key={post.guid || post.link}
-          href={post.link}
+          href={isSafeUrl(post.link) ? post.link : "#"}
           target="_blank"
           rel="noopener noreferrer"
           style={cardStyle(theme)}
@@ -104,6 +105,16 @@ export default function BlogPosts() {
   );
 }
 
+function isSafeUrl(url) {
+  if (!url || typeof url !== "string") return false;
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" || parsed.protocol === "http:";
+  } catch {
+    return false;
+  }
+}
+
 function stripHtml(html) {
   if (!html) return "";
   return html.replace(/<[^>]*>/g, "").replace(/&nbsp;/g, " ").trim();
@@ -127,10 +138,9 @@ const gridStyle = {
 
 function cardStyle(theme) {
   return {
+    ...getCardStyle(theme),
     display: "flex",
     flexDirection: "column",
-    backgroundColor: theme.imageDark,
-    border: `1px solid ${theme.text}12`,
     borderRadius: 12,
     overflow: "hidden",
     textDecoration: "none",
@@ -176,7 +186,7 @@ function titleStyle(theme) {
     fontWeight: 600,
     margin: "0 0 0.5rem",
     lineHeight: 1.4,
-    fontFamily: "'Google Sans Medium', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 500,
   };
 }
 
@@ -187,7 +197,7 @@ function excerptStyle(theme) {
     lineHeight: 1.5,
     margin: "0 0 1rem",
     flex: 1,
-    fontFamily: "'Google Sans Regular', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif",
   };
 }
 
@@ -196,6 +206,6 @@ function readMoreStyle(theme) {
     color: theme.accentColor,
     fontSize: "0.85rem",
     fontWeight: 600,
-    fontFamily: "'Google Sans Medium', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 500,
   };
 }

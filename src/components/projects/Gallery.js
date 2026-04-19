@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -106,10 +106,14 @@ export default function Gallery({ screenshots = [], projectName = "" }) {
               </>
             )}
 
-            <img
+            <Image
               src={screenshots[selectedIndex]}
               alt={`${projectName} screenshot ${selectedIndex + 1}`}
+              width={1200}
+              height={675}
               style={fullImgStyle}
+              sizes="90vw"
+              priority
             />
 
             <p style={{ color: "#8D8D8D", textAlign: "center", marginTop: 12, fontSize: "0.85rem" }}>
@@ -134,14 +138,6 @@ const thumbBtnStyle = {
   borderRadius: 12,
   overflow: "hidden",
   transition: "transform 0.2s, box-shadow 0.2s",
-};
-
-const thumbImgStyle = {
-  width: "100%",
-  height: "auto",
-  display: "block",
-  objectFit: "cover",
-  aspectRatio: "16/9",
 };
 
 const overlayStyle = {

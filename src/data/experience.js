@@ -3,7 +3,6 @@ export const experience = {
   subtitle: "Work & Internship",
   description:
     "I'm an IT fresher who is working as an Software Developer intern. I have prior knowledge of programing languages as well as full stack development.",
-  header_image_path: "experience.svg",
   sections: [
     {
       title: "Internships",

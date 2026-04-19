@@ -1,5 +1,5 @@
-import React from "react";
 import { useTheme } from "../../context/ThemeContext";
+import { getCardStyle } from "../../utils/cardStyle";
 import Badge from "../ui/Badge";
 import { currentlyBuilding } from "../../data/currentlyBuilding";
 
@@ -66,11 +66,10 @@ const gridStyle = {
 
 function cardStyle(theme) {
   return {
+    ...getCardStyle(theme),
     display: "flex",
     flexDirection: "column",
     padding: "1.5rem",
-    backgroundColor: theme.imageDark,
-    border: `1px solid ${theme.text}12`,
     borderRadius: 12,
   };
 }
@@ -90,7 +89,7 @@ function titleStyle(theme) {
     fontSize: "1.1rem",
     fontWeight: 600,
     margin: 0,
-    fontFamily: "'Google Sans Medium', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 500,
   };
 }
 
@@ -116,7 +115,7 @@ function descStyle(theme) {
     lineHeight: 1.6,
     margin: "0 0 1rem",
     flex: 1,
-    fontFamily: "'Google Sans Regular', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif",
   };
 }
 
@@ -133,6 +132,6 @@ function linkStyle(theme) {
     textDecoration: "none",
     fontSize: "0.85rem",
     fontWeight: 600,
-    fontFamily: "'Google Sans Medium', sans-serif",
+    fontFamily: "var(--font-google-sans), sans-serif", fontWeight: 500,
   };
 }
