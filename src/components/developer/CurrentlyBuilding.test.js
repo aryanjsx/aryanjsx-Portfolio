@@ -12,20 +12,22 @@ describe("CurrentlyBuilding", () => {
     renderWithTheme(<CurrentlyBuilding />);
     expect(screen.getByText("AURA")).toBeInTheDocument();
     expect(screen.getByText("AURA MCP Server")).toBeInTheDocument();
-    expect(screen.getByText("OpenClaude")).toBeInTheDocument();
+    expect(screen.getByText("Code Converter")).toBeInTheDocument();
+    expect(screen.getByText("Know India")).toBeInTheDocument();
   });
 
   it("renders status badges", () => {
     renderWithTheme(<CurrentlyBuilding />);
     expect(screen.getByText("In Development")).toBeInTheDocument();
     expect(screen.getByText("Beta")).toBeInTheDocument();
-    expect(screen.getByText("Active")).toBeInTheDocument();
+    const activeBadges = screen.getAllByText("Active");
+    expect(activeBadges.length).toBe(2);
   });
 
   it("renders GitHub links for each project", () => {
     renderWithTheme(<CurrentlyBuilding />);
     const links = screen.getAllByText("View on GitHub →");
-    expect(links.length).toBeGreaterThanOrEqual(3);
+    expect(links.length).toBeGreaterThanOrEqual(4);
     links.forEach((link) => {
       expect(link.closest("a")).toHaveAttribute("target", "_blank");
       expect(link.closest("a")).toHaveAttribute("rel", "noopener noreferrer");
