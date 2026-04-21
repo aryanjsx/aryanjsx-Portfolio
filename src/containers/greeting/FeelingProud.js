@@ -1,39 +1,57 @@
-import { useRef, useEffect, useState, useCallback } from "react";
+import { useRef, useEffect, useState } from "react";
+
+const LEFT_EYE = { cx: 98.4, cy: 114 };
+const RIGHT_EYE = { cx: 136.9, cy: 114 };
+const MAX_MOVE = 3;
+
+function calcOffset(svgPt, eye) {
+  const dx = svgPt.x - eye.cx;
+  const dy = svgPt.y - eye.cy;
+  const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+  const clamp = Math.min(MAX_MOVE, dist);
+  return { x: (dx / dist) * clamp, y: (dy / dist) * clamp };
+}
 
 function FeelingProud(props) {
   const theme = props.theme;
   const svgRef = useRef(null);
+  const rafRef = useRef(null);
+  const mouseRef = useRef({ x: 0, y: 0 });
   const [eyeOffset, setEyeOffset] = useState({ lx: 0, ly: 0, rx: 0, ry: 0 });
 
-  const LEFT_EYE = { cx: 98.4, cy: 114 };
-  const RIGHT_EYE = { cx: 136.9, cy: 114 };
-  const MAX_MOVE = 3;
+  useEffect(() => {
+    let lastX = 0;
+    let lastY = 0;
+    const THRESHOLD = 5;
 
-  const handleMouseMove = useCallback((e) => {
-    const svg = svgRef.current;
-    if (!svg) return;
-    const pt = svg.createSVGPoint();
-    pt.x = e.clientX;
-    pt.y = e.clientY;
-    const svgPt = pt.matrixTransform(svg.getScreenCTM().inverse());
+    function onMouseMove(e) {
+      const dx = e.clientX - lastX;
+      const dy = e.clientY - lastY;
+      if (dx * dx + dy * dy < THRESHOLD * THRESHOLD) return;
+      lastX = e.clientX;
+      lastY = e.clientY;
 
-    function calcOffset(eye) {
-      const dx = svgPt.x - eye.cx;
-      const dy = svgPt.y - eye.cy;
-      const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-      const clamp = Math.min(MAX_MOVE, dist);
-      return { x: (dx / dist) * clamp, y: (dy / dist) * clamp };
+      if (rafRef.current) return;
+      rafRef.current = requestAnimationFrame(() => {
+        rafRef.current = null;
+        const svg = svgRef.current;
+        if (!svg) return;
+        const pt = svg.createSVGPoint();
+        pt.x = lastX;
+        pt.y = lastY;
+        const svgPt = pt.matrixTransform(svg.getScreenCTM().inverse());
+        const l = calcOffset(svgPt, LEFT_EYE);
+        const r = calcOffset(svgPt, RIGHT_EYE);
+        setEyeOffset({ lx: l.x, ly: l.y, rx: r.x, ry: r.y });
+      });
     }
 
-    const l = calcOffset(LEFT_EYE);
-    const r = calcOffset(RIGHT_EYE);
-    setEyeOffset({ lx: l.x, ly: l.y, rx: r.x, ry: r.y });
+    window.addEventListener("mousemove", onMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    };
   }, []);
-
-  useEffect(() => {
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [handleMouseMove]);
 
   return (
     <svg

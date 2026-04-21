@@ -1,9 +1,8 @@
 import {
   createContext,
   useContext,
-  useState,
   useCallback,
-  useEffect,
+  useSyncExternalStore,
 } from "react";
 
 const lightTheme = {
@@ -42,15 +41,23 @@ const themes = { light: lightTheme, dark: darkTheme };
 
 const ThemeContext = createContext(undefined);
 
-function getStoredTheme() {
-  const attr = document.documentElement.getAttribute("data-theme");
-  if (attr && themes[attr]) return attr;
-  try {
-    const stored = localStorage.getItem("theme");
-    if (stored && themes[stored]) return stored;
-  } catch {
-    /* storage unavailable */
-  }
+let currentThemeName = "dark";
+const listeners = new Set();
+
+function emitChange() {
+  for (const listener of listeners) listener();
+}
+
+function subscribe(listener) {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function getSnapshot() {
+  return currentThemeName;
+}
+
+function getServerSnapshot() {
   return "dark";
 }
 
@@ -61,44 +68,39 @@ function applyThemeAttribute(name) {
   }
 }
 
+function setThemeStore(name) {
+  if (name === currentThemeName) return;
+  currentThemeName = name;
+  applyThemeAttribute(name);
+  emitChange();
+}
+
+if (typeof window !== "undefined") {
+  const attr = document.documentElement.getAttribute("data-theme");
+  if (attr && themes[attr]) {
+    currentThemeName = attr;
+  } else {
+    try {
+      const stored = localStorage.getItem("theme");
+      if (stored && themes[stored]) currentThemeName = stored;
+    } catch { /* storage unavailable */ }
+  }
+}
+
 export function ThemeProvider({ children }) {
-  const [themeName, setThemeName] = useState("dark");
+  const themeName = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const theme = themes[themeName] || themes.dark;
 
-  useEffect(() => {
-    const stored = getStoredTheme();
-    if (stored !== themeName) {
-      setThemeName(stored);
-    }
-    applyThemeAttribute(stored);
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-  useEffect(() => {
-    applyThemeAttribute(themeName);
-  }, [themeName]);
-
   const toggleTheme = useCallback(() => {
-    setThemeName((prev) => {
-      const next = prev === "light" ? "dark" : "light";
-      try {
-        localStorage.setItem("theme", next);
-      } catch {
-        /* storage unavailable */
-      }
-      applyThemeAttribute(next);
-      return next;
-    });
+    const next = currentThemeName === "light" ? "dark" : "light";
+    try { localStorage.setItem("theme", next); } catch { /* storage unavailable */ }
+    setThemeStore(next);
   }, []);
 
   const setTheme = useCallback((name) => {
-    setThemeName(name);
-    try {
-      localStorage.setItem("theme", name);
-    } catch {
-      /* storage unavailable */
-    }
-    applyThemeAttribute(name);
+    try { localStorage.setItem("theme", name); } catch { /* storage unavailable */ }
+    setThemeStore(name);
   }, []);
 
   return (
