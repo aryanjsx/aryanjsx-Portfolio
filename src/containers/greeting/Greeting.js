@@ -63,7 +63,16 @@ function getYearsOfExperience() {
   return Math.floor(years);
 }
 
-export default function Greeting() {
+const NAV_THOUGHTS = {
+  Home: "Welcome to my world! ✨",
+  Education: "My degrees & certifications 🎓",
+  Experience: "Where I've worked & grown 💼",
+  Projects: "Cool stuff I've built 🚀",
+  Developer: "GitHub stats & npm packages 👨‍💻",
+  Contact: "Let's connect & collaborate! 📬",
+};
+
+export default function Greeting({ hoveredNav }) {
   const { theme } = useTheme();
   const router = useRouter();
   const typedRole = useTypewriter(ROLES);
@@ -163,7 +172,18 @@ export default function Greeting() {
           </Fade>
         </div>
         <Fade direction="right" duration={1000} triggerOnce>
-          <div className="greeting-image-div" aria-hidden="true">
+          <div className="greeting-image-div" aria-hidden="true" style={{ position: "relative" }}>
+            {hoveredNav && NAV_THOUGHTS[hoveredNav] && (
+              <div className="thought-bubble" style={{
+                color: theme.text,
+                backgroundColor: theme.imageDark,
+                borderColor: `${theme.secondaryText}40`,
+              }}>
+                {NAV_THOUGHTS[hoveredNav]}
+                <span className="thought-dot thought-dot-1" style={{ backgroundColor: theme.imageDark, borderColor: `${theme.secondaryText}40` }} />
+                <span className="thought-dot thought-dot-2" style={{ backgroundColor: theme.imageDark, borderColor: `${theme.secondaryText}40` }} />
+              </div>
+            )}
             <FeelingProud theme={theme} />
           </div>
         </Fade>

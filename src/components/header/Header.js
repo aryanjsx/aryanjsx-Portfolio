@@ -5,7 +5,7 @@ import { useTheme } from "../../context/ThemeContext";
 import { CgSun } from "react-icons/cg";
 import { HiMoon } from "react-icons/hi";
 
-function Header() {
+function Header({ onNavHover }) {
   const { theme, toggleTheme } = useTheme();
   const pathname = usePathname();
 
@@ -78,6 +78,8 @@ function Header() {
                 href={link.href}
                 className={pathname === link.href ? "active" : ""}
                 style={{ color: theme.text }}
+                onMouseEnter={() => onNavHover?.(link.label)}
+                onMouseLeave={() => onNavHover?.(null)}
               >
                 {link.label}
               </Link>

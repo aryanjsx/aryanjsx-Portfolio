@@ -1,7 +1,43 @@
+import { useRef, useEffect, useState, useCallback } from "react";
+
 function FeelingProud(props) {
   const theme = props.theme;
+  const svgRef = useRef(null);
+  const [eyeOffset, setEyeOffset] = useState({ lx: 0, ly: 0, rx: 0, ry: 0 });
+
+  const LEFT_EYE = { cx: 98.4, cy: 114 };
+  const RIGHT_EYE = { cx: 136.9, cy: 114 };
+  const MAX_MOVE = 3;
+
+  const handleMouseMove = useCallback((e) => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    const pt = svg.createSVGPoint();
+    pt.x = e.clientX;
+    pt.y = e.clientY;
+    const svgPt = pt.matrixTransform(svg.getScreenCTM().inverse());
+
+    function calcOffset(eye) {
+      const dx = svgPt.x - eye.cx;
+      const dy = svgPt.y - eye.cy;
+      const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+      const clamp = Math.min(MAX_MOVE, dist);
+      return { x: (dx / dist) * clamp, y: (dy / dist) * clamp };
+    }
+
+    const l = calcOffset(LEFT_EYE);
+    const r = calcOffset(RIGHT_EYE);
+    setEyeOffset({ lx: l.x, ly: l.y, rx: r.x, ry: r.y });
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [handleMouseMove]);
+
   return (
     <svg
+      ref={svgRef}
       version="1.1"
       viewBox="80 -10 100.1879 500"
       height="650.68268"
@@ -205,14 +241,14 @@ function FeelingProud(props) {
           </g>
         </g>
         <g id="eyeb">
-          <g id="g106">
+          <g id="g106" transform={`translate(${eyeOffset.lx},${8 + eyeOffset.ly})`}>
             <path
               id="path104"
               d="M84.6,92c0,0,16.8-9.6,14.2-12.2C96.2,77.2,84.6,92,84.6,92z"
               fill={theme.dark}
             />
           </g>
-          <g id="g110">
+          <g id="g110" transform={`translate(${eyeOffset.rx},${8 + eyeOffset.ry})`}>
             <path
               id="path108"
               d="M151.5,91.5c0,0-16.8-9.6-14.2-12.2C139.9,76.8,151.5,91.5,151.5,91.5z"
@@ -221,8 +257,8 @@ function FeelingProud(props) {
           </g>
         </g>
         <g id="eyey2">
-          <circle id="circle113" r="5" cy="114" cx="98.4" fill={theme.dark} />
-          <circle id="circle115" r="5" cy="114" cx="136.9" fill={theme.dark} />
+          <circle id="circle113" r="3.5" cy={114 + eyeOffset.ly} cx={98.4 + eyeOffset.lx} fill={theme.dark} />
+          <circle id="circle115" r="3.5" cy={114 + eyeOffset.ry} cx={136.9 + eyeOffset.rx} fill={theme.dark} />
         </g>
       </g>
       <g id="shirt">

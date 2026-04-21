@@ -42,8 +42,7 @@ const themes = { light: lightTheme, dark: darkTheme };
 
 const ThemeContext = createContext(undefined);
 
-function getInitialTheme() {
-  if (typeof window === "undefined") return "dark";
+function getStoredTheme() {
   const attr = document.documentElement.getAttribute("data-theme");
   if (attr && themes[attr]) return attr;
   try {
@@ -63,9 +62,17 @@ function applyThemeAttribute(name) {
 }
 
 export function ThemeProvider({ children }) {
-  const [themeName, setThemeName] = useState(getInitialTheme);
+  const [themeName, setThemeName] = useState("dark");
 
   const theme = themes[themeName] || themes.dark;
+
+  useEffect(() => {
+    const stored = getStoredTheme();
+    if (stored !== themeName) {
+      setThemeName(stored);
+    }
+    applyThemeAttribute(stored);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     applyThemeAttribute(themeName);
