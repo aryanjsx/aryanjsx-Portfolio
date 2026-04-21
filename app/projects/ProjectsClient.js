@@ -51,7 +51,7 @@ export default function ProjectsClient() {
           <div className="projects-heading-div">
             <div className="projects-heading-img-div"><ProjectsImg theme={theme} /></div>
             <div className="projects-heading-text-div">
-              <h1 className="projects-heading-text" style={{ color: theme.text }}>Aryan Kumar </h1>
+              <h1 className="projects-heading-text" style={{ color: theme.text }}>Projects </h1>
               <h2 className="visually-hidden">Projects by Aryan</h2>
               <p className="projects-header-detail-text subTitle" style={{ color: theme.secondaryText }}>{projectsHeader.description}</p>
             </div>

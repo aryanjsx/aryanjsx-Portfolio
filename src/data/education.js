@@ -33,7 +33,7 @@ export const degrees = {
 export const certifications = {
   certifications: [
     {
-      title: "Microsoft Certified: Azure Fundamentals (AZ-900)",
+      title: "Azure Fundamentals (AZ-900)",
       subtitle: "Microsoft",
       logo_path: "az-900.svg",
       certificate_link: "/AZ-900.pdf",
