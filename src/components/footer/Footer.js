@@ -30,13 +30,8 @@ export default function Footer() {
       <Fade triggerOnce>
         <div className="footer__accent-line" />
         <div className="footer__row">
-          <div className="footer__left">
-            <p className="footer__copyright" style={{ color: theme.secondaryText }}>
-              © {new Date().getFullYear()}
-            </p>
-          </div>
           <p className="footer__tagline" style={{ color: theme.secondaryText }}>
-            Made by{" "}
+            © {new Date().getFullYear()} · Made by{" "}
             <a
               href={socialMediaLinks.github}
               target="_blank"
@@ -47,9 +42,6 @@ export default function Footer() {
             >
               {greeting.full_name}
             </a>
-            <span className="footer__handle" style={{ color: theme.secondaryText }}>
-              {" "}
-            </span>
           </p>
           <nav className="footer__social" aria-label="Social links">
             {FOOTER_LINKS.map((item) => (

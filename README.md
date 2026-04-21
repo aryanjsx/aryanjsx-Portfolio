@@ -32,7 +32,7 @@ Portfolio and **Entity Home Page** for **Aryan Kumar** (`aryanjsx`) — Software
 | **Animations** | React Awesome Reveal |
 | **Icons** | Iconify, React Icons |
 | **Testing** | Jest 30, React Testing Library |
-| **Tooling** | ESLint 9, Prettier, next-sitemap |
+| **Tooling** | ESLint 9, next-sitemap |
 | **Deployment** | Vercel (with serverless sitemap API) |
 | **SEO** | JSON-LD, Open Graph, Twitter Cards, Sitemaps |
 
@@ -99,7 +99,7 @@ aryanjsx-Portfolio/
 ├── next-sitemap.config.js      # Sitemap generation config
 ├── jest.config.js              # Jest test configuration
 ├── tsconfig.json               # TypeScript configuration
-├── vercel.json                 # Vercel config: rewrites, security headers
+├── vercel.json                 # Vercel config: security headers
 └── package.json
 ```
 

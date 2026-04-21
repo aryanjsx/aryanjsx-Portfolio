@@ -35,7 +35,7 @@ export const certifications = {
     {
       title: "Azure Fundamentals (AZ-900)",
       subtitle: "Microsoft",
-      logo_path: "az-900.svg",
+      logo_path: "microsoft.svg",
       certificate_link: "/AZ-900.pdf",
       alt_name: "Microsoft Azure",
       color_code: "#0078D4",
@@ -43,7 +43,7 @@ export const certifications = {
     {
       title: "Toycathon-21",
       subtitle: "Organized by Govt. of India",
-      logo_path: "ino.png",
+      logo_path: "toycathon.svg",
       certificate_link: "/Toycathon.jpg",
       alt_name: "Toycathon",
       color_code: "#FF9933",
@@ -51,7 +51,7 @@ export const certifications = {
     {
       title: "Linux Administration",
       subtitle: "Udemy",
-      logo_path: "google_logo.png",
+      logo_path: "udemy.svg",
       certificate_link: "/Linux Certification.pdf",
       alt_name: "Linux Administration",
       color_code: "#A435F0",
