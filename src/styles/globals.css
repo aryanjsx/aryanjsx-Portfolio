@@ -217,10 +217,6 @@ body {
   background-color: #e4416020;
 }
 
-.grey-color {
-  color: var(--theme-secondary-text, #868e96);
-}
-
 /* Desktop - 769px and above */
 @media (min-width: 769px) {
   .header .menu-icon {
@@ -669,16 +665,6 @@ body {
   margin: 0.5rem 0;
 }
 
-.greeting-username {
-  display: inline-block;
-  font-size: 1.5rem;
-  font-family: var(--font-google-sans), sans-serif;
-  font-weight: 500;
-  padding: 0.5rem 1.2rem;
-  border-radius: 25px;
-  margin: 1rem 0;
-}
-
 .greeting-role {
   font-size: 1.8rem;
   font-family: var(--font-google-sans), sans-serif;
@@ -901,10 +887,6 @@ body {
     font-size: 2.5rem;
   }
 
-  .greeting-username {
-    font-size: 1.2rem;
-  }
-
   .greeting-role {
     font-size: 1.2rem;
     flex-direction: column;
@@ -953,31 +935,6 @@ body {
     flex: 1;
     min-width: 80px;
   }
-}
-
-/* Legacy support - keeping old class for Skills.css compatibility */
-.main {
-  width: 90%;
-  padding: 0px 10px;
-  margin: 0px auto;
-  margin-top: 4rem;
-}
-
-.button {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 1);
-  padding: 15px 15px;
-  margin-top: 25px;
-  border-radius: 4px;
-  border-width: 0px;
-  margin-bottom: 20px;
-  width: 200px;
-  height: 50px;
-  font-weight: bold;
-  font-family: var(--font-google-sans), sans-serif;
-  font-size: 17px;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
 }
 
 /* =============================================================================

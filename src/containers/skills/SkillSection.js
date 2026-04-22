@@ -2,14 +2,10 @@ import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import { skills } from "../../data/skills";
 import { Fade } from "react-awesome-reveal";
 import { useTheme } from "../../context/ThemeContext";
-import DataScienceImg from "../../assets/illustrations/DataScienceImg";
 import FullStackImg from "../../assets/illustrations/FullStackImg";
-import CloudInfraImg from "../../assets/illustrations/CloudInfraImg";
 
 function GetSkillSvg(props) {
-  if (props.fileName === "DataScienceImg") return <DataScienceImg theme={props.theme} />;
-  else if (props.fileName === "FullStackImg") return <FullStackImg theme={props.theme} />;
-  else if (props.fileName === "CloudInfraImg") return <CloudInfraImg theme={props.theme} />;
+  if (props.fileName === "FullStackImg") return <FullStackImg theme={props.theme} />;
   return null;
 }
 

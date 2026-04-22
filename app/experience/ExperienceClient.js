@@ -55,8 +55,6 @@ export default function ExperienceClient() {
         <section className="experience-timeline-section">
           <Fade direction="up" duration={800} triggerOnce>
             <div className="section-header">
-              {/* <h3 className="section-title" style={{ color: theme.text }}>My Journey</h3> */}
-              {/* <div className="section-line" style={{ backgroundColor: theme.accentColor }} /> */}
             </div>
             <div className="experience-tabs">
               <button

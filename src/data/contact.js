@@ -1,6 +1,5 @@
 export const contactPageData = {
   contactSection: {
-    title: "Contact Me",
     profile_image_path: "hrishi2.png",
     description:
       "You can reach out to me through the platforms listed below. I’ll do my best to respond as soon as possible.",

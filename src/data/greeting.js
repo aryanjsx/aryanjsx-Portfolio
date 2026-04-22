@@ -1,7 +1,4 @@
 export const greeting = {
-  title: "Hello, I'm",
-  title1: "Aryan",
-  logo_name: "AK",
   full_name: "Aryan Kumar",
   subTitle:
     "I am a Software Engineer and Generative AI Developer. I build modern web applications using React, Next.js, Node.js, and Python, and am passionate about DevOps, cloud technologies, and system architecture. Explore my portfolio to view projects, resume, and contact details.",

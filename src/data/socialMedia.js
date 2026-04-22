@@ -2,7 +2,6 @@ export const socialMediaLinks = {
   github: "https://github.com/aryanjsx",
   linkedin: "https://www.linkedin.com/in/aryanjsx",
   gmail: "me@aryankr.in",
-  facebook: "https://www.facebook.com/aryanjsx/",
   twitter: "https://x.com/aryanjsx",
   instagram: "https://www.instagram.com/aryanjsx/",
   codechef: "https://www.codechef.com/users/aryanjsx",
