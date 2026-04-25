@@ -90,6 +90,15 @@ export default function RootLayout({ children }) {
     >
       <head>
         <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-FC0PX75F4B"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FC0PX75F4B');`,
+          }}
+        />
+        <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);document.documentElement.style.colorScheme=t}else{document.documentElement.setAttribute("data-theme","dark");document.documentElement.style.colorScheme="dark"}}catch(e){document.documentElement.setAttribute("data-theme","dark");document.documentElement.style.colorScheme="dark"}})()`,
           }}
@@ -114,15 +123,6 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-TDZT2FJN"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
         <noscript>
           <div style={{ padding: "40px", textAlign: "center", fontFamily: "sans-serif" }}>
             <h1>Aryan Kumar</h1>
