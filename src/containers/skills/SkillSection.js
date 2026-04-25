@@ -2,7 +2,7 @@ import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
 import { skills } from "../../data/skills";
 import { Fade } from "react-awesome-reveal";
 import { useTheme } from "../../context/ThemeContext";
-import FullStackImg from "../../assets/illustrations/FullStackImg";
+import FullStackImg from "./FullStackImg";
 
 function GetSkillSvg(props) {
   if (props.fileName === "FullStackImg") return <FullStackImg theme={props.theme} />;

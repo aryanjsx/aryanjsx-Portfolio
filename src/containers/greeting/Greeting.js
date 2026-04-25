@@ -7,7 +7,7 @@ import { skills } from "../../data/skills";
 import { Fade } from "react-awesome-reveal";
 import { useRouter } from "next/navigation";
 import { useTheme } from "../../context/ThemeContext";
-import FeelingProud from "../../assets/illustrations/FeelingProud";
+import FeelingProud from "./FeelingProud";
 
 const ROLES = ["Software Engineer", "Gen AI Developer", "Full-Stack Engineer"];
 const TYPE_SPEED = 100;

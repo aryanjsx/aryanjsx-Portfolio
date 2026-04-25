@@ -15,17 +15,8 @@ const googleSans = localFont({
     { path: "../public/fonts/GoogleSans-Regular.ttf", weight: "400", style: "normal" },
     { path: "../public/fonts/GoogleSans-Medium.ttf", weight: "500", style: "normal" },
     { path: "../public/fonts/GoogleSans-Bold.ttf", weight: "700", style: "normal" },
-    { path: "../public/fonts/GoogleSans-Italic.ttf", weight: "400", style: "italic" },
-    { path: "../public/fonts/GoogleSans-MediumItalic.ttf", weight: "500", style: "italic" },
-    { path: "../public/fonts/GoogleSans-BoldItalic.ttf", weight: "700", style: "italic" },
   ],
   variable: "--font-google-sans",
-  display: "swap",
-});
-
-const agustina = localFont({
-  src: "../public/fonts/Agustina.woff",
-  variable: "--font-agustina",
   display: "swap",
 });
 
@@ -85,7 +76,7 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${montserrat.variable} ${googleSans.variable} ${agustina.variable}`}
+      className={`${montserrat.variable} ${googleSans.variable}`}
       suppressHydrationWarning
     >
       <head>
